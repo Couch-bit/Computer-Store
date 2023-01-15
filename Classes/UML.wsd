@@ -1,0 +1,185 @@
+@startuml Project
+class Supplier {
+  -{static} int currentId
+  -readonly int id
+  -string nip
+  -string name
+  -string country
+  -List<Product> products
+  ----
+  + void AddProduct (Product product)
+  + void RemoveProduct (Product product)
+  + void Sort()
+  + {static} bool ValidateNip (string nip)
+  + override string ToString()
+}
+
+class Company {
+  -string name
+  -string nip
+  ----
+  + override string ToString()
+}
+
+class Private_Customer{
+  -string firstName
+  -string lastName
+  ----
+  + override string ToString()
+}
+
+abstract Customer {
+  -{static} int currentId
+  -readonly int id
+  -string country
+  -string city
+  -string street
+  -string zipCode
+  -string phoneNumber
+  -string email
+  -List<Order> orders
+  -- encrypted --
+  -string password
+  ----
+  + void AddOrder(Order order)
+  + void RemoveOrder(int id)
+  + override string ToString()
+}
+
+class Order {
+  -{static} int currentID
+  -readonly int id
+  -Customer customer
+  -bool status
+  -DateTime deliveryDate
+  -readonly Dictionary<Product, int> cart
+  ----
+  + void Add(Product product, int amount)
+  + void Delete(Product product)
+  + decimal CalculateOrderCost()
+  + decimal CalculateFee()
+  + decimal CalculateShippingCost()
+  + override string ToString()
+}
+
+abstract Product{
+  -{static} int productId
+  -readonly int id
+  -string name
+  -string description
+  -string product_number
+  -decimal discount
+  -decimal price
+  -int amount
+  -Supplier supplier
+  -Dictionary<string, string> technicalInfo
+  -List<Item> items
+  ----
+  + void AddTechnicalInfo(string key, string value)
+  + void EditTechnicalInfo(string key, string value)
+  + void DeleteTechnicalInfo(string key)
+  + override string ToString()
+  + override bool Equals (object? obj)
+  + override int GetHashCode()
+}
+
+class Item{
+  - readonly string serialNumber
+  - readonly DateTime dateOfArrival
+  ----
+  + override string ToString()
+  + override bool Equals (object? obj)
+  + override int GetHashCode()
+}
+
+class Store{
+  - string name
+  - readonly List<Supplier> suppliers
+  - readonly List<Customer> customers
+  ----
+  + void Serialize (string fname)
+  + {static} Store Deserialize (string fname)
+  + override string ToString()
+}
+
+enum HardwareType{
+  GPU,
+  CPU,
+  RAM,
+  Motherboard,
+  PowerSupply,
+  Drive,
+  Other
+}
+
+enum AccessoryType{
+  Headphones,
+  Microphone,
+  Mouse,
+  Keyboard,
+  Screen,
+  Cable,
+  Other
+}
+
+enum Architecture{
+  Bit32,
+  Bit64
+}
+
+class Hardware{
+  -double weight
+  -double length
+  -double height
+  -double width
+  -HardwareType type
+  ---- 
+  + override string ToString()
+}
+
+class Software{
+  -string version
+  -TimeSpan license
+  -Architecture architecture
+  ----
+  + override string ToString()
+}
+
+class Accessory{
+  -double weight
+  -AccessoryType type
+  ----
+  + override string ToString()
+}
+
+interface ICloneable{
+  + object Clone()
+}
+
+interface IComparable{
+  + int CompareTo(object? other)
+}
+
+interface IEquatable{
+  + bool Equals (object? other)
+}
+
+IEquatable <|-[dashed]- Item : "<Item>"
+IComparable <|-[dashed]- Product : "<Product>"
+IEquatable <|-[dashed]- Product : "<Product>"
+abstract Product implements ICloneable
+HardwareType --> Hardware
+AccessoryType --> Accessory
+Architecture --> Software
+Product <|-- Accessory
+Product <|-- Software
+Product <|-- Hardware
+Customer	<|-- Company
+Customer	<|-- Private_Customer
+Supplier "0..*" --> "1" Store
+Customer "0..*" --> "1" Store
+Product "1..*" <-- "0..*" Order
+Supplier "1" --> "0..*" Product
+Customer "1" --> "0..*" Order
+Item "0..*" --> "1" Product
+@enduml
