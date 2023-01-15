@@ -106,6 +106,23 @@ namespace Classes
         }
 
         [TestMethod]
+        public void AddTest()
+        {
+            // Arrange
+            string name = "test";
+            string nip = "0000000000";
+            string country = "Poland";
+
+            // Act
+            Supplier supplier = new(name, nip, country);
+
+            // Assert
+            // TODO
+
+
+        }
+
+        [TestMethod]
         public void ToStringTest()
         {
             // Arrange
@@ -114,10 +131,10 @@ namespace Classes
             string country = "Poland";
 
             // Act
-            Supplier supplier1 = new(name, nip, country);
+            Supplier supplier = new(name, nip, country);
 
             // Assert
-            Assert.AreEqual(supplier1.ToString(),
+            Assert.AreEqual(supplier.ToString(),
                 $"{name} ({nip:000-000-00-00} {country})");
         }
     }

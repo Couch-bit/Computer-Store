@@ -13,7 +13,6 @@
         private readonly int id;
         private string name;
         private string description;
-        private string productNumber;
         private decimal discount;
         private decimal price;
         private decimal vat;
@@ -23,6 +22,7 @@
 
         #region Properties
 
+        public static int CurrentId => currentId;
         /// <summary>
         /// Gets the identifier.
         /// </summary>
@@ -47,15 +47,6 @@
         /// </value>
         public string Description { get => description;
             set => description = value; }
-
-        /// <summary>
-        /// Gets or sets the product number.
-        /// </summary>
-        /// <value>
-        /// The product number.
-        /// </value>
-        public string ProductNumber { get => productNumber;
-            set => productNumber = value; }
 
         /// <summary>
         /// Gets or sets the discount. Setting the discount is validated, as discount must be in range (0,1).
@@ -160,7 +151,6 @@
             description = string.Empty;
             Discount = 0;
             Price = 0;
-            productNumber = $"{currentId:00000}";
             vat = 0;
             technical_info = new Dictionary<string, string>();
             items = new();
@@ -310,7 +300,7 @@
         /// </returns>
         public override string ToString()
         {
-            string text = $"{name} ({productNumber}), " +
+            string text = $"{name} (Id : {id}), " +
                 $"price: {GetTotalPrice():c}";
             if (Discount != 0)
             {

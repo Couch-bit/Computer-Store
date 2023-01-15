@@ -67,7 +67,6 @@ abstract Product{
   -readonly int id
   -string name
   -string description
-  -string product_number
   -decimal discount
   -decimal price
   -int amount
@@ -178,8 +177,8 @@ Customer	<|-- Company
 Customer	<|-- Private_Customer
 Supplier "0..*" --> "1" Store
 Customer "0..*" --> "1" Store
-Product "1..*" <-- "0..*" Order
-Supplier "1" --> "0..*" Product
-Customer "1" --> "0..*" Order
+Product "0..*" --> "1" Order
+Product "0..*" --> "1" Supplier
+Order "0..*" --> "1" Customer
 Item "0..*" --> "1" Product
 @enduml
