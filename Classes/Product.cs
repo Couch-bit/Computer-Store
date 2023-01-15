@@ -24,7 +24,7 @@
 
         public static int CurrentId => currentId;
         /// <summary>
-        /// Gets the identifier.
+        /// Gets or sets (init) the identifier.
         /// </summary>
         /// <value>
         /// The identifier.
