@@ -24,7 +24,7 @@
         #region Properties
 
         /// <summary>
-        /// Gets the identifier.
+        /// Gets or sets (init) the identifier.
         /// </summary>
         /// <value>
         /// The identifier.
