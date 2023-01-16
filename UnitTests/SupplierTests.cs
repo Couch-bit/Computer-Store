@@ -4,6 +4,20 @@ namespace Classes
     public class SupplierTests
     {
         [TestMethod]
+        public void DefaultConstructorTest()
+        {
+            // Arrange
+
+            // Act
+            Supplier supplier = new();
+
+            // Assert
+            Assert.AreEqual(supplier.Nip, new string('0', 10));
+            Assert.AreEqual(supplier.Name, string.Empty);
+            Assert.AreEqual(supplier.Country, string.Empty);
+        }
+
+        [TestMethod]
         public void StaticIdTest()
         {
             // Arrange

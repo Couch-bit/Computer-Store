@@ -25,7 +25,7 @@ namespace Classes
     {
         #region Fields
         private string version;
-        private float license;
+        private TimeSpan license;
         private Architecture targetArchitecture;
         #endregion Fields
 
@@ -46,7 +46,7 @@ namespace Classes
         /// <value>
         /// The license.
         /// </value>
-        public float License { get => license;
+        public TimeSpan License { get => license;
             set => license = value; }
 
         /// <summary>
@@ -65,11 +65,11 @@ namespace Classes
         public Software() : base()
         {
             version = string.Empty;
-            license = 0;
+            license = TimeSpan.Zero;
             targetArchitecture = Architecture.Bit64;
         }
 
-        public Software(string version, float license,
+        public Software(string version, TimeSpan license,
             Architecture targetArchitecture, 
             string name, string description,
             decimal discount, decimal price, decimal vat) : 

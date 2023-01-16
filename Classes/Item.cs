@@ -29,7 +29,7 @@
         /// Gets or sets (init) the date of arrival.
         /// </summary>
         /// <value>
-        /// The dateof arrival.
+        /// The date of arrival.
         /// </value>
         public DateTime DateofArrival
         {
@@ -52,7 +52,6 @@
             SerialNumber = serialNumber;
             DateofArrival = dateofArrival;
         }
-
         #endregion Constructors
 
         #region Methods

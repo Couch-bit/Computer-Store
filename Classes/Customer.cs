@@ -22,7 +22,9 @@ namespace Classes
         private readonly List<Order> orders;
         #endregion Fields
 
-        #region Properties        
+        #region Properties  
+
+        public static int CurrentId => currentId;
         /// <summary>
         /// Gets the identifier.
         /// </summary>
@@ -135,11 +137,11 @@ namespace Classes
         /// </value>
         /// <exception cref="Classes.PhoneNumberException">Incorrect Phone Number</exception>
         public string PhoneNumber { get => phoneNumber;
-            init
+            set
             {
                 if (Regex.IsMatch(value, @"^(\d{3}-){2}\d{3}$"))
                 {
-                    zipCode = value;
+                    phoneNumber = value;
                 }
                 else
                 {
@@ -214,7 +216,7 @@ namespace Classes
             country = string.Empty; 
             city = string.Empty;
             street = string.Empty;
-            zipCode = string.Empty;
+            zipCode = "00-000";
             phoneNumber = new string('0', 9);
             email = string.Empty;
             password = string.Empty;

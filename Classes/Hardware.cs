@@ -48,7 +48,9 @@
             {
                 if(value <= 0)
                 {
-                    throw new WrongParameterException("Weight cannot be smaller or equal to 0.");
+                    throw new 
+                        WrongParameterException
+                        ("Weight cannot be smaller or equal to 0.");
                 }
                 else
                 {
@@ -72,7 +74,9 @@
             {
                 if(value <= 0)
                 {
-                    throw new WrongParameterException("Length cannot be smaller or equal to 0.");
+                    throw new 
+                        WrongParameterException
+                        ("Length cannot be smaller or equal to 0.");
                 }
                 else
                 {
@@ -95,7 +99,9 @@
             {
                 if (value <= 0)
                 {
-                    throw new WrongParameterException("Height cannot be smaller or equal to 0.");
+                    throw new 
+                        WrongParameterException
+                        ("Height cannot be smaller or equal to 0.");
                 }
                 else
                 {
@@ -118,7 +124,9 @@
             {
                 if(value <= 0)
                 {
-                    throw new WrongParameterException("Width cannot be samller or equal to 0.");
+                    throw new 
+                        WrongParameterException
+                        ("Width cannot be samller or equal to 0.");
                 }
                 else
                 {
@@ -153,11 +161,15 @@
             decimal discount, decimal price, decimal vat) :
             base(name, description, discount, price, vat) 
         {
-            this.weight = weight;
-            this.length = length;
-            this.height = height;
-            this.width = width;
+            this.width = 0;
+            this.length = 0;
+            this.height = 0;
+            this.width = 0;
             this.type = type;
+            Weight = weight;
+            Length = length;
+            Height = height;
+            Width = width;
         }
         #endregion Constructors
 

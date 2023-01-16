@@ -21,7 +21,7 @@ class Company {
   + override string ToString()
 }
 
-class Private_Customer{
+class PrivateCustomer{
   -string firstName
   -string lastName
   ----
@@ -47,7 +47,7 @@ abstract Customer {
 }
 
 class Order {
-  -{static} int currentID
+  -{static} int currentId
   -readonly int id
   -Customer customer
   -bool status
@@ -63,7 +63,7 @@ class Order {
 }
 
 abstract Product{
-  -{static} int productId
+  -{static} int currentId
   -readonly int id
   -string name
   -string description
@@ -174,7 +174,7 @@ Product <|-- Accessory
 Product <|-- Software
 Product <|-- Hardware
 Customer	<|-- Company
-Customer	<|-- Private_Customer
+Customer	<|-- PrivateCustomer
 Supplier "0..*" --> "1" Store
 Customer "0..*" --> "1" Store
 Product "0..*" --> "1" Order

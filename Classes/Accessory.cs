@@ -18,7 +18,7 @@
     /// A class for Accessories that inherits after the abstract class Product.
     /// </summary>
     /// <seealso cref="Classes.Product" />
-    public class Accesories : Product
+    public class Accessory : Product
     {
         #region Fields
 
@@ -62,13 +62,13 @@
 
         #region Constructors
 
-        public Accesories() : base()
+        public Accessory() : base()
         {
             weight = 0;
             type = AccessoryType.Headphones;
         }
 
-        public Accesories(double weight, AccessoryType type,
+        public Accessory(double weight, AccessoryType type,
             string name, string description,
             decimal discount, decimal price, decimal vat) : 
             base(name, description, discount, price, vat)
