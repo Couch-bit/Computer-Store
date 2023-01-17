@@ -74,6 +74,10 @@ abstract Product{
   -Dictionary<string, string> technicalInfo
   -List<Item> items
   ----
+  + decimal GetTotalPrice()
+  + int GetCount()
+  + void AddItem(Item item)
+  + void RemoveItem(Item item)
   + void AddTechnicalInfo(string key, string value)
   + void EditTechnicalInfo(string key, string value)
   + void DeleteTechnicalInfo(string key)

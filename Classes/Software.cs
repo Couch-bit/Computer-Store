@@ -91,7 +91,7 @@ namespace Classes
         /// </returns>
         public override string ToString()
         {
-            return base.ToString() + $"({Version} " +
+            return base.ToString() + $" ({Version} " +
                 $"{TargetArchitecture}, license: {License})";
         }
         #endregion Methods

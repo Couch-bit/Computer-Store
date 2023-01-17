@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Xml.Linq;
 
 namespace Classes
 {
@@ -281,7 +281,7 @@ namespace Classes
         }
 
         [TestMethod]
-        public void GetTotalPrice()
+        public void GetTotalPriceTest()
         {
             // Arrange
             double weight = 1;
@@ -302,7 +302,8 @@ namespace Classes
             actualPrice = hardware.GetTotalPrice();
 
             // Assert
-            Assert.AreEqual(actualPrice, (1 - discount) * price * (1 + vat));
+            Assert.AreEqual(actualPrice, (1 - discount) *
+                price * (1 + vat));
         }
 
         [TestMethod]
@@ -382,6 +383,25 @@ namespace Classes
             {
                 hardware.RemoveItem(item2);
             });
+        }
+
+        [TestMethod]
+        public void GetCountTest()
+        {
+            // Arrange
+            Item item = new("test", new DateTime(1960, 2, 28));
+            Item item2 = new("tester", new DateTime(1960, 2, 29));
+            int count;
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddItem(item);
+            hardware.AddItem(item2);
+            hardware.RemoveItem(item);
+            count = hardware.GetCount();
+
+            // Assert
+            Assert.AreEqual(count, 1);
         }
 
         [TestMethod]
@@ -500,6 +520,36 @@ namespace Classes
             {
                 hardware.DeleteTechnicalInfo(key2);
             });
+        }
+
+        [TestMethod]
+        public void ToStringTest()
+        {
+            // Arrange
+            double weight = 1;
+            double length = 1;
+            double height = 1;
+            double width = 1;
+            HardwareType type = HardwareType.CPU;
+            string name = "test";
+            string description = "desc";
+            decimal discount = 0.5M;
+            decimal price = 1;
+            decimal vat = 0.23M;
+            string text;
+            string result;
+
+            // Act
+            Hardware hardware = new(weight, length, height, width,
+                type, name, description, discount, price, vat);
+            text = $"{name} (Id : {hardware.Id}), " +
+                $"price: {hardware.GetTotalPrice():c}";
+            text += $" <-{discount:P} OFF!>";
+            text += $" ({type})";
+            result = hardware.ToString();
+
+            // Assert
+            Assert.AreEqual(result, text);   
         }
     }
 }

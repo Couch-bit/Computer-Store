@@ -14,7 +14,7 @@ namespace Classes
         private bool status;
         private DateTime deliveryDate;
         private readonly Dictionary<Product, int> cart;
-        #endregion
+        #endregion Fields
 
         #region Properties
 
@@ -69,7 +69,7 @@ namespace Classes
         /// </value>
         public Dictionary<Product, int> Cart { get => cart;
             init => cart = value; }
-        #endregion
+        #endregion Properties
 
         #region Constructors
 
@@ -90,7 +90,7 @@ namespace Classes
         {
             DeliveryDate = deliveryDate;
         }
-        #endregion
+        #endregion Constructors
 
         #region Methods
 
@@ -190,7 +190,8 @@ namespace Classes
             {
                 sb.AppendLine("(not realized)");
             }
-            sb.AppendLine($"Delivery date: {DeliveryDate:dd-MM-yyyy})");
+            sb.AppendLine
+                ($"Delivery date: {DeliveryDate:dd-MM-yyyy})");
             sb.Append($"Order cost: {CalculateOrderCost():c},");
             sb.Append($"Shipping cost: {CalculateShippingCost():c}");
             sb.Append($" (Fee: {CalculateFee():c}),");
@@ -198,6 +199,6 @@ namespace Classes
                 $"{CalculateOrderCost() + CalculateShippingCost():c}");
             return sb.ToString();
         }
-        #endregion
+        #endregion Methods
     }
 }
