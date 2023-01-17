@@ -51,7 +51,7 @@ namespace Classes
         {
 
             name = string.Empty;
-            nip = string.Empty;
+            nip = new string('0', 10);
         }
 
         public Company(string name, string nip,

@@ -46,7 +46,10 @@ namespace Classes
             get => country;
             set
             {
-                if (Regex.IsMatch(value, @"^[A-Z]{1}[a-zA-Z\s]+$"))
+                if (Regex.IsMatch(value,
+                    @"^[AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ]{1}" + 
+                    @"[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMm" + 
+                    @"NnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż\s]+$"))
                 {
                     country = value;
                 }
@@ -70,7 +73,10 @@ namespace Classes
             get => city;
             set
             {
-                if (Regex.IsMatch(value, @"^[A-Z]{1}[a-zA-Z\s]+$"))
+                if (Regex.IsMatch(value, 
+                    @"^[AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ]{1}" + 
+                    @"[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃń" + 
+                    @"OoÓóPpRrSsŚśTtUuWwYyZzŹźŻż\s]+$"))
                 {
                     city = value;
                 }
@@ -95,7 +101,10 @@ namespace Classes
             get => street;
             set
             {
-                if (Regex.IsMatch(value, @"^[A-Z]{1}[a-zA-Z1-9\s]+$"))
+                if (Regex.IsMatch(value,
+                    @"^[AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ]{1}" +
+                    @"[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃń" +
+                    @"OoÓóPpRrSsŚśTtUuWwYyZzŹźŻż\s]+$"))
                 {
                     street = value;
                 }
@@ -163,17 +172,7 @@ namespace Classes
             init
             {
                 if (Regex.IsMatch(value,
-                    @"(?:[a-z0-9!#$%&'+/=?^_`{|}" + 
-                    @"~-]+(?:.[a-z0-9!#$%&'+/=?^_`{|}~-]+)|""(?:" + 
-                    @"[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23" + 
-                    @"-\x5b\x5d-\x7f]|\[\x01-\x09\x0b\x0c\x0e-\x7f])" + 
-                    @")@(?:(?:[a-z0-9](?:[a-z0-9-][a-z0-9])?.)" + 
-                    @"+[a-z0-9](?:[a-z0-9-][a-z0-9])?|[(?:(?:(2(5" +
-                    "[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])).)" + 
-                    @"{3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]" + 
-                    @"?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b" + 
-                    @"\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\[\x01-" + 
-                    @"\x09\x0b\x0c\x0e-\x7f])+)])"))
+                    @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
                 {
                     email = value;
                 }
@@ -217,7 +216,7 @@ namespace Classes
             city = string.Empty;
             street = string.Empty;
             zipCode = "00-000";
-            phoneNumber = new string('0', 9);
+            phoneNumber = "000-000-000";
             email = string.Empty;
             password = string.Empty;
             orders = new();

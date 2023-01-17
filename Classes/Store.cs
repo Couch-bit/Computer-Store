@@ -40,7 +40,7 @@ namespace Classes
         /// The customers.
         /// </value>
         public List<Customer> Customers { get => customers; init => customers = value; }
-        #endregion 
+        #endregion Properties
 
         #region Constructors
 

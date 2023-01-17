@@ -103,7 +103,7 @@
         /// </returns>
         public override int GetHashCode()
         {
-            return HashCode.Combine(serialNumber, dateOfArrival);
+            return HashCode.Combine(serialNumber);
         }
         #endregion Methods
     }

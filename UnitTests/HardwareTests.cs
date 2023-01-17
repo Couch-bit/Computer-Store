@@ -1,4 +1,6 @@
-﻿namespace Classes
+﻿using System;
+
+namespace Classes
 {
     [TestClass]
     public class HardwareTests
@@ -22,8 +24,8 @@
             Assert.AreEqual(hardware.Discount, 0);
             Assert.AreEqual(hardware.Price, 0);
             Assert.AreEqual(hardware.Vat, 0);
-            Assert.IsTrue(hardware.Technical_info.Count == 0);
-            Assert.IsTrue(hardware.Items.Count == 0);
+            Assert.IsFalse(hardware.Technical_info.Any());
+            Assert.IsFalse(hardware.Items.Any());
         }
 
         [TestMethod]
@@ -275,6 +277,228 @@
                 Hardware hardware = new(weight, length,
                     height, width, type, name, description,
                     discount, price, vat);
+            });
+        }
+
+        [TestMethod]
+        public void GetTotalPrice()
+        {
+            // Arrange
+            double weight = 1;
+            double length = 1;
+            double height = 1;
+            double width = 1;
+            HardwareType type = HardwareType.CPU;
+            string name = "test";
+            string description = "desc";
+            decimal discount = 0.5M;
+            decimal price = 1;
+            decimal vat = 0.23M;
+            decimal actualPrice;
+
+            // Act
+            Hardware hardware = new(weight, length, height, width,
+                type, name, description, discount, price, vat);
+            actualPrice = hardware.GetTotalPrice();
+
+            // Assert
+            Assert.AreEqual(actualPrice, (1 - discount) * price * (1 + vat));
+        }
+
+        [TestMethod]
+        public void GetCountBaseTest()
+        {
+            // Arrange
+            int count;
+
+            // Act
+            Hardware hardware = new();
+            count = hardware.GetCount();
+
+            // Assert
+            Assert.AreEqual(count, 0);
+        }
+
+        [TestMethod]
+        public void AddItemTest()
+        {
+            // Arrange
+            Item item = new("test", new DateTime(1960, 2, 28));
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddItem(item);
+
+            // Assert
+            Assert.IsTrue(hardware.Items.Contains(item));
+        }
+
+        [TestMethod]
+        public void AddItemFailTest()
+        {
+            // Arrange
+            Item item = new("test", new DateTime(1960, 2, 28));
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddItem(item);
+
+            // Assert
+            Assert.ThrowsException<DuplicateException>(() => 
+            hardware.AddItem(item));
+        }
+
+        [TestMethod]
+        public void DeleteItemTest()
+        {
+            // Arrange
+            Item item = new("test", new DateTime(1960, 2, 28));
+            Item item2 = new("tester", new DateTime(1960, 2, 29));
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddItem(item);
+            hardware.AddItem(item2);
+            hardware.RemoveItem(item);
+
+            // Assert
+            Assert.IsFalse(hardware.Items.Contains(item));
+            Assert.IsTrue(hardware.Items.Contains(item2));
+        }
+
+        [TestMethod]
+        public void DeleteItemFailTest()
+        {
+            // Arrange
+            Item item = new("test", new DateTime(1960, 2, 28));
+            Item item2 = new("tester", new DateTime(1960, 2, 29));
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddItem(item);
+
+            // Assert
+            Assert.ThrowsException<WrongKeyException>(() =>
+            {
+                hardware.RemoveItem(item2);
+            });
+        }
+
+        [TestMethod]
+        public void AddTechnicalInfoTest()
+        {
+            // Arrange
+            string key = "type";
+            string value = "test";
+            string key2 = "assertion";
+            string value2 = "testing";
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddTechnicalInfo(key, value);
+            hardware.AddTechnicalInfo(key2, value2);
+
+            // Assert
+            Assert.AreEqual(hardware.Technical_info[key], value);
+            Assert.AreEqual(hardware.Technical_info[key2], value2);
+        }
+
+        [TestMethod]
+        public void AddTechnicalInfoFailTest()
+        {
+            // Arrange
+            string key = "type";
+            string value = "test";
+            string key2 = "type";
+            string value2 = "testing";
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddTechnicalInfo(key, value);
+
+
+            // Assert
+            Assert.ThrowsException<WrongKeyException>(() =>
+            {
+                hardware.AddTechnicalInfo(key2, value2);
+            });
+        }
+
+        [TestMethod]
+        public void EditTechnicalInfoTest()
+        {
+            // Arrange
+            string key = "type";
+            string value = "test";
+            string value2 = "testing";
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddTechnicalInfo(key, value);
+            hardware.EditTechnicalInfo(key, value2);
+
+            // Assert
+            Assert.AreEqual(hardware.Technical_info[key], value2);
+        }
+
+        [TestMethod]
+        public void EditTechnicalInfoFailTest()
+        {
+            // Arrange
+            string key = "type";
+            string value = "test";
+            string key2 = "type2";
+            string value2 = "testing";
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddTechnicalInfo(key, value);
+
+            // Assert
+            Assert.ThrowsException<WrongKeyException>(() =>
+            {
+                hardware.EditTechnicalInfo(key2, value2);
+            });
+        }
+
+        [TestMethod]
+        public void DeleteTechnicalInfoTest()
+        {
+            // Arrange
+            string key = "type";
+            string value = "test";
+            string key2 = "typer";
+            string value2 = "nottest";
+            string key3 = "typest";
+            string value3 = "hmmm";
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddTechnicalInfo(key, value);
+            hardware.AddTechnicalInfo(key2, value2);
+            hardware.AddTechnicalInfo(key3, value3);
+            hardware.DeleteTechnicalInfo(key2);
+
+            // Assert
+            Assert.IsFalse(hardware.Technical_info.ContainsKey(key2));
+        }
+
+        [TestMethod]
+        public void DeleteTechnicalInfoFailTest()
+        {
+            // Arrange
+            string key = "type";
+            string value = "test";
+            string key2 = "foo";
+
+            // Act
+            Hardware hardware = new();
+            hardware.AddTechnicalInfo(key, value);
+
+            // Assert
+            Assert.ThrowsException<WrongKeyException>(() =>
+            {
+                hardware.DeleteTechnicalInfo(key2);
             });
         }
     }

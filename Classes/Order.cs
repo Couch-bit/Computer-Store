@@ -18,6 +18,8 @@ namespace Classes
 
         #region Properties
 
+        public static int CurrentId { get => currentId;
+            set => currentId = value; }
         /// <summary>
         /// Gets the identifier.
         /// </summary>
@@ -54,7 +56,7 @@ namespace Classes
                 }
                 else
                 {
-                    deliveryDate = now;
+                    deliveryDate = value;
                 }
             } 
         }
@@ -80,9 +82,8 @@ namespace Classes
         {
             id = currentId++;
             Status = false;
-            DeliveryDate = DateTime.Now;
+            DeliveryDate = DateTime.Now.AddDays(7);
             cart = new();
-
         }
 
         public Order(DateTime deliveryDate) : this()

@@ -87,6 +87,7 @@ namespace Classes
             string name = "test";
             string nip1 = "0000001000";
             string nip2 = "456712";
+            string nip3 = "813-026-80-82";
             string country = "Poland";
 
             // Act
@@ -99,6 +100,10 @@ namespace Classes
             Assert.ThrowsException<NipValidationException>(() =>
             {
                 Supplier supplier = new(name, nip2, country);
+            });
+            Assert.ThrowsException<NipValidationException>(() =>
+            {
+                Supplier supplier = new(name, nip3, country);
             });
         }
 

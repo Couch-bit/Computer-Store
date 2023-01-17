@@ -1,27 +1,27 @@
 ﻿namespace Classes
 {
     [TestClass]
-    public class PrivateCustomerTests
+    public class CompanyTests
     {
         [TestMethod]
-        public void DefautlConstructorTest()
+        public void DefaultConstructorTest()
         {
             // Arrange
 
             // Act
-            PrivateCustomer privateCustomer = new();
+            Company company = new();
 
             // Assert
-            Assert.AreEqual(privateCustomer.FirstName, string.Empty);
-            Assert.AreEqual(privateCustomer.LastName, string.Empty);
-            Assert.AreEqual(privateCustomer.Country, string.Empty);
-            Assert.AreEqual(privateCustomer.City, string.Empty);
-            Assert.AreEqual(privateCustomer.Street, string.Empty);
-            Assert.AreEqual(privateCustomer.ZipCode, "00-000");
-            Assert.AreEqual(privateCustomer.PhoneNumber,
+            Assert.AreEqual(company.Name, string.Empty);
+            Assert.AreEqual(company.Nip, new string('0', 10));
+            Assert.AreEqual(company.Country, string.Empty);
+            Assert.AreEqual(company.City, string.Empty);
+            Assert.AreEqual(company.Street, string.Empty);
+            Assert.AreEqual(company.ZipCode, "00-000");
+            Assert.AreEqual(company.PhoneNumber,
                 "000-000-000");
-            Assert.AreEqual(privateCustomer.Email, string.Empty);
-            Assert.IsTrue(privateCustomer.Orders.Count == 0);
+            Assert.AreEqual(company.Email, string.Empty);
+            Assert.IsTrue(company.Orders.Count == 0);
         }
 
         [TestMethod]
@@ -32,7 +32,7 @@
             int result;
 
             // Act
-            _ = new PrivateCustomer();
+            _ = new Company();
             result = Customer.CurrentId - temp;
 
             // Assert
@@ -46,9 +46,9 @@
             int diff;
 
             // Act
-            PrivateCustomer privateCustomer1 = new();
-            PrivateCustomer privateCustomer2 = new();
-            diff = privateCustomer2.Id - privateCustomer1.Id;
+            Company company1 = new();
+            Company company2 = new();
+            diff = company2.Id - company1.Id;
 
             // Assert
             Assert.AreEqual(diff, 1);
@@ -58,8 +58,8 @@
         public void CreationTest()
         {
             // Arrange
-            string firstName = "Cezary";
-            string lastName = "Moskal";
+            string name = "PGE";
+            string nip = "0000000000";
             string country = "Polandia bruh";
             string city = "Łódź";
             string street = "Słowiańska";
@@ -69,30 +69,31 @@
             string password = "samolot123";
 
             // Act
-            PrivateCustomer privateCustomer = new(firstName, lastName,
+            Company company = new(name, nip,
                 country, city, street, zipCode, phoneNumber,
                 email, password);
 
             // Assert
-            Assert.AreEqual(privateCustomer.FirstName, firstName);
-            Assert.AreEqual(privateCustomer.LastName, lastName);
-            Assert.AreEqual(privateCustomer.Country, country);
-            Assert.AreEqual(privateCustomer.City, city);
-            Assert.AreEqual(privateCustomer.Street, street);
-            Assert.AreEqual(privateCustomer.ZipCode, zipCode);
-            Assert.AreEqual(privateCustomer.PhoneNumber, phoneNumber);
-            Assert.AreEqual(privateCustomer.Email, email);
-            Assert.AreEqual(privateCustomer.Password, password);
-            Assert.IsTrue(privateCustomer.Orders.Count == 0);
+            Assert.AreEqual(company.Name, name);
+            Assert.AreEqual(company.Nip, nip);
+            Assert.AreEqual(company.Country, country);
+            Assert.AreEqual(company.City, city);
+            Assert.AreEqual(company.Street, street);
+            Assert.AreEqual(company.ZipCode, zipCode);
+            Assert.AreEqual(company.PhoneNumber, phoneNumber);
+            Assert.AreEqual(company.Email, email);
+            Assert.AreEqual(company.Password, password);
+            Assert.IsTrue(company.Orders.Count == 0);
         }
 
         [TestMethod]
-        public void FirstNameTest()
+        public void NipTest()
         {
             // Arrange
-            string firstName = "cezary";
-            string firstName2 = "Cez4";
-            string lastName = "Moskal";
+            string name = "Cezary";
+            string nip = "0000010000";
+            string nip2 = "12345678901";
+            string nip3 = "045-467-24-12";
             string country = "Polandia bruh";
             string city = "Łódź";
             string street = "Słowiańska";
@@ -104,48 +105,22 @@
             // Act
 
             // Assert
-            Assert.ThrowsException<WrongNameException>(() =>
+            Assert.ThrowsException<NipValidationException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber, email, password);
             });
-            Assert.ThrowsException<WrongNameException>(() =>
+            Assert.ThrowsException<NipValidationException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName2,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip2,
+                    country, city, street, zipCode,
                     phoneNumber, email, password);
             });
-        }
-
-        [TestMethod]
-        public void LastNameTest()
-        {
-            // Arrange
-            string firstName = "Cezary";
-            string lastName = "moskal";
-            string lastName2 = "mos4t";
-            string country = "Polandia bruh";
-            string city = "Łódź";
-            string street = "Słowiańska";
-            string zipCode = "26-086";
-            string phoneNumber = "652-548-943";
-            string email = "xd@gmail.com";
-            string password = "samolot123";
-
-            // Act
-
-            // Assert
-            Assert.ThrowsException<WrongNameException>(() =>
+            Assert.ThrowsException<NipValidationException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
-                    phoneNumber, email, password);
-            });
-            Assert.ThrowsException<WrongNameException>(() =>
-            {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName2, country, city, street, zipCode,
+                Company company = new(name, nip3,
+                    country, city, street, zipCode,
                     phoneNumber, email, password);
             });
         }
@@ -154,8 +129,8 @@
         public void CountryTest()
         {
             // Arrange
-            string firstName = "Cezary";
-            string lastName = "Moskal";
+            string name = "PGE";
+            string nip = "0000000000";
             string country = "USA3";
             string country2 = "kongo";
             string city = "Łódź";
@@ -170,14 +145,14 @@
             // Assert
             Assert.ThrowsException<WrongNameException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber, email, password);
             });
             Assert.ThrowsException<WrongNameException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country2, city, street, zipCode,
+                Company company = new(name, nip,
+                    country2, city, street, zipCode,
                     phoneNumber, email, password);
             });
         }
@@ -186,8 +161,8 @@
         public void CityTest()
         {
             // Arrange
-            string firstName = "Cezary";
-            string lastName = "Moskal";
+            string name = "PGE";
+            string nip = "0000000000";
             string country = "Polandia";
             string city = "łódź";
             string city2 = "Op0le";
@@ -202,14 +177,14 @@
             // Assert
             Assert.ThrowsException<WrongNameException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber, email, password);
             });
             Assert.ThrowsException<WrongNameException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city2, street, zipCode,
+                Company company = new(name, nip,
+                    country, city2, street, zipCode,
                     phoneNumber, email, password);
             });
         }
@@ -218,8 +193,8 @@
         public void StreetTest()
         {
             // Arrange
-            string firstName = "Cezary";
-            string lastName = "Moskal";
+            string name = "PGE";
+            string nip = "0000000000";
             string country = "Polandia";
             string city = "Łódź";
             string street = "słowiańska";
@@ -234,14 +209,14 @@
             // Assert
             Assert.ThrowsException<WrongNameException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber, email, password);
             });
             Assert.ThrowsException<WrongNameException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street2, zipCode,
+                Company company = new(name, nip,
+                    country, city, street2, zipCode,
                     phoneNumber, email, password);
             });
         }
@@ -250,8 +225,8 @@
         public void ZipCodeTest()
         {
             // Arrange
-            string firstName = "Cezary";
-            string lastName = "Moskal";
+            string name = "PGE";
+            string nip = "0000000000";
             string country = "Polandia";
             string city = "Łódź";
             string street = "Słowiańska";
@@ -267,20 +242,20 @@
             // Assert
             Assert.ThrowsException<WrongZipCodeException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name,
+                    nip, country, city, street, zipCode,
                     phoneNumber, email, password);
             });
             Assert.ThrowsException<WrongZipCodeException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode2,
+                Company company = new(name,
+                    nip, country, city, street, zipCode2,
                     phoneNumber, email, password);
             });
             Assert.ThrowsException<WrongZipCodeException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode3,
+                Company company = new(name, nip,
+                    country, city, street, zipCode3,
                     phoneNumber, email, password);
             });
         }
@@ -289,8 +264,8 @@
         public void PhoneNumberTest()
         {
             // Arrange
-            string firstName = "Cezary";
-            string lastName = "Moskal";
+            string name = "PGE";
+            string nip = "0000000000";
             string country = "Polandia";
             string city = "Łódź";
             string street = "Słowiańska";
@@ -306,20 +281,20 @@
             // Assert
             Assert.ThrowsException<PhoneNumberException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber, email, password);
             });
             Assert.ThrowsException<PhoneNumberException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber2, email, password);
             });
             Assert.ThrowsException<PhoneNumberException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber3, email, password);
             });
         }
@@ -328,8 +303,8 @@
         public void EmailTest()
         {
             // Arrange
-            string firstName = "Cezary";
-            string lastName = "Moskal";
+            string name = "PGE";
+            string nip = "0000000000";
             string country = "Polandia";
             string city = "Łódź";
             string street = "Słowiańska";
@@ -345,20 +320,20 @@
             // Assert
             Assert.ThrowsException<WrongEmailException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber, email, password);
             });
             Assert.ThrowsException<WrongEmailException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber, email2, password);
             });
             Assert.ThrowsException<WrongEmailException>(() =>
             {
-                PrivateCustomer privateCustomer = new(firstName,
-                    lastName, country, city, street, zipCode,
+                Company company = new(name, nip,
+                    country, city, street, zipCode,
                     phoneNumber, email3, password);
             });
         }

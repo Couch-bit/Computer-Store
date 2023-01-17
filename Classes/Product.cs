@@ -191,6 +191,24 @@
             return items.Count;
         }
 
+        public void AddItem(Item item)
+        {
+            if (items.Contains(item))
+            {
+                throw new DuplicateException
+                    ("This Item is already added");
+            }
+            items.Add(item);
+        }
+
+        public void RemoveItem(Item item)
+        {
+            if (!items.Contains(item))
+            {
+                throw new WrongKeyException("There is no such item");
+            }
+            items.Remove(item);
+        }
 
         /// <summary>
         /// Adds the technical information.
@@ -320,7 +338,6 @@
         {
             return Equals(obj as Product);
         }
-
 
         /// <summary>
         /// Returns a hash code for this instance.

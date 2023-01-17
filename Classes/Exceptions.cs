@@ -77,4 +77,11 @@
         public WrongParameterException() : base() { }
         public WrongParameterException(string message) : base(message) { }
     }
+
+    public class DuplicateException : Exception 
+    {
+        public DuplicateException() : base() { }
+        public DuplicateException(string message) : base(message) { }
+    }
+
 }
