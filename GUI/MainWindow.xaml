@@ -14,10 +14,10 @@
             <RowDefinition Height="47*"/>
             <RowDefinition Height="354*"/>
         </Grid.RowDefinitions>
-        <Image Margin="600,70,30,200" Grid.Row="3" Source="/settings.png" Stretch="Fill"/>
-        <Image Margin="271,69,354,200" Grid.Row="3" Source="/user.png" Stretch="Fill"/>
-        <Rectangle HorizontalAlignment="Left" Height="296" Margin="57,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="324" Grid.Row="3"/>
-        <Rectangle HorizontalAlignment="Left" Height="296" Margin="381,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="326" Grid.Row="3"/>
+        <Image x:Name="ImageFile" Margin="395,288,305,42" Grid.Row="3" Source="/receipt.png" Stretch="Fill"/>
+        <Image x:Name ="ImageLogin" Margin="72,288,630,42" Grid.Row="3" Source="/shopping-cart.png" Stretch="Fill"/>
+        <Image x:Name="ImageAdmin" Margin="600,70,30,200" Grid.Row="3" Source="/settings.png" Stretch="Fill"/>
+        <Image x:Name ="ImageAccount" Margin="271,69,354,200" Grid.Row="3" Source="/user.png" Stretch="Fill"/>
         <Button x:Name="BtnCreate" Content="Create an account" HorizontalAlignment="Left" Height="84" Margin="62,69,0,0" VerticalAlignment="Top" Width="314                 " Click="Create_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -50,14 +50,25 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="LblCustomer" Content="Klient" HorizontalAlignment="Left" Height="26" Margin="57,11,0,0" VerticalAlignment="Top" Width="324" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3"/>
-        <Label x:Name="LblStore" Content="Sklep" HorizontalAlignment="Left" Height="26" Margin="382,11,0,0" VerticalAlignment="Top" Width="325" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3"/>
-        <Label x:Name="LblName" Content="Nazwa" HorizontalAlignment="Left" Height="28" Margin="400,180,0,0" Grid.Row="3" VerticalAlignment="Top" Width="74" HorizontalContentAlignment="Right"/>
-        <Button x:Name="BtnFileOpen" Content="Odczytaj z Pliku" HorizontalAlignment="Left" Height="31" Margin="386,284,0,0" Grid.Row="3" VerticalAlignment="Top" Width="314" Click="StoreOpen_Click"/>
-        <Label x:Name="LblSuppliers" Content="Dostawcy" HorizontalAlignment="Left" Height="28" Margin="400,227,0,0" Grid.Row="3" VerticalAlignment="Top" Width="74" HorizontalContentAlignment="Right"/>
-        <Label Content="Klienci&#xA;" HorizontalAlignment="Left" Height="28" Margin="548,227,0,0" Grid.Row="3" VerticalAlignment="Top" Width="81" HorizontalContentAlignment="Right"/>
+        <Label x:Name="LblCustomer" Content="CUSTOMER" HorizontalAlignment="Left" Height="26" Margin="57,11,0,0" VerticalAlignment="Top" Width="324" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3" FontFamily="Bahnschrift" FontSize="16"/>
+        <Label x:Name="LblStore" Content="SHOP" HorizontalAlignment="Left" Height="26" Margin="382,11,0,0" VerticalAlignment="Top" Width="325" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3" FontFamily="Bahnschrift" FontSize="16"/>
+        <Label x:Name="LblName" Content="NAME" HorizontalAlignment="Left" Height="28" Margin="400,180,0,0" Grid.Row="3" VerticalAlignment="Top" Width="74" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Button x:Name="BtnFileOpen" Content="READ FROM FILE" HorizontalAlignment="Left" Height="31" Margin="386,284,0,0" Grid.Row="3" VerticalAlignment="Top" Width="314" Click="StoreOpen_Click"
+                Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label x:Name="LblSuppliers" Content="SUPPLIERS" HorizontalAlignment="Left" Height="28" Margin="400,227,0,0" Grid.Row="3" VerticalAlignment="Top" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Label Content="CUSTOMERS" HorizontalAlignment="Left" Height="28" Margin="548,227,0,0" Grid.Row="3" VerticalAlignment="Top" Width="81" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="18" Margin="479,185,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="TxtSupplier" HorizontalAlignment="Left" Height="18                  " Margin="479,232,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
         <TextBox HorizontalAlignment="Left" Height="18                  " Margin="629,232,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"/>
+        <Border x:Name ="BorderLEFT" HorizontalAlignment="Left" Height="296" Margin="57,37,0,0" VerticalAlignment="Top" Width="324" BorderThickness="2" Grid.Row="3"
+        CornerRadius="10,0,0,10" BorderBrush="Black"/>
+        <Border x:Name ="BorderRIGHT" HorizontalAlignment="Left" Height="296" Margin="381,37,0,0" VerticalAlignment="Top" Width="324" BorderThickness="2" Grid.Row="3"
+        CornerRadius="0,10,10,0" BorderBrush="Black"/>
     </Grid>
 </Window>
