@@ -1,27 +1,45 @@
 ﻿<Window x:Class="GUI.MainWindow"
+        ResizeMode="NoResize"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0,0,0,-6">
-        <Rectangle HorizontalAlignment="Left" Height="296" Margin="10,115,0,0" Stroke="Black" VerticalAlignment="Top" Width="390"/>
-        <Rectangle HorizontalAlignment="Left" Height="296" Margin="400,115,0,0" Stroke="Black" VerticalAlignment="Top" Width="386"/>
-        <Button x:Name="BtnCreate" Content="Utwórz Konto" HorizontalAlignment="Left" Height="84" Margin="34,147,0,0" VerticalAlignment="Top" Width="336" Click="Create_Click"/>
-        <Label x:Name="LblLogin" Content="E-mail" HorizontalAlignment="Left" Height="29" Margin="33,263,0,0" VerticalAlignment="Top" Width="147"/>
-        <TextBox x:Name="TxtLogin" HorizontalAlignment="Left" Height="29" Margin="202,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
-        <Label x:Name="LblPassword" Content="Hasło" HorizontalAlignment="Left" Height="27" Margin="33,313,0,0" VerticalAlignment="Top" Width="147"/>
-        <PasswordBox x:Name ="TxtPassword" HorizontalAlignment="Left" Height="27" Margin="201,313,0,0" VerticalAlignment="Top" Width="169"/>
-        <Button x:Name="BtnLogin" Content="Zaloguj Się" HorizontalAlignment="Left" Height="31" Margin="33,362,0,0" VerticalAlignment="Top" Width="337" Click="Login_Click"/>
-        <Label x:Name="LablStore" Content="Sklep" HorizontalAlignment="Center" Height="51" Margin="0,24,0,0" VerticalAlignment="Top" Width="380" IsEnabled="False" FontWeight="Bold" FontSize="36" FontFamily="Calibri" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Menu Height="24" Margin="0, 0, 0, 0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+        Title="MainWindow" Height="450" Width="740">
+    <Grid Margin="10,0,0,3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="354*"/>
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Left" Height="296" Margin="57,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="324" Grid.Row="3"/>
+        <Rectangle HorizontalAlignment="Left" Height="296" Margin="381,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="326" Grid.Row="3"/>
+        <Button x:Name="BtnCreate" Content="Utwórz Konto" HorizontalAlignment="Left" Height="84" Margin="62,69,0,0" VerticalAlignment="Top" Width="314
+                " Click="Create_Click" Grid.Row="3"/>
+        <Label x:Name="LblLogin" Content="E-mail" HorizontalAlignment="Left" Height="28" Margin="122,180,0,0" VerticalAlignment="Top" Width="74" Grid.Row="3" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="TxtLogin" HorizontalAlignment="Left" Height="18" Margin="201,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Grid.Row="3" Text=""/>
+        <Label x:Name="LblPassword" Content="Hasło" HorizontalAlignment="Left" Height="28" Margin="122,230,0,0" VerticalAlignment="Top" Width="74" Grid.Row="3" HorizontalContentAlignment="Right"/>
+        <PasswordBox x:Name ="TxtPassword" HorizontalAlignment="Left" Height="18" Margin="201,235,0,0" VerticalAlignment="Top" Width="169" Grid.Row="3"/>
+        <Button x:Name="BtnLogin" Content="Zaloguj Się" HorizontalAlignment="Left" Height="31" Margin="62,284,0,0" VerticalAlignment="Top" Width="314" Click="Login_Click" Grid.Row="3"/>
+        <Menu Height="24" VerticalAlignment="Top" Grid.RowSpan="2">
             <MenuItem Header="Plik" Width="75" Height="24">
-                <MenuItem x:Name="MenuItemOpen" Header="Otwórz" Click="MenuItemOpen_Click"/>
                 <MenuItem x:Name="MenuItemSave" Header="Zapisz" Click="MenuItemSave_Click"/>
                 <MenuItem x:Name="MenuItemClose" Header="Zakończ" Click="MenuItemClose_Click"/>
             </MenuItem>
         </Menu>
+        <Button x:Name="BtnAdministrator" Content="Tryb Administratora" HorizontalAlignment="Left" Height="84" Margin="386,69,0,0" VerticalAlignment="Top" Width="314" Grid.Row="3"/>
+        <Label x:Name="LblCustomer" Content="Klient" HorizontalAlignment="Left" Height="26" Margin="57,11,0,0" VerticalAlignment="Top" Width="324" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3"/>
+        <Label x:Name="LblStore" Content="Sklep" HorizontalAlignment="Left" Height="26" Margin="382,11,0,0" VerticalAlignment="Top" Width="325" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3"/>
+        <Label x:Name="LblName" Content="Nazwa" HorizontalAlignment="Left" Height="28" Margin="400,180,0,0" Grid.Row="3" VerticalAlignment="Top" Width="74" HorizontalContentAlignment="Right"/>
+        <Button x:Name="BtnFileOpen" Content="Odczytaj z Pliku" HorizontalAlignment="Left" Height="31" Margin="386,284,0,0" Grid.Row="3" VerticalAlignment="Top" Width="314" Click="StoreOpen_Click"/>
+        <Label x:Name="LblSuppliers" Content="Dostawcy" HorizontalAlignment="Left" Height="28" Margin="400,227,0,0" Grid.Row="3" VerticalAlignment="Top" Width="74" HorizontalContentAlignment="Right"/>
+        <Label Content="Klienci&#xD;&#xA;" HorizontalAlignment="Left" Height="28" Margin="548,227,0,0" Grid.Row="3" VerticalAlignment="Top" Width="81" HorizontalContentAlignment="Right"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="479,185,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="TxtSupplier" HorizontalAlignment="Left" Height="18
+                 " Margin="479,232,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <TextBox HorizontalAlignment="Left" Height="18
+                 " Margin="629,232,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"/>
     </Grid>
 </Window>

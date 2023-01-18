@@ -120,12 +120,11 @@ namespace Classes
         /// <exception cref="Classes.SerializationException">Failed to Parse File</exception>
         public static Store Deserialize(string fname)
         {
-            if (!File.Exists($"{fname}.json"))
+            if (!File.Exists($"{fname}"))
             {
                 throw new FileNotFoundException("No such JSON file");
             }
-            using StreamReader sw = new($"{fname}.json");
-            string txt = File.ReadAllText($"{fname}.json",
+            string txt = File.ReadAllText($"{fname}",
                 Encoding.UTF8);
             return JsonSerializer.Deserialize(txt, typeof(Store))
                 as Store ?? throw new SerializationException
