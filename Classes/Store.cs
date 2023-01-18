@@ -31,7 +31,8 @@ namespace Classes
         /// <value>
         /// The suppliers.
         /// </value>
-        public List<Supplier> Suppliers { get => suppliers; init => suppliers = value; }
+        public List<Supplier> Suppliers { get => suppliers;
+            init => suppliers = value; }
 
         /// <summary>
         /// Gets or sets (init) the customers.
@@ -39,7 +40,8 @@ namespace Classes
         /// <value>
         /// The customers.
         /// </value>
-        public List<Customer> Customers { get => customers; init => customers = value; }
+        public List<Customer> Customers { get => customers;
+            init => customers = value; }
         #endregion Properties
 
         #region Constructors
@@ -59,6 +61,44 @@ namespace Classes
 
         #region Methods
 
+        public void AddSupplier(Supplier supplier)
+        {
+            if (suppliers.Any(x => x.Nip == supplier.Nip)) {
+                suppliers.Add(supplier);
+            } else
+            {
+                throw new DuplicateException
+                    ("Supplier already exists");
+            }
+        }
+
+        public void RemoveSupplier(Supplier supplier)
+        {
+            if(!suppliers.Remove(supplier))
+            {
+                throw new WrongKeyException("No such Supplier");
+            }
+        }
+
+        public void AddCustomer(Customer customer)
+        {
+            if (customers.Any(x => x.Email == customer.Email)) {
+                customers.Add(customer);
+            }
+            else
+            {
+                throw new DuplicateException
+                    ("Customer already exists");
+            }
+        }
+
+        public void RemoveCustomer(Customer customer)
+        {
+            if (!customers.Remove(customer))
+            {
+                throw new WrongKeyException("No such Customer");
+            }
+        }
         /// <summary>
         /// Serializes the specified file to JSON format.
         /// </summary>

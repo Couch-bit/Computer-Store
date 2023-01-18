@@ -24,5 +24,30 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void MenuItemOpen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItemSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItemClose_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Create_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

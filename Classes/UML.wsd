@@ -38,7 +38,6 @@ abstract Customer {
   -string phoneNumber
   -string email
   -List<Order> orders
-  -- encrypted --
   -string password
   ----
   + void AddOrder(Order order)
@@ -100,6 +99,10 @@ class Store{
   - readonly List<Supplier> suppliers
   - readonly List<Customer> customers
   ----
+  + void AddSupplier(Supplier supplier)
+  + void RemoveSupplier(Supplier supplier)
+  + void AddCustomer(Customer customer)
+  + void RemoveCustomer(Customer customer)
   + void Serialize (string fname)
   + {static} Store Deserialize (string fname)
   + override string ToString()
