@@ -82,7 +82,7 @@ namespace GUI
         // TODO
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-            ClientCreationWindow okno = new();
+            ClientCreationWindow okno = new(store.Customers);
             bool? result = okno.ShowDialog();
             if (result == true)
             {
