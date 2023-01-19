@@ -7,6 +7,64 @@
         mc:Ignorable="d"
         Title="StoreManagementWindow" Height="450" Width="800">
     <Grid>
-        
+        <Label x:Name="LblWelcome" Content="WELCOME TO OUR STORE MANAGEMENT SYSTEM" HorizontalAlignment="Center" Height="32" Margin="0,10,0,0" VerticalAlignment="Top" Width="780" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="367" Margin="323,67,0,0" VerticalAlignment="Top" Width="8" Fill="#FF0052D6"/>
+        <Label x:Name ="LblSuppliers" Content="Registered suppliers" HorizontalAlignment="Left" Height="27" Margin="336,57,0,0" VerticalAlignment="Top" Width="148" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <ListBox x:Name="LstSuppliers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="336,89,316,100" SelectionChanged="ListBox_SelectionChanged"/>
+        <Label x:Name ="LblCustomers" Content="Registered customers" HorizontalAlignment="Left" Height="27" Margin="489,57,0,0" VerticalAlignment="Top" Width="148" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <ListBox x:Name="LstCustomers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="489,89,163,100" SelectionChanged="ListBox_SelectionChanged"/>
+        <Label x:Name ="LblOrders" Content="Customer's orders" HorizontalAlignment="Left" Height="27" Margin="642,57,0,0" VerticalAlignment="Top" Width="148" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <ListBox x:Name="LstCustomers_Copy" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="642,89,10,100" SelectionChanged="ListBox_SelectionChanged"/>
+        <Button x:Name ="BtnAddSupplier" Content="Add supplier" HorizontalAlignment="Left" Margin="348,339,0,0" VerticalAlignment="Top" Height="32" Width="124"
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name ="BtnDeleteOrder" Content="Delete order" HorizontalAlignment="Left" Margin="654,339,0,0" VerticalAlignment="Top" Height="32" Width="124"
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name ="BtnModifySupplier" Content="Modify supplier" HorizontalAlignment="Left" Margin="336,376,0,0" VerticalAlignment="Top" Height="32" Width="148"
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ListBox x:Name="LstSuppliers_Copy" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,89,621,10" SelectionChanged="ListBox_SelectionChanged"/>
+        <Button x:Name ="BtnAddItem" Content="Add Item" HorizontalAlignment="Left" Margin="184,89,0,0" VerticalAlignment="Top" Height="32" Width="134"
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name ="BtnDeleteItem" Content="Delete item" HorizontalAlignment="Left" Margin="184,126,0,0" VerticalAlignment="Top" Height="32" Width="134"
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name ="BtnModifyItem" Content="Modify item" HorizontalAlignment="Left" Margin="184,163,0,0" VerticalAlignment="Top" Height="32" Width="134"
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label x:Name ="LblStoreProducts" Content="Known store products" HorizontalAlignment="Left" Height="27" Margin="10,57,0,0" VerticalAlignment="Top" Width="308" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+
     </Grid>
 </Window>
