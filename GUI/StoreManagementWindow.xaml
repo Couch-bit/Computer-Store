@@ -9,9 +9,9 @@
     <Grid>
         <Label x:Name="LblWelcome" Content="WELCOME TO OUR STORE MANAGEMENT SYSTEM" HorizontalAlignment="Center" Height="32" Margin="0,10,0,0" VerticalAlignment="Top" Width="780" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Left" Height="367" Margin="184,67,0,0" VerticalAlignment="Top" Width="8" Fill="#FF0052D6"/>
-        <Label x:Name ="LblSuppliers" Content="Registered Suppliers" HorizontalAlignment="Left" Height="27" Margin="240,57,0,0" VerticalAlignment="Top" Width="148" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
-        <ListBox x:Name="LstSuppliers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="197,86,0,102" HorizontalAlignment="Left" Width="235"/>
-        <Label x:Name ="LblCustomers" Content="Registered Customers" HorizontalAlignment="Left" Height="27" Margin="463,57,0,0" VerticalAlignment="Top" Width="148" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Label x:Name ="LblSuppliers" Content="Registered Suppliers" HorizontalAlignment="Left" Height="27" Margin="197,57,0,0" VerticalAlignment="Top" Width="235" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <ListBox x:Name="LstSuppliers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="197,86,0,100" HorizontalAlignment="Left" Width="235"/>
+        <Label x:Name ="LblCustomers" Content="Registered Customers" HorizontalAlignment="Left" Height="27" Margin="437,57,0,0" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <ListBox x:Name="LstCustomers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="437,86,0,100" HorizontalAlignment="Left" Width="200"/>
         <Label x:Name ="LblOrders" Content="Orders To Realize" HorizontalAlignment="Left" Height="27" Margin="642,57,0,0" VerticalAlignment="Top" Width="148" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <ListBox x:Name="LstOrders" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="642,86,0,100" HorizontalAlignment="Left" Width="148"/>
@@ -23,8 +23,8 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name ="BtnDeleteOrder" Content="Delete Order" HorizontalAlignment="Left" Margin="654,339,0,0" VerticalAlignment="Top" Height="32" Width="124"
-            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name ="BtnRealizeOrder" Content="Realize Order" HorizontalAlignment="Left" Margin="642,339,0,0" VerticalAlignment="Top" Height="32" Width="148"
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnDeleteOrder_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -32,14 +32,14 @@
             </Button.Resources>
         </Button>
         <Button x:Name ="BtnModifySupplier" Content="Modify Supplier" HorizontalAlignment="Left" Margin="240,376,0,0" VerticalAlignment="Top" Height="32" Width="148"
-            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnModifySupplier_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <ListBox x:Name="LstProducts" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,86,0,102" HorizontalAlignment="Left" Width="169"/>
+        <ListBox x:Name="LstProducts" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,86,0,100" HorizontalAlignment="Left" Width="169"/>
         <Button x:Name ="BtnModifyItem" Content="Modify Items" HorizontalAlignment="Left" Margin="28,339,0,0" VerticalAlignment="Top" Height="32" Width="134"
             Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnModifyItem_Click">
             <Button.Resources>
@@ -48,7 +48,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name ="LblStoreProducts" Content="Supplier Products" HorizontalAlignment="Left" Height="27" Margin="10,57,0,0" VerticalAlignment="Top" Width="169" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Label x:Name ="LblStoreProducts" Content="Registered Products" HorizontalAlignment="Left" Height="27" Margin="10,57,0,0" VerticalAlignment="Top" Width="169" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
 
     </Grid>
 </Window>

@@ -12,13 +12,26 @@ namespace GUI
     /// </summary>
     public partial class SupplierWindow : Window
     {
-        private Store store;
-        private List<Product> products;
+        private readonly Store store;
+        private readonly Supplier? supplier;
+        private readonly List<Product> products;
         public SupplierWindow(Store store)
         {
             this.store = store;
             products = new();
             InitializeComponent();
+        }
+
+        public SupplierWindow(Store store, Supplier supplier)
+        {
+            this.store = store;
+            this.supplier = supplier;
+            products = new();
+            InitializeComponent();
+            LstProducts.ItemsSource = supplier.Products;
+            TxtName.Text = supplier.Name;
+            TxtNIP.Text = supplier.Nip;
+            TxtCountry.Text = supplier.Country;
         }
 
         private void TxtName_TextChanged(object sender, TextChangedEventArgs e)
@@ -35,10 +48,14 @@ namespace GUI
         {
             try
             {
-                Supplier supplier = new(TxtName.Text, TxtNIP.Text,
+                Supplier result = new(TxtName.Text, TxtNIP.Text,
                     TxtCountry.Text);
-                products.ForEach(p => supplier.AddProduct(p));
-                store.AddSupplier(supplier);
+                products.ForEach(p => result.AddProduct(p));
+                if (supplier is not null)
+                {
+                    store.RemoveSupplier(supplier);
+                }
+                store.AddSupplier(result);
                 DialogResult = true;
             }
             catch (Exception exc)

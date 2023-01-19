@@ -31,14 +31,14 @@
         <Label x:Name ="LblCost" Content="Order cost" HorizontalAlignment="Left" Height="27" Margin="405,297,0,0" VerticalAlignment="Top" Width="147" HorizontalContentAlignment="Right" FontFamily="Bahnschrift"/>
         <Label x:Name ="LblFee" Content="Delivery fee" HorizontalAlignment="Left" Height="27" Margin="406,329,0,0" VerticalAlignment="Top" Width="146" HorizontalContentAlignment="Right" FontFamily="Bahnschrift"/>
         <Label x:Name ="LblTotal" Content="Total cost" HorizontalAlignment="Left" Height="27" Margin="405,361,0,0" VerticalAlignment="Top" Width="146" HorizontalContentAlignment="Right" FontFamily="Bahnschrift"/>
-        <TextBox x:Name="TxtOrder" HorizontalAlignment="Left" Height="27" Margin="568,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsEnabled="False"/>
-        <TextBox x:Name="TxtFee" HorizontalAlignment="Left" Height="27" Margin="568,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsEnabled="False"/>
-        <TextBox x:Name="TxtCost" HorizontalAlignment="Left" Height="27" Margin="568,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsEnabled="False"/>
+        <TextBox x:Name="TxtOrder" HorizontalAlignment="Left" Height="18" Margin="568,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsEnabled="False"/>
+        <TextBox x:Name="TxtFee" HorizontalAlignment="Left" Height="18" Margin="568,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsEnabled="False"/>
+        <TextBox x:Name="TxtCost" HorizontalAlignment="Left" Height="18" Margin="568,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsEnabled="False"/>
         <Label x:Name ="LblCart" Content="Products in your cart" HorizontalAlignment="Left" Height="27" Margin="406,61,0,0" VerticalAlignment="Top" Width="228" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <Label x:Name ="LblCartAmount" Content="Amount" HorizontalAlignment="Left" Height="27" Margin="639,61,0,0" VerticalAlignment="Top" Width="61" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <DatePicker x:Name="DateDelivery" HorizontalAlignment="Left" Height="29" Margin="568,263,0,0" VerticalAlignment="Top" Width="132"/>
         <Label x:Name ="LblStore" Content="Products in our store" HorizontalAlignment="Left" Height="27" Margin="10,61,0,0" VerticalAlignment="Top" Width="247" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,93,0,221" SelectionChanged="ListBox_SelectionChanged" HorizontalAlignment="Left" Width="247"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,93,0,86" SelectionChanged="ListBox_SelectionChanged" HorizontalAlignment="Left" Width="230"/>
         <Button x:Name ="BtnSort" Content="Sort" HorizontalAlignment="Left" Margin="262,392,0,0" VerticalAlignment="Top" Height="32" Width="125"
             Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnSort_Click">
             <Button.Resources>
@@ -55,9 +55,9 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox x:Name="TxtAmount" HorizontalAlignment="Left" Height="27" Margin="262,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name ="LblAmount" Content="Enter the amount" HorizontalAlignment="Left" Height="27" Margin="263,294,0,0" VerticalAlignment="Top" Width="123" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
-        <ListBox x:Name ="LstTechnicalInfo" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="263,94,0,221" HorizontalAlignment="Left" SelectionChanged="ListBox_SelectionChanged" Width="123"/>
-        <Label x:Name ="LblTechnicalInfo" Content="Technical information" HorizontalAlignment="Left" Height="27" Margin="263,62,0,0" VerticalAlignment="Top" Width="123" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <TextBox x:Name="TxtAmount" HorizontalAlignment="Left" Height="18" Margin="245,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
+        <Label x:Name ="LblAmount" Content="Enter the amount" HorizontalAlignment="Left" Height="27" Margin="245,294,0,0" VerticalAlignment="Top" Width="141" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <ListBox x:Name ="LstTechnicalInfo" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="245,94,0,221" HorizontalAlignment="Left" SelectionChanged="ListBox_SelectionChanged" Width="142"/>
+        <Label x:Name ="LblTechnicalInfo" Content="Technical information" HorizontalAlignment="Left" Height="27" Margin="245,62,0,0" VerticalAlignment="Top" Width="141" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
     </Grid>
 </Window>

@@ -19,6 +19,8 @@ namespace GUI
 
         private void RefreshStore()
         {
+            LstProducts.ItemsSource = new ObservableCollection
+                <Product>(store.GetAllProducts());
             LstSuppliers.ItemsSource = new ObservableCollection
                 <Supplier>(store.Suppliers);
             LstCustomers.ItemsSource = new ObservableCollection
@@ -36,10 +38,28 @@ namespace GUI
             {
                 RefreshStore();
             }
-            
+        }
+
+        private void BtnModifySupplier_Click(object sender,
+            RoutedEventArgs e)
+        {
+            if (LstSuppliers.SelectedItem is Supplier supplier)
+            {
+                SupplierWindow window = new(store, supplier);
+                bool? result = window.ShowDialog();
+                if (result == true)
+                {
+                    RefreshStore();
+                }
+            }
         }
 
         private void BtnModifyItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDeleteOrder_Click(object sender, RoutedEventArgs e)
         {
 
         }
