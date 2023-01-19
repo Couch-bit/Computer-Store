@@ -63,9 +63,9 @@
         </Button>
         <Label x:Name="LblSuppliers" Content="SUPPLIERS" HorizontalAlignment="Left" Height="28" Margin="400,227,0,0" Grid.Row="3" VerticalAlignment="Top" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <Label Content="CUSTOMERS" HorizontalAlignment="Left" Height="28" Margin="548,227,0,0" Grid.Row="3" VerticalAlignment="Top" Width="81" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="18" Margin="479,185,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="TxtSupplier" HorizontalAlignment="Left" Height="18                  " Margin="479,232,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
-        <TextBox HorizontalAlignment="Left" Height="18                  " Margin="629,232,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="18" Margin="479,185,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" IsEnabled="False" />
+        <TextBox x:Name="TxtSupplier" HorizontalAlignment="Left" Height="18" Margin="479,232,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False"/>
+        <TextBox x:Name="TxtCustomer" HorizontalAlignment="Left" Height="18" Margin="629,232,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" IsEnabled="False"/>
         <Border x:Name ="BorderLEFT" HorizontalAlignment="Left" Height="296" Margin="57,37,0,0" VerticalAlignment="Top" Width="324" BorderThickness="2" Grid.Row="3"
         CornerRadius="10,0,0,10" BorderBrush="Black"/>
         <Border x:Name ="BorderRIGHT" HorizontalAlignment="Left" Height="296" Margin="381,37,0,0" VerticalAlignment="Top" Width="324" BorderThickness="2" Grid.Row="3"

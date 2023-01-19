@@ -2,6 +2,7 @@
 
 namespace Classes
 {
+    public delegate int Sumation(string nip);
     /// <summary>
     /// Class for suppliers.
     /// </summary>
@@ -52,7 +53,7 @@ namespace Classes
             set
             {
                 if (Regex.IsMatch(value, @"^\d{10}$") &&
-                    ValidateNip(value))
+                    ValidateNip(value, SumNip))
                 {
                     nip = value;
                 }
@@ -149,20 +150,26 @@ namespace Classes
         /// where the first three digits are codes provided by the tax office, and the last number is a control one.
         /// For further references please click <a href="https://www.justaskpoland.com/nip-number/">here</a>.</param>
         /// <returns>Boolean value</returns>
-        public static bool ValidateNip(string nip)
+        public static bool ValidateNip(string nip, Sumation sum)
         {
-            int[] arr = new int[] { 6, 5, 7, 2, 3, 4, 5, 6, 7 };
-            int result = 0;
-            for (int i = 0; i < 9; ++i)
-            {
-                result += (nip[i] - '0') * arr[i];
-            }
+            int result = sum(nip);
 
             if (result % 11 == nip[9] - '0')
             {
                 return true;
             }
             return false;
+        }
+
+        public static int SumNip(string nip)
+        {
+            int[] arr = new int[] { 6, 5, 7, 2, 3, 4, 5, 6, 7 };
+            int result = 0;
+            for (int i = 0; i < nip.Length - 1; ++i)
+            {
+                result += (nip[i] - '0') * arr[i];
+            }
+            return result;
         }
 
         /// <summary>

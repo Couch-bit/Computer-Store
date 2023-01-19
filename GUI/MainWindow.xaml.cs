@@ -1,8 +1,8 @@
 ﻿using System.IO;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Forms;
 using Classes;
-using Microsoft.Win32;
 
 namespace GUI
 {
@@ -16,9 +16,10 @@ namespace GUI
         {
             store = new();
             InitializeComponent();
+            RefreshStore();
         }
 
-        // TODO
+
         private void StoreOpen_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new()
@@ -32,14 +33,26 @@ namespace GUI
                 try
                 {
                     store = Store.Deserialize(fname);
+                    RefreshStore();
+                    
                 }
-                catch (FileNotFoundException)
+                catch (FileNotFoundException exc)
                 {
-
+                    System.Windows.Forms.MessageBox.Show
+                        (exc.Message, "Error" ,
+                        MessageBoxButtons.OK);
                 }
-                catch (SerializationException)
+                catch (SerializationException exc)
                 {
-                    return;
+                    System.Windows.Forms.MessageBox.Show
+                        (exc.Message, "Error",
+                        MessageBoxButtons.OK);
+                }
+                catch (JsonException)
+                {
+                    System.Windows.Forms.MessageBox.Show
+                        ("Unexpected Error", "Error",
+                        MessageBoxButtons.OK);
                 }
             }
         }
@@ -60,6 +73,7 @@ namespace GUI
             Close();
         }
 
+        // TODO
         private void Login_Click(object sender, RoutedEventArgs e)
         {
 
@@ -74,6 +88,13 @@ namespace GUI
             {
                 
             }
+        }
+
+        public void RefreshStore()
+        {
+            TxtName.Text = store.Name;
+            TxtSupplier.Text = store.Suppliers.Count.ToString();
+            TxtCustomer.Text = store.Customers.Count.ToString();
         }
     }
 }

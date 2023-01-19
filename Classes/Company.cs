@@ -32,7 +32,7 @@ namespace Classes
             set
             {
                 if (Regex.IsMatch(value, @"^\d{10}$") &&
-                    Supplier.ValidateNip(value))
+                    Supplier.ValidateNip(value, Supplier.SumNip))
                 {
                     nip = value;
                 }

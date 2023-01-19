@@ -1,16 +1,7 @@
-﻿using System;
+﻿using Classes;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GUI
 {
@@ -19,9 +10,48 @@ namespace GUI
     /// </summary>
     public partial class ClientCreationWindow : Window
     {
-        public ClientCreationWindow()
+        private List<Customer> customers;
+        public ClientCreationWindow(List<Customer> customers)
         {
+            this.customers = customers;
             InitializeComponent();
+            CmbType.Text = "Private Customer";
+        }
+
+        private void Confirm_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtNip.IsEnabled)
+            {
+                
+            }
+            else
+            {
+
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void CmbType_SelectionChanged(object sender,
+            SelectionChangedEventArgs e)
+        {
+            if (CmbType.Text.Equals("Company"))
+            {
+                TxtFirstName.IsEnabled = false;
+                TxtLastName.IsEnabled = false;
+                TxtName.IsEnabled = true;
+                TxtNip.IsEnabled = true;
+            }
+            else if (CmbType.Text.Equals("Private Customer"))
+            {
+                TxtName.IsEnabled = false;
+                TxtNip.IsEnabled = false;
+                TxtFirstName.IsEnabled = true;
+                TxtLastName.IsEnabled = true;
+            }
         }
     }
 }

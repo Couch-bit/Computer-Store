@@ -105,7 +105,7 @@ namespace Classes
         /// <param name="fname">The name of the file where the JSON format is going to be stored.</param>
         public void Serialize(string fname)
         {
-            using StreamWriter sw = new(fname);
+            using StreamWriter sw = new($"{fname}.json");
             string txt = JsonSerializer.Serialize(this, typeof(Store));
             sw.WriteLine(txt);
         }

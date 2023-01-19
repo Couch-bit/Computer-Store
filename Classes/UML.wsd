@@ -10,7 +10,8 @@ class Supplier {
   + void AddProduct (Product product)
   + void RemoveProduct (Product product)
   + void Sort()
-  + {static} bool ValidateNip (string nip)
+  + {static} bool ValidateNip (string nip, Sumation sum)
+  + {static} int SumNip(string nip)
   + override string ToString()
 }
 

@@ -69,10 +69,11 @@ namespace Classes
             // Arrange
             string nip1 = "0000001000";
             string nip2 = "0000000000";
+            Sumation sum = new(Supplier.SumNip);
 
             // Act
-            bool test1 = Supplier.ValidateNip(nip1);
-            bool test2 = Supplier.ValidateNip(nip2);
+            bool test1 = Supplier.ValidateNip(nip1, sum);
+            bool test2 = Supplier.ValidateNip(nip2, sum);
 
             // Assert
             Assert.IsFalse(test1);
