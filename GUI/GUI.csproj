@@ -9,7 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="receipt.png" />
+    <None Remove="shopping-cart.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Classes\Classes.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="receipt.png" />
+    <Resource Include="shopping-cart.png" />
   </ItemGroup>
 
 </Project>

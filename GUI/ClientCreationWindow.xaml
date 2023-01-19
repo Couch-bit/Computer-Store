@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="ClientWindow" Height="299" Width="488">
     <Grid Margin="0,-13,0,0" Height="332" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500">
-        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="29" Margin="81,22,0,0" VerticalAlignment="Top" Width="116" SelectionChanged="CmbType_SelectionChanged">
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="29" Margin="81,22,0,0" VerticalAlignment="Top" Width="169" SelectionChanged="CmbType_SelectionChanged">
             <ComboBoxItem x:Name="company">Company</ComboBoxItem>
             <ComboBoxItem x:Name="private">Private Customer</ComboBoxItem>
         </ComboBox>
@@ -37,7 +37,19 @@
         <TextBox x:Name="TxtLastName" HorizontalAlignment="Left" Height="18" Margin="290,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
         <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="18" Margin="290,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
         <TextBox x:Name="TxtNip" HorizontalAlignment="Left" Height="18" Margin="290,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="33" Margin="208,250,0,0" VerticalAlignment="Top" Width="198" Click="Confirm_Click"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="10,250,0,0" VerticalAlignment="Top" Width="193" Click="Button_Click"/>
+        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="33" Margin="208,250,0,0" VerticalAlignment="Top" Width="198" Click="Confirm_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="10,250,0,0" VerticalAlignment="Top" Width="193" Click="Button_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
