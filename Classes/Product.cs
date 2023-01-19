@@ -1,10 +1,15 @@
-﻿namespace Classes
+﻿using System.Text.Json.Serialization;
+
+namespace Classes
 {
     /// <summary>
     /// An abstract class for the Products.
     /// </summary>
     /// <seealso cref="System.IComparable" />
     /// <seealso cref="System.ICloneable" />
+    [JsonDerivedType(typeof(Hardware), typeDiscriminator: "Hardware")]
+    [JsonDerivedType(typeof(Software), typeDiscriminator: "Software")]
+    [JsonDerivedType(typeof(Accessory), typeDiscriminator: "Accessory")]
     public abstract class Product : IComparable<Product>, IEquatable<Product>, ICloneable
     {
         #region Fields
@@ -351,4 +356,5 @@
         }
         #endregion Methods
     }
+
 }

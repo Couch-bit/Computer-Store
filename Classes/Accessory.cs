@@ -1,4 +1,6 @@
-﻿namespace Classes
+﻿using System.Text.Json.Serialization;
+
+namespace Classes
 {
     /// <summary>
     /// Enum for basic Accesory types in the store.

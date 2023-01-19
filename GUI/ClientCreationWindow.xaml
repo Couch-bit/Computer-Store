@@ -6,9 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="ClientWindow" Height="299" Width="488">
+        Title="ClientWindow" Height="338" Width="495">
     <Grid Margin="0,-13,0,0" Height="332" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500">
-        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="29" Margin="81,22,0,0" VerticalAlignment="Top" Width="169" SelectionChanged="CmbType_SelectionChanged">
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="29" Margin="81,22,0,0" VerticalAlignment="Top" Width="169" DropDownClosed="CmbType_DropDownClosed">
             <ComboBoxItem x:Name="company">Company</ComboBoxItem>
             <ComboBoxItem x:Name="private">Private Customer</ComboBoxItem>
         </ComboBox>
@@ -44,7 +44,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="10,250,0,0" VerticalAlignment="Top" Width="193" Click="Button_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="10,250,0,0" VerticalAlignment="Top" Width="193" Click="Close_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Classes;
 
 namespace GUI
 {
     /// <summary>
     /// Interaction logic for ShopWindow.xaml
     /// </summary>
-    public partial class ShopWindow : Window
+    public partial class StoreClientWindow : Window
     {
-        public ShopWindow()
+        private Store store;
+        private Customer customer;
+        public StoreClientWindow(Store store, Customer customer)
         {
             InitializeComponent();
+            this.store = store;
+            this.customer = customer;
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

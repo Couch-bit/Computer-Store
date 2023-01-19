@@ -1,7 +1,7 @@
 ﻿using Classes;
-using System.Collections.Generic;
+using System;
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -10,35 +10,71 @@ namespace GUI
     /// </summary>
     public partial class ClientCreationWindow : Window
     {
-        private List<Customer> customers;
-        public ClientCreationWindow(List<Customer> customers)
+        private readonly Store store;
+
+        public ClientCreationWindow(Store store)
         {
-            this.customers = customers;
+            this.store = store;
             InitializeComponent();
             CmbType.Text = "Private Customer";
+            TxtName.IsEnabled = false;
+            TxtNip.IsEnabled = false;
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            if (TxtNip.IsEnabled)
+            if (!TxtPassword.Password.Equals(TxtConfirm.Password))
             {
-                
+                System.Windows.Forms.MessageBox.Show
+                    ("Passwords Do Not Match", "Warning", MessageBoxButtons.OK);
+            }
+            else if (TxtNip.IsEnabled)
+            {
+                try
+                { 
+                    Company company = new(TxtName.Text, TxtNip.Text,
+                        TxtCountry.Text, TxtCity.Text, TxtStreet.Text,
+                        TxtZipCode.Text, TxtPhone.Text, TxtEmail.Text,
+                        TxtPassword.Password);
+                    store.AddCustomer(company);
+                    DialogResult = true;
+                }
+                catch (Exception exc)
+                {
+                    System.Windows.Forms.MessageBox.Show
+                    (exc.Message, "Error", MessageBoxButtons.OK);
+                }
             }
             else
             {
-
+                try
+                {
+                    PrivateCustomer privateCustomer = 
+                        new(TxtFirstName.Text, TxtLastName.Text,
+                        TxtCountry.Text, TxtCity.Text,
+                        TxtStreet.Text, TxtZipCode.Text,
+                        TxtPhone.Text, TxtEmail.Text,
+                        TxtPassword.Password);
+                    store.AddCustomer(privateCustomer);
+                    DialogResult = true;
+                }
+                catch (Exception exc)
+                {
+                    System.Windows.Forms.MessageBox.Show
+                    (exc.Message, "Error", MessageBoxButtons.OK);
+                }
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Close_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void CmbType_SelectionChanged(object sender,
-            SelectionChangedEventArgs e)
+        private void CmbType_DropDownClosed(object sender,
+            EventArgs e)
         {
-            if (CmbType.Text.Equals("Company"))
+            if (CmbType.Text.Equals("Company")) 
             {
                 TxtFirstName.IsEnabled = false;
                 TxtLastName.IsEnabled = false;

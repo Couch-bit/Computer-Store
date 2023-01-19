@@ -43,7 +43,6 @@ abstract Customer {
   ----
   + void AddOrder(Order order)
   + void RemoveOrder(int id)
-  + override string ToString()
 }
 
 class Order {
@@ -103,7 +102,9 @@ class Store{
   + void AddSupplier(Supplier supplier)
   + void RemoveSupplier(Supplier supplier)
   + void AddCustomer(Customer customer)
-  + void RemoveCustomer(Customer customer)
+  + void RemoveCustomer(Customer customer) 
+  + List<Order> GetAllOrders()
+  + List<Product> GetAllProducts()
   + void Serialize (string fname)
   + {static} Store Deserialize (string fname)
   + override string ToString()

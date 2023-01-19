@@ -99,7 +99,7 @@ namespace Classes
         /// </returns>
         public override string ToString()
         {
-            return $"Private Customer: {FirstName} {LastName}, " + base.ToString();
+            return $"Private Customer: {FirstName} {LastName}";
         }
 
         #endregion Methods

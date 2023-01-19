@@ -62,7 +62,7 @@
             string nip = "0000000000";
             string country = "Polandia bruh";
             string city = "Łódź";
-            string street = "Słowiańska";
+            string street = "Słowiańska 9";
             string zipCode = "26-086";
             string phoneNumber = "652-548-943";
             string email = "xd@gmail.com";
@@ -96,7 +96,7 @@
             string nip3 = "045-467-24-12";
             string country = "Polandia bruh";
             string city = "Łódź";
-            string street = "Słowiańska";
+            string street = "Słowiańska 7";
             string zipCode = "26-086";
             string phoneNumber = "652-548-943";
             string email = "xd@gmail.com";
@@ -134,7 +134,7 @@
             string country = "USA3";
             string country2 = "kongo";
             string city = "Łódź";
-            string street = "Słowiańska";
+            string street = "Słowiańska 5";
             string zipCode = "26-086";
             string phoneNumber = "652-548-943";
             string email = "xd@gmail.com";
@@ -166,7 +166,7 @@
             string country = "Polandia";
             string city = "łódź";
             string city2 = "Op0le";
-            string street = "Słowiańska";
+            string street = "Słowiańska 3";
             string zipCode = "26-086";
             string phoneNumber = "652-548-943";
             string email = "xd@gmail.com";
@@ -197,8 +197,8 @@
             string nip = "0000000000";
             string country = "Polandia";
             string city = "Łódź";
-            string street = "słowiańska";
-            string street2 = "Słow1ańska";
+            string street = "słowiańska 1";
+            string street2 = "Słow1ańska 2";
             string zipCode = "26-086";
             string phoneNumber = "652-548-943";
             string email = "xd@gmail.com";
@@ -229,7 +229,7 @@
             string nip = "0000000000";
             string country = "Polandia";
             string city = "Łódź";
-            string street = "Słowiańska";
+            string street = "Słowiańska 1";
             string zipCode = "26-0860";
             string zipCode2 = "245-89";
             string zipCode3 = "24R-56";
@@ -268,7 +268,7 @@
             string nip = "0000000000";
             string country = "Polandia";
             string city = "Łódź";
-            string street = "Słowiańska";
+            string street = "Słowiańska 1";
             string zipCode = "26-086";
             string phoneNumber = "652-548-9434";
             string phoneNumber2 = "652548943";
@@ -307,7 +307,7 @@
             string nip = "0000000000";
             string country = "Polandia";
             string city = "Łódź";
-            string street = "Słowiańska";
+            string street = "Słowiańska 1";
             string zipCode = "26-086";
             string phoneNumber = "652-548-943";
             string email = "xdgmail.com";

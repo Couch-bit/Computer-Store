@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Forms;
@@ -57,7 +58,8 @@ namespace GUI
             }
         }
 
-        private void MenuItemSave_Click(object sender, RoutedEventArgs e)
+        private void MenuItemSave_Click(object sender,
+            RoutedEventArgs e)
         {
             Microsoft.Win32.SaveFileDialog dlg = new();
             bool? result = dlg.ShowDialog();
@@ -68,25 +70,50 @@ namespace GUI
             }
         }
 
-        private void MenuItemClose_Click(object sender, RoutedEventArgs e)
+        private void MenuItemClose_Click(object sender,
+            RoutedEventArgs e)
         {
             Close();
         }
 
-        // TODO
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void Login_Click(object sender,
+            RoutedEventArgs e)
+        {
+            Customer? customer = store.Customers.Find
+                (x => x.Email == TxtLogin.Text);
+            if (customer is null)
+            {
+                System.Windows.Forms.MessageBox.Show
+                        ("No Account exists for this Email Address",
+                        "Error",
+                        MessageBoxButtons.OK);
+            }
+            else
+            {
+                if (customer.Password == TxtPassword.Password)
+                {
+                    StoreClientWindow dlg = new(store, customer);
+                    bool? result = dlg.ShowDialog();
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show
+                        ("Incorrect Password",
+                        "Error",
+                        MessageBoxButtons.OK);
+                }
+            }
         }
 
-        // TODO
-        private void Create_Click(object sender, RoutedEventArgs e)
+        private void Create_Click(object sender,
+            RoutedEventArgs e)
         {
-            ClientCreationWindow okno = new(store.Customers);
-            bool? result = okno.ShowDialog();
+            ClientCreationWindow window = new(store);
+            bool? result = window.ShowDialog();
             if (result == true)
             {
-                
+                RefreshStore();
             }
         }
 
@@ -95,6 +122,13 @@ namespace GUI
             TxtName.Text = store.Name;
             TxtSupplier.Text = store.Suppliers.Count.ToString();
             TxtCustomer.Text = store.Customers.Count.ToString();
+        }
+
+        private void Admin_Click(object sender, RoutedEventArgs e)
+        {
+            StoreManagementWindow window = new(store);
+            window.ShowDialog();
+            RefreshStore();
         }
     }
 }

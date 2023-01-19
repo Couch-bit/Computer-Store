@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Classes
 {
@@ -63,7 +64,7 @@ namespace Classes
 
         public void AddSupplier(Supplier supplier)
         {
-            if (suppliers.Any(x => x.Nip == supplier.Nip)) {
+            if (!suppliers.Any(x => x.Nip == supplier.Nip)) {
                 suppliers.Add(supplier);
             } else
             {
@@ -82,13 +83,13 @@ namespace Classes
 
         public void AddCustomer(Customer customer)
         {
-            if (customers.Any(x => x.Email == customer.Email)) {
+            if (!customers.Any(x => x.Email == customer.Email)) {
                 customers.Add(customer);
             }
             else
             {
                 throw new DuplicateException
-                    ("Customer already exists");
+                    ("Email is already in use");
             }
         }
 
@@ -99,12 +100,39 @@ namespace Classes
                 throw new WrongKeyException("No such Customer");
             }
         }
+
+        public List<Order> GetAllOrders()
+        {
+            List<Order> result = new();
+            foreach (Customer customer in customers)
+            {
+                foreach (Order order in customer.Orders)
+                {
+                    result.Add(order);
+                }
+            }
+            return result;
+        }
+
+        public List<Product> GetAllProducts()
+        {
+            List<Product> result = new();
+            foreach (Supplier supplier in suppliers)
+            {
+                foreach (Product product in supplier.Products)
+                {
+                    result.Add(product);
+                }
+            }
+            return result;
+        }
         /// <summary>
         /// Serializes the specified file to JSON format.
         /// </summary>
         /// <param name="fname">The name of the file where the JSON format is going to be stored.</param>
         public void Serialize(string fname)
         {
+
             using StreamWriter sw = new($"{fname}.json");
             string txt = JsonSerializer.Serialize(this, typeof(Store));
             sw.WriteLine(txt);

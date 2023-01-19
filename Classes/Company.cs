@@ -77,7 +77,7 @@ namespace Classes
         /// </returns>
         public override string ToString()
         {
-            return $"Company: {Name} (NIP: {Nip}), " + base.ToString();
+            return $"Company: {Name} (NIP: {Nip})";
         }
         #endregion Methods
     }
