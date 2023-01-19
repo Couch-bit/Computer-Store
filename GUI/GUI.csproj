@@ -18,8 +18,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="receipt.png" />
-    <Resource Include="shopping-cart.png" />
+    <Resource Include="receipt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="shopping-cart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="computer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

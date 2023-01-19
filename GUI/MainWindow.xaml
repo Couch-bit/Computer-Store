@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="740">
-    <Grid Margin="10,0,0,3">
+    <Grid Margin="0,0,0,3">
         <Grid.RowDefinitions>
             <RowDefinition Height="13*"/>
             <RowDefinition Height="18*"/>
@@ -33,10 +33,10 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image x:Name="ImageFile" Margin="379,289,321,40" Grid.Row="3" Source="/receipt.png" Width="20" Height="20"/>
+        <Image x:Name="ImageFile" Margin="379,289,321,40" Grid.Row="3" Source="/receipt.png"/>
         <Image x:Name ="ImageLogin" Margin="56,289,646,40" Grid.Row="3" Source="/shopping-cart.png" />
-        <Image x:Name="ImageAdmin" Margin="584,71,46,198" Grid.Row="3" Source="/settings.png" Stretch="Fill"/>
-        <Image x:Name ="ImageAccount" Margin="255,70,370,198" Grid.Row="3" Source="/user.png" Stretch="Fill"/>
+        <Image x:Name="ImageAdmin" Margin="584,71,46,198" Grid.Row="3" Source="/settings.png"/>
+        <Image x:Name ="ImageAccount" Margin="255,70,370,198" Grid.Row="3" Source="/user.png"/>
         <Button x:Name="BtnCreate" Content="Create an account" HorizontalAlignment="Left" Height="84" Margin="46,70,0,0" VerticalAlignment="Top" Width="314                 " Click="Create_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
