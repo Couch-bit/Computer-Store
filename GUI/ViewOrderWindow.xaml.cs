@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Interaction logic for ProductWindow.xaml
+    /// Interaction logic for ViewOrderWindow.xaml
     /// </summary>
-    public partial class ProductWindow : Window
+    public partial class ViewOrderWindow : Window
     {
-        public ProductWindow()
+        public ViewOrderWindow()
         {
             InitializeComponent();
-        }
-
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

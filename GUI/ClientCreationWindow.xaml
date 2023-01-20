@@ -6,45 +6,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="ClientWindow" Height="338" Width="495">
-    <Grid Margin="0,-13,0,0" Height="332" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500">
-        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="29" Margin="81,22,0,0" VerticalAlignment="Top" Width="169" DropDownClosed="CmbType_DropDownClosed">
+        Title="ClientWindow" Height="350" Width="500">
+    <Grid Margin="0,-13,0,0" Height="330" VerticalAlignment="Top" HorizontalAlignment="Center" Width="495">
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="32" Margin="102,22,0,0" VerticalAlignment="Top" Width="197" DropDownClosed="CmbType_DropDownClosed">
             <ComboBoxItem x:Name="company">Company</ComboBoxItem>
             <ComboBoxItem x:Name="private">Private Customer</ComboBoxItem>
         </ComboBox>
-        <Label x:Name="LblType" Content="Type" HorizontalAlignment="Left" Height="28" Margin="10,22,0,0" VerticalAlignment="Top" Width="66" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblCountry" Content="Country" HorizontalAlignment="Left" Height="28" Margin="10,52,0,0" VerticalAlignment="Top" Width="66" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblCity" Content="City" HorizontalAlignment="Left" Height="28" Margin="10,81,0,0" VerticalAlignment="Top" Width="66" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblStreet" Content="Street" HorizontalAlignment="Left" Height="28" Margin="10,112,0,0" VerticalAlignment="Top" Width="66" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblZipCode" Content="Zip-Code" HorizontalAlignment="Left" Height="28" Margin="10,142,0,0" VerticalAlignment="Top" Width="66" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblPhoneNumber" Content="Phone" HorizontalAlignment="Left" Height="28" Margin="10,172,0,0" VerticalAlignment="Top" Width="66" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblEmail" Content="E-mail" HorizontalAlignment="Left" Height="28" Margin="10,202,0,0" VerticalAlignment="Top" Width="66" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblPassword" Content="Password" HorizontalAlignment="Left" Height="30" Margin="208,52,0,0" VerticalAlignment="Top" Width="77" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LbLConfirm" Content="Confirm" HorizontalAlignment="Left" Height="28" Margin="208,84,0,0" VerticalAlignment="Top" Width="77" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblFirstName" Content="First Name" HorizontalAlignment="Left" Height="28" Margin="208,114,0,0" VerticalAlignment="Top" Width="77" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblLastName" Content="Last Name" HorizontalAlignment="Left" Height="28" Margin="208,144,0,0" VerticalAlignment="Top" Width="77" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblName" Content="Name" HorizontalAlignment="Left" Height="28" Margin="208,174,0,0" VerticalAlignment="Top" Width="77" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblNip" Content="Nip" HorizontalAlignment="Left" Height="28" Margin="208,202,0,0" VerticalAlignment="Top" Width="77" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtCountry" HorizontalAlignment="Left" Height="18" Margin="81,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtCity" HorizontalAlignment="Left" Height="18" Margin="81,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtStreet" HorizontalAlignment="Left" Height="18" Margin="81,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtZipCode" HorizontalAlignment="Left" Height="18" Margin="81,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtPhone" HorizontalAlignment="Left" Height="18" Margin="81,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtEmail" HorizontalAlignment="Left" Height="18" Margin="81,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <PasswordBox x:Name="TxtPassword" HorizontalAlignment="Left" Height="18" Margin="290,58,0,0" VerticalAlignment="Top" Width="116"/>
-        <PasswordBox x:Name="TxtConfirm" HorizontalAlignment="Left" Height="18" Margin="290,88,0,0" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtFirstName" HorizontalAlignment="Left" Height="18" Margin="290,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtLastName" HorizontalAlignment="Left" Height="18" Margin="290,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="18" Margin="290,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtNip" HorizontalAlignment="Left" Height="18" Margin="290,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="33" Margin="208,250,0,0" VerticalAlignment="Top" Width="198" Click="Confirm_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Label x:Name="LblType" Content="Type" HorizontalAlignment="Left" Height="31" Margin="20,22,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblCountry" Content="Country" HorizontalAlignment="Left" Height="32" Margin="20,55,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblCity" Content="City" HorizontalAlignment="Left" Height="31" Margin="20,88,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblStreet" Content="Street" HorizontalAlignment="Left" Height="32" Margin="20,122,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblZipCode" Content="Zip-Code" HorizontalAlignment="Left" Height="31" Margin="20,156,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblPhoneNumber" Content="Phone" HorizontalAlignment="Left" Height="32" Margin="20,189,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblEmail" Content="E-mail" HorizontalAlignment="Left" Height="31" Margin="20,223,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblPassword" Content="Password" HorizontalAlignment="Left" Height="34" Margin="250,55,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LbLConfirm" Content="Confirm" HorizontalAlignment="Left" Height="31" Margin="250,91,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblFirstName" Content="First Name" HorizontalAlignment="Left" Height="31" Margin="250,125,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblLastName" Content="Last Name" HorizontalAlignment="Left" Height="31" Margin="250,158,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblName" Content="Name" HorizontalAlignment="Left" Height="31" Margin="250,192,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblNip" Content="Nip" HorizontalAlignment="Left" Height="31" Margin="250,223,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtCountry" HorizontalAlignment="Left" Height="20" Margin="102,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtCity" HorizontalAlignment="Left" Height="20" Margin="102,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtStreet" HorizontalAlignment="Left" Height="20" Margin="102,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtZipCode" HorizontalAlignment="Left" Height="21" Margin="102,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtPhone" HorizontalAlignment="Left" Height="20" Margin="102,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtEmail" HorizontalAlignment="Left" Height="21" Margin="102,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <PasswordBox x:Name="TxtPassword" HorizontalAlignment="Left" Height="20" Margin="346,62,0,0" VerticalAlignment="Top" Width="135"/>
+        <PasswordBox x:Name="TxtConfirm" HorizontalAlignment="Left" Height="20" Margin="346,96,0,0" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtFirstName" HorizontalAlignment="Left" Height="20" Margin="346,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtLastName" HorizontalAlignment="Left" Height="20" Margin="346,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="20" Margin="346,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="TxtNip" HorizontalAlignment="Left" Height="20" Margin="346,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="37" Margin="250,276,0,0" VerticalAlignment="Top" Width="231" Click="Confirm_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="10,250,0,0" VerticalAlignment="Top" Width="193" Click="Close_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="37" Margin="20,276,0,0" VerticalAlignment="Top" Width="225" Click="Close_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="740">
+        Title="MainWindow" Height="450" Width="800">
     <Grid Margin="0,0,0,3">
         <Grid.RowDefinitions>
             <RowDefinition Height="13*"/>
@@ -14,9 +14,9 @@
             <RowDefinition Height="47*"/>
             <RowDefinition Height="354*"/>
         </Grid.RowDefinitions>
-        <Border x:Name ="BorderRIGHT" HorizontalAlignment="Left" Height="296" Margin="365,38,0,0" VerticalAlignment="Top" Width="324" BorderThickness="2" Grid.Row="3"
+        <Border x:Name ="BorderRIGHT" HorizontalAlignment="Left" Height="289" Margin="399,37,0,0" VerticalAlignment="Top" Width="358" BorderThickness="2" Grid.Row="3"
         CornerRadius="0,10,10,0" BorderBrush="Black"/>
-        <Button x:Name="BtnFileOpen" Content="READ FROM FILE" HorizontalAlignment="Left" Height="31" Margin="370,285,0,0" Grid.Row="3" VerticalAlignment="Top" Width="314" Click="StoreOpen_Click"
+        <Button x:Name="BtnFileOpen" Content="READ FROM FILE" HorizontalAlignment="Left" Height="30" Margin="404,279,0,0" Grid.Row="3" VerticalAlignment="Top" Width="348" Click="StoreOpen_Click"
                 Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -24,37 +24,37 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Border x:Name ="BorderLEFT" HorizontalAlignment="Left" Height="296" Margin="41,38,0,0" VerticalAlignment="Top" Width="324" BorderThickness="2" Grid.Row="3"
+        <Border x:Name ="BorderLEFT" HorizontalAlignment="Left" Height="289" Margin="41,37,0,0" VerticalAlignment="Top" Width="358" BorderThickness="2" Grid.Row="3"
         CornerRadius="10,0,0,10" BorderBrush="Black"/>
-        <Button x:Name="BtnLogin" Content="LOG IN" HorizontalAlignment="Left" Height="31" Margin="46,285,0,0" VerticalAlignment="Top" Width="314" Click="Login_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name="BtnLogin" Content="LOG IN" HorizontalAlignment="Left" Height="30" Margin="46,279,0,0" VerticalAlignment="Top" Width="348" Click="Login_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Image x:Name="ImageFile" Margin="379,289,321,40" Grid.Row="3" Source="/receipt.png"/>
-        <Image x:Name ="ImageLogin" Margin="56,289,646,40" Grid.Row="3" Source="/shopping-cart.png" />
-        <Image x:Name="ImageAdmin" Margin="584,71,46,198" Grid.Row="3" Source="/settings.png"/>
-        <Image x:Name ="ImageAccount" Margin="255,70,370,198" Grid.Row="3" Source="/user.png"/>
-        <Button x:Name="BtnCreate" Content="Create an account" HorizontalAlignment="Left" Height="84" Margin="46,70,0,0" VerticalAlignment="Top" Width="314                 " Click="Create_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Image x:Name="ImageFile" Margin="414,282,276,47" Grid.Row="3" Source="/receipt.png"/>
+        <Image x:Name ="ImageLogin" Margin="58,282,635,47" Grid.Row="3" Source="/shopping-cart.png" />
+        <Image x:Name="ImageAdmin" Margin="641,69,19,201" Grid.Row="3" Source="/settings.png"/>
+        <Image x:Name ="ImageAccount" Margin="278,68,378,201" Grid.Row="3" Source="/user.png"/>
+        <Button x:Name="BtnCreate" Content="Create an account" HorizontalAlignment="Left" Height="83" Margin="46,68,0,0" VerticalAlignment="Top" Width="348" Click="Create_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="LblLogin" Content="E-MAIL" HorizontalAlignment="Left" Height="28" Margin="106,181,0,0" VerticalAlignment="Top" Width="74" Grid.Row="3" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtLogin" HorizontalAlignment="Left" Height="18" Margin="185,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Grid.Row="3" Text=""/>
-        <Label x:Name="LblPassword" Content="PASSWORD" HorizontalAlignment="Left" Height="28" Margin="106,231,0,0" VerticalAlignment="Top" Width="74" Grid.Row="3" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <PasswordBox x:Name ="TxtPassword" HorizontalAlignment="Left" Height="18" Margin="185,236,0,0" VerticalAlignment="Top" Width="169" Grid.Row="3"/>
+        <Label x:Name="LblLogin" Content="E-MAIL" HorizontalAlignment="Left" Height="27" Margin="113,177,0,0" VerticalAlignment="Top" Width="82" Grid.Row="3" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtLogin" HorizontalAlignment="Left" Height="17" Margin="200,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Grid.Row="3" Text=""/>
+        <Label x:Name="LblPassword" Content="PASSWORD" HorizontalAlignment="Left" Height="27" Margin="113,226,0,0" VerticalAlignment="Top" Width="82" Grid.Row="3" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name ="TxtPassword" HorizontalAlignment="Left" Height="17" Margin="200,231,0,0" VerticalAlignment="Top" Width="186" Grid.Row="3"/>
         <Menu Height="24" VerticalAlignment="Top" Grid.RowSpan="2">
             <MenuItem Header="Plik" Width="75" Height="24">
                 <MenuItem x:Name="MenuItemSave" Header="Zapisz" Click="MenuItemSave_Click"/>
                 <MenuItem x:Name="MenuItemClose" Header="Zakończ" Click="MenuItemClose_Click"/>
             </MenuItem>
         </Menu>
-        <Button x:Name="BtnAdministrator" Content="Admin mode" HorizontalAlignment="Left" Height="84" Margin="370,70,0,0" VerticalAlignment="Top" Width="314" Grid.Row="3"
+        <Button x:Name="BtnAdministrator" Content="Admin mode" HorizontalAlignment="Left" Height="83" Margin="404,68,0,0" VerticalAlignment="Top" Width="348" Grid.Row="3"
                 Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="Admin_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -62,13 +62,13 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="LblCustomer" Content="CUSTOMER" HorizontalAlignment="Left" Height="26" Margin="41,12,0,0" VerticalAlignment="Top" Width="324" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3" FontFamily="Bahnschrift" FontSize="16"/>
-        <Label x:Name="LblStore" Content="SHOP" HorizontalAlignment="Left" Height="26" Margin="366,12,0,0" VerticalAlignment="Top" Width="325" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3" FontFamily="Bahnschrift" FontSize="16"/>
-        <Label x:Name="LblName" Content="NAME" HorizontalAlignment="Left" Height="28" Margin="384,181,0,0" Grid.Row="3" VerticalAlignment="Top" Width="74" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblSuppliers" Content="SUPPLIERS" HorizontalAlignment="Left" Height="28" Margin="384,228,0,0" Grid.Row="3" VerticalAlignment="Top" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift"/>
-        <Label Content="CUSTOMERS" HorizontalAlignment="Left" Height="28" Margin="532,228,0,0" Grid.Row="3" VerticalAlignment="Top" Width="81" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name ="TxtName" HorizontalAlignment="Left" Height="18" Margin="463,186,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" IsEnabled="False"/>
-        <TextBox x:Name="TxtSupplier" HorizontalAlignment="Left" Height="18" Margin="463,233,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False"/>
-        <TextBox x:Name ="TxtCustomer" HorizontalAlignment="Left" Height="18" Margin="613,233,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" IsEnabled="False"/>
+        <Label x:Name="LblCustomer" Content="CUSTOMER" HorizontalAlignment="Left" Height="25" Margin="41,12,0,0" VerticalAlignment="Top" Width="358" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3" FontFamily="Bahnschrift" FontSize="16"/>
+        <Label x:Name="LblStore" Content="SHOP" HorizontalAlignment="Left" Height="25" Margin="400,12,0,0" VerticalAlignment="Top" Width="359" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3" FontFamily="Bahnschrift" FontSize="16"/>
+        <Label x:Name="LblName" Content="NAME" HorizontalAlignment="Left" Height="27" Margin="420,177,0,0" Grid.Row="3" VerticalAlignment="Top" Width="82" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblSuppliers" Content="SUPPLIERS" HorizontalAlignment="Left" Height="27" Margin="420,223,0,0" Grid.Row="3" VerticalAlignment="Top" Width="82" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Label Content="CUSTOMERS" HorizontalAlignment="Left" Height="27" Margin="584,223,0,0" Grid.Row="3" VerticalAlignment="Top" Width="89" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name ="TxtName" HorizontalAlignment="Left" Height="17" Margin="507,182,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" IsEnabled="False"/>
+        <TextBox x:Name="TxtSupplier" HorizontalAlignment="Left" Height="17" Margin="507,228,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" IsEnabled="False"/>
+        <TextBox x:Name ="TxtCustomer" HorizontalAlignment="Left" Height="17" Margin="673,228,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False"/>
     </Grid>
 </Window>

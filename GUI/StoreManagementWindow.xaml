@@ -15,7 +15,7 @@
         <ListBox x:Name="LstCustomers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="437,86,0,100" HorizontalAlignment="Left" Width="200"/>
         <Label x:Name ="LblOrders" Content="Orders To Realize" HorizontalAlignment="Left" Height="27" Margin="642,57,0,0" VerticalAlignment="Top" Width="148" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <ListBox x:Name="LstOrders" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="642,86,0,100" HorizontalAlignment="Left" Width="148"/>
-        <Button x:Name ="BtnAddSupplier" Content="Add Supplier" HorizontalAlignment="Left" Margin="252,339,0,0" VerticalAlignment="Top" Height="32" Width="124"
+        <Button x:Name ="BtnAddSupplier" Content="Add Supplier" HorizontalAlignment="Left" Margin="240,339,0,0" VerticalAlignment="Top" Height="32" Width="148"
             Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="AddSupplier_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -23,7 +23,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name ="BtnRealizeOrder" Content="Realize Order" HorizontalAlignment="Left" Margin="642,339,0,0" VerticalAlignment="Top" Height="32" Width="148"
+        <Button x:Name ="BtnViewOrder" Content="View Order" HorizontalAlignment="Left" Margin="642,339,0,0" VerticalAlignment="Top" Height="32" Width="148"
             Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnDeleteOrder_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -49,6 +49,14 @@
             </Button.Resources>
         </Button>
         <Label x:Name ="LblStoreProducts" Content="Registered Products" HorizontalAlignment="Left" Height="27" Margin="10,57,0,0" VerticalAlignment="Top" Width="169" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Button x:Name ="BtnAdd" Content="Add Item" HorizontalAlignment="Left" Margin="28,376,0,0" VerticalAlignment="Top" Height="32" Width="134"
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnModifyItem_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Window>

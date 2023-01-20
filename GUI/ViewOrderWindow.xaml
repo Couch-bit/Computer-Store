@@ -1,0 +1,36 @@
+﻿<Window x:Class="GUI.ViewOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="ViewOrderWindow" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="LblCustomer" Content="Customer" HorizontalAlignment="Left" Height="28" Margin="21,25,0,0" VerticalAlignment="Top" Width="145" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name ="LblCost" Content="Order cost" HorizontalAlignment="Left" Height="26" Margin="25,57,0,0" VerticalAlignment="Top" Width="142" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Label x:Name ="LblFee" Content="Delivery fee" HorizontalAlignment="Left" Height="27" Margin="26,88,0,0" VerticalAlignment="Top" Width="141" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Label x:Name ="LblTotal" Content="Total cost" HorizontalAlignment="Left" Height="25" Margin="25,120,0,0" VerticalAlignment="Top" Width="141" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <TextBox x:Name="TxtOrder" HorizontalAlignment="Left" Height="18" Margin="183,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" IsEnabled="False" />
+        <TextBox x:Name="TxtFee" HorizontalAlignment="Left" Height="18" Margin="183,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" IsEnabled="False"/>
+        <TextBox x:Name="TxtCost" HorizontalAlignment="Left" Height="17" Margin="183,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" IsEnabled="False"/>
+        <TextBox x:Name="TxtCustomer" HorizontalAlignment="Left" Height="18" Margin="183,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" IsEnabled="False"/>
+        <Label x:Name ="LblItems" Content="Ordered items" HorizontalAlignment="Left" Height="27" Margin="25,150,0,0" VerticalAlignment="Top" Width="141" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <ListBox x:Name="LstItems"  HorizontalAlignment="Left" Height="256" Margin="183,150,0,0" VerticalAlignment="Top" Width="220" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name ="BtnRealize" Content="Realize Order" HorizontalAlignment="Left" Height="32" Margin="595,374,0,0" VerticalAlignment="Top" Width="187" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name ="BtnDelete" Content="Delete Order" HorizontalAlignment="Left" Height="32" Margin="595,337,0,0" VerticalAlignment="Top" Width="187" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Window>
