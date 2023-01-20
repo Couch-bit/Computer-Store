@@ -6,8 +6,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="ProductWindow" Height="450" Width="800">
+        Title="ProductWindow" Height="338" Width="495">
     <Grid>
-        
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="29" Margin="98,24,0,0" VerticalAlignment="Top" Width="169" DropDownClosed="CmbType_DropDownClosed">
+            <ComboBoxItem x:Name="company" Content="Company"/>
+            <ComboBoxItem x:Name="private" Content="Private Customer"/>
+        </ComboBox>
+        <Label x:Name="LblType" Content="Type" HorizontalAlignment="Left" Height="28" Margin="10,25,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblName" Content="Name" HorizontalAlignment="Left" Height="28" Margin="10,56,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblDescription" Content="Description" HorizontalAlignment="Left" Height="28" Margin="10,89,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblDiscount" Content="Discount" HorizontalAlignment="Left" Height="28" Margin="10,167,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblPrice" Content="Price" HorizontalAlignment="Left" Height="28" Margin="10,195,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblInfoKey" Content="Key" HorizontalAlignment="Left" Height="23" Margin="219,84,0,0" VerticalAlignment="Top" Width="128" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LbLVAT" Content="VAT" HorizontalAlignment="Left" Height="28" Margin="10,222,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="18" Margin="98,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtDescription" HorizontalAlignment="Left" Height="72" Margin="98,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtDiscount" HorizontalAlignment="Left" Height="18" Margin="98,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Height="18" Margin="98,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="33" Margin="208,261,0,0" VerticalAlignment="Top" Width="198" Click="Confirm_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="10,261,0,0" VerticalAlignment="Top" Width="193" Click="Close_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label x:Name="LblTechInfo" Content="Technical information" HorizontalAlignment="Left" Height="28" Margin="219,56,0,0" VerticalAlignment="Top" Width="266" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblInfoVal" Content="Description" HorizontalAlignment="Left" Height="22" Margin="357,84,0,0" VerticalAlignment="Top" Width="128" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtInfoValue" HorizontalAlignment="Left" Height="72" Margin="357,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="TxtInfoKey" HorizontalAlignment="Left" Height="18" Margin="219,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="BtnAdd" Content="Add" HorizontalAlignment="Left" Height="33" Margin="219,148,0,0" VerticalAlignment="Top" Width="128" Click="Confirm_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
     </Grid>
 </Window>
