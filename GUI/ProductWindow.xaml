@@ -61,7 +61,7 @@
         <TextBox x:Name="TxtHeight" HorizontalAlignment="Center" Height="18" Margin="0,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
         <TextBox x:Name="TxtWidth" HorizontalAlignment="Center" Height="18" Margin="0,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
         <Label x:Name="LblTypeS" Content="Type" HorizontalAlignment="Left" Height="28" Margin="261,285,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblArchitecture" Content="Architecture" HorizontalAlignment="Left" Height="28" Margin="261,318,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblArchitecture" Content="Architecture" HorizontalAlignment="Left" Height="28" Margin="261,341,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblVersion" Content="Version" HorizontalAlignment="Left" Height="28" Margin="261,206,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblLicense" Content="License" HorizontalAlignment="Left" Height="28" Margin="261,234,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <TextBox x:Name="TxtVersion" HorizontalAlignment="Center" Height="18" Margin="0,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
@@ -75,7 +75,7 @@
             <ComboBoxItem x:Name="Drive" Content="Drive"/>
             <ComboBoxItem x:Name="Other" Content="Other"/>
         </ComboBox>
-        <ComboBox x:Name="CmbArchitecture" HorizontalAlignment="Center" Height="29" Margin="0,316,0,0" VerticalAlignment="Top" Width="116" DropDownClosed="CmbType_DropDownClosed">
+        <ComboBox x:Name="CmbArchitecture" HorizontalAlignment="Center" Height="29" Margin="0,339,0,0" VerticalAlignment="Top" Width="116" DropDownClosed="CmbType_DropDownClosed">
             <ComboBoxItem x:Name="Bit32" Content="Bit32"/>
             <ComboBoxItem x:Name="Bit64" Content="Bit64"/>
         </ComboBox>
