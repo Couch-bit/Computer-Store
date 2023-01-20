@@ -10,14 +10,14 @@
     <Grid Margin="0,0,0,2">
         <Label x:Name ="LblSupplier" Content="BASIC INFORMATION ABOUT THE SUPPLIER" HorizontalAlignment="Center" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="780" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Label x:Name="LblName" Content="Name" HorizontalAlignment="Left" Height="28" Margin="26,71,0,0" VerticalAlignment="Top" Width="132" FontFamily="Bahnschrift" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtName" HorizontalAlignment="Center" Height="18" Margin="0,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" TextChanged="TxtName_TextChanged"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Center" Height="18" Margin="0,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
         <Label x:Name="LblNIP" Content="NIP" HorizontalAlignment="Left" Height="28" Margin="26,104,0,0" VerticalAlignment="Top" Width="132" FontFamily="Bahnschrift" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtNIP" HorizontalAlignment="Center" Height="18" Margin="0,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" TextChanged="TxtName_TextChanged"/>
+        <TextBox x:Name="TxtNIP" HorizontalAlignment="Center" Height="18" Margin="0,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
         <Label x:Name="LblCountry" Content="Country of Origin" HorizontalAlignment="Left" Height="28" Margin="26,137,0,0" VerticalAlignment="Top" Width="132" FontFamily="Bahnschrift" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtCountry" HorizontalAlignment="Center" Height="18" Margin="0,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" TextChanged="TxtName_TextChanged"/>
+        <TextBox x:Name="TxtCountry" HorizontalAlignment="Center" Height="18" Margin="0,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
         <Label x:Name="LblProducts" Content="List of Products" HorizontalAlignment="Left" Height="28" Margin="26,170,0,0" VerticalAlignment="Top" Width="132" FontFamily="Bahnschrift" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <ListBox x:Name ="LstProducts" HorizontalAlignment="Center" Height="245" Margin="0,170,0,0" VerticalAlignment="Top" Width="456" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button x:Name ="BtnAccept" Content="Accept" HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top" Height="32" Width="157"
+        <Button x:Name ="BtnAccept" Content="Confirm" HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top" Height="32" Width="157"
         Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnAccept_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -25,7 +25,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name ="BtnClose" Content="Close" HorizontalAlignment="Left" Margin="640,383,0,0" VerticalAlignment="Top" Height="32" Width="157"
+        <Button x:Name ="BtnClose" Content="Cancel" HorizontalAlignment="Left" Margin="640,383,0,0" VerticalAlignment="Top" Height="32" Width="157"
             Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnClose_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

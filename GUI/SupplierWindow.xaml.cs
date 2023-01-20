@@ -33,12 +33,6 @@ namespace GUI
             TxtNIP.Text = supplier.Nip;
             TxtCountry.Text = supplier.Country;
         }
-
-        private void TxtName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();

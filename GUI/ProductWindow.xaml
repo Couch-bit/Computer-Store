@@ -6,48 +6,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="ProductWindow" Height="338" Width="495">
+        Title="ProductWindow" Height="470" Width="814">
     <Grid>
-        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="29" Margin="98,24,0,0" VerticalAlignment="Top" Width="169" DropDownClosed="CmbType_DropDownClosed">
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="29" Margin="98,24,0,0" VerticalAlignment="Top" Width="143" DropDownClosed="CmbType_DropDownClosed">
             <ComboBoxItem x:Name="company" Content="Company"/>
             <ComboBoxItem x:Name="private" Content="Private Customer"/>
         </ComboBox>
         <Label x:Name="LblType" Content="Type" HorizontalAlignment="Left" Height="28" Margin="10,25,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblName" Content="Name" HorizontalAlignment="Left" Height="28" Margin="10,56,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblDescription" Content="Description" HorizontalAlignment="Left" Height="28" Margin="10,89,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblDiscount" Content="Discount" HorizontalAlignment="Left" Height="28" Margin="10,167,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblPrice" Content="Price" HorizontalAlignment="Left" Height="28" Margin="10,195,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblInfoKey" Content="Key" HorizontalAlignment="Left" Height="23" Margin="219,84,0,0" VerticalAlignment="Top" Width="128" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LbLVAT" Content="VAT" HorizontalAlignment="Left" Height="28" Margin="10,222,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="18" Margin="98,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtDescription" HorizontalAlignment="Left" Height="72" Margin="98,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtDiscount" HorizontalAlignment="Left" Height="18" Margin="98,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Height="18" Margin="98,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="33" Margin="208,261,0,0" VerticalAlignment="Top" Width="198" Click="Confirm_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Label x:Name="LblName" Content="Name" HorizontalAlignment="Left" Height="28" Margin="10,95,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblDescription" Content="Description" HorizontalAlignment="Left" Height="28" Margin="10,128,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblDiscount" Content="Discount" HorizontalAlignment="Left" Height="28" Margin="10,206,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblPrice" Content="Price" HorizontalAlignment="Left" Height="28" Margin="10,234,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblInfoKey" Content="Key" HorizontalAlignment="Left" Height="23" Margin="538,54,0,0" VerticalAlignment="Top" Width="128" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LbLVAT" Content="VAT" HorizontalAlignment="Left" Height="28" Margin="10,261,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="18" Margin="98,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtDescription" HorizontalAlignment="Left" Height="72" Margin="98,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtDiscount" HorizontalAlignment="Left" Height="18" Margin="98,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Height="18" Margin="98,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="33" Margin="10,411,0,0" VerticalAlignment="Top" Width="198" Click="Confirm_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="10,261,0,0" VerticalAlignment="Top" Width="193" Click="Close_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="33" Margin="611,411,0,0" VerticalAlignment="Top" Width="193" Click="Close_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="LblTechInfo" Content="Technical information" HorizontalAlignment="Left" Height="28" Margin="219,56,0,0" VerticalAlignment="Top" Width="266" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblInfoVal" Content="Description" HorizontalAlignment="Left" Height="22" Margin="357,84,0,0" VerticalAlignment="Top" Width="128" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtInfoValue" HorizontalAlignment="Left" Height="72" Margin="357,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
-        <TextBox x:Name="TxtInfoKey" HorizontalAlignment="Left" Height="18" Margin="219,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
-        <Button x:Name="BtnAdd" Content="Add" HorizontalAlignment="Left" Height="33" Margin="219,148,0,0" VerticalAlignment="Top" Width="128" Click="Confirm_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Label x:Name="LblTechInfo" Content="Modify technical information" HorizontalAlignment="Left" Height="28" Margin="538,26,0,0" VerticalAlignment="Top" Width="266" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblInfoVal" Content="Description" HorizontalAlignment="Left" Height="22" Margin="676,54,0,0" VerticalAlignment="Top" Width="128" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtInfoValue" HorizontalAlignment="Left" Height="72" Margin="676,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="TxtInfoKey" HorizontalAlignment="Left" Height="18" Margin="538,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="BtnAdd" Content="Add" HorizontalAlignment="Left" Height="33" Margin="538,118,0,0" VerticalAlignment="Top" Width="128" Click="Confirm_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-
+        <TextBox x:Name="TxtVAT" HorizontalAlignment="Left" Height="18" Margin="98,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="LblTechInfoCurrent" Content="Current technical information" HorizontalAlignment="Left" Height="28" Margin="538,158,0,0" VerticalAlignment="Top" Width="266" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblBasicInfo" Content="Basic information" HorizontalAlignment="Left" Height="28" Margin="10,59,0,0" VerticalAlignment="Top" Width="231" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblSpecificInfo" Content="Specific Information" HorizontalAlignment="Left" Height="28" Margin="246,59,0,0" VerticalAlignment="Top" Width="231" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblWeigth" Content="Weight" HorizontalAlignment="Left" Height="28" Margin="261,95,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblLength" Content="Length" HorizontalAlignment="Left" Height="28" Margin="261,123,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblHeight" Content="Height" HorizontalAlignment="Left" Height="28" Margin="261,151,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblWidth" Content="Width" HorizontalAlignment="Left" Height="28" Margin="261,178,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtWeight" HorizontalAlignment="Center" Height="18" Margin="0,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtLength" HorizontalAlignment="Center" Height="18" Margin="0,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtHeight" HorizontalAlignment="Center" Height="18" Margin="0,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtWidth" HorizontalAlignment="Center" Height="18" Margin="0,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="LblTypeS" Content="Type" HorizontalAlignment="Left" Height="28" Margin="261,285,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblArchitecture" Content="Architecture" HorizontalAlignment="Left" Height="28" Margin="261,318,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblVersion" Content="Version" HorizontalAlignment="Left" Height="28" Margin="261,206,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblLicense" Content="License" HorizontalAlignment="Left" Height="28" Margin="261,234,0,0" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtVersion" HorizontalAlignment="Center" Height="18" Margin="0,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TxtLicense" HorizontalAlignment="Center" Height="18" Margin="0,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <ComboBox x:Name="CmbTypeS" HorizontalAlignment="Center" Height="29" Margin="0,283,0,0" VerticalAlignment="Top" Width="116" DropDownClosed="CmbType_DropDownClosed">
+            <ComboBoxItem x:Name="GPU" Content="GPU"/>
+            <ComboBoxItem x:Name="CPU" Content="CPU"/>
+            <ComboBoxItem x:Name="RAM" Content="RAM"/>
+            <ComboBoxItem x:Name="Motherboard" Content="Motherboard"/>
+            <ComboBoxItem x:Name="PowerSupply" Content="PowerSupply"/>
+            <ComboBoxItem x:Name="Drive" Content="Drive"/>
+            <ComboBoxItem x:Name="Other" Content="Other"/>
+        </ComboBox>
+        <ComboBox x:Name="CmbArchitecture" HorizontalAlignment="Center" Height="29" Margin="0,316,0,0" VerticalAlignment="Top" Width="116" DropDownClosed="CmbType_DropDownClosed">
+            <ComboBoxItem x:Name="Bit32" Content="Bit32"/>
+            <ComboBoxItem x:Name="Bit64" Content="Bit64"/>
+        </ComboBox>
+        <ListBox x:Name="LstInfoCurrent" HorizontalAlignment="Left" Height="160" Margin="538,186,0,0" VerticalAlignment="Top" Width="258" d:ItemsSource="{d:SampleData ItemCount=5}"/>
     </Grid>
 </Window>
