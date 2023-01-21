@@ -36,11 +36,8 @@ namespace GUI
             if (LstSuppliers.SelectedItem is Supplier supplier)
             {
                 SupplierWindow window = new(store, supplier);
-                bool? result = window.ShowDialog();
-                if (result == true)
-                {
-                    RefreshStore();
-                }
+                window.ShowDialog();
+                RefreshStore();
             }
         }
 
@@ -70,6 +67,8 @@ namespace GUI
                 <Supplier>(store.Suppliers);
             LstCustomers.ItemsSource = new ObservableCollection
                 <Customer>(store.Customers);
+            LstOrders.ItemsSource = new ObservableCollection
+                <Order>();
             LstOrders.ItemsSource = new ObservableCollection
                 <Order>(store.GetAllOrders().FindAll(p => !p.Status));
         }

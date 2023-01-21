@@ -49,6 +49,7 @@ namespace GUI
             try
             {
                 Hardware hardware = new();
+                --Product.CurrentId;
                 items.ForEach(hardware.AddItem);
                 product.Items.Clear();
                 items.ForEach(product.AddItem);
