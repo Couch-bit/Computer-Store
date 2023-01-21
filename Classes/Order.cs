@@ -174,6 +174,13 @@ namespace Classes
             return 20M + CalculateFee();
         }
 
+
+        /// <summary>
+        /// Calculates the total cost (order cost + shipping cost).
+        /// </summary>
+        /// <returns>
+        /// A decimal containing said total cost.
+        /// </returns>
         public decimal CalculateTotalCost()
         {
             return CalculateOrderCost() + CalculateShippingCost();
@@ -209,11 +216,28 @@ namespace Classes
         #endregion Methods
     }
 
+
+    /// <summary>
+    /// A class converging the type of dictionary to make it JSON friendly. Otherwise JSON won't work. Perhaps in .NET 8.0 it won't be needed. 
+    /// </summary>
     public class CartItem
     {
         #region Properties
 
+        /// <summary>
+        /// Gets or sets the item1 (as the name in the original dictionary).
+        /// </summary>
+        /// <value>
+        /// The item1.
+        /// </value>
         public Product Item1 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the item2 (as the name in the original dictionary).
+        /// </summary>
+        /// <value>
+        /// The item2.
+        /// </value>
         public int Item2 { get; set; }
         #endregion Properties
 
@@ -234,6 +258,13 @@ namespace Classes
         #endregion Constructors
 
         #region Methods
+
+        /// <summary>
+        /// Converts to string.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return $"({Item1} , {Item2})";

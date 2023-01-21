@@ -3,6 +3,11 @@ using System.Text.RegularExpressions;
 
 namespace Classes
 {
+    /// <summary>
+    /// The mandatory delegate.
+    /// </summary>
+    /// <param name="nip">The nip.</param>
+    /// <returns></returns>
     public delegate int Sumation(string nip);
     /// <summary>
     /// Class for suppliers.
@@ -163,6 +168,11 @@ namespace Classes
             return false;
         }
 
+        /// <summary>
+        /// Sums the nip - a base for the famous mandatory delegate.
+        /// </summary>
+        /// <param name="nip">The nip.</param>
+        /// <returns></returns>
         public static int SumNip(string nip)
         {
             int[] arr = new int[] { 6, 5, 7, 2, 3, 4, 5, 6, 7 };

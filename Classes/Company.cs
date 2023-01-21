@@ -14,8 +14,13 @@ namespace Classes
         private string nip;
         #endregion Fields
 
-        #region Properties
-
+        #region Properties        
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name { get => name; set => name = value; }
 
         /// <summary>

@@ -61,6 +61,11 @@ namespace Classes
 
         #region Methods
 
+        /// <summary>
+        /// Adds the supplier to the known database of suppliers.
+        /// </summary>
+        /// <param name="supplier">The supplier.</param>
+        /// <exception cref="Classes.DuplicateException">Supplier already exists</exception>
         public void AddSupplier(Supplier supplier)
         {
             if (!suppliers.Any(x => x.Nip == supplier.Nip)) {
@@ -72,6 +77,11 @@ namespace Classes
             }
         }
 
+        /// <summary>
+        /// Removes the supplier from the known database from suppliers.
+        /// </summary>
+        /// <param name="supplier">The supplier.</param>
+        /// <exception cref="Classes.WrongKeyException">No such Supplier</exception>
         public void RemoveSupplier(Supplier supplier)
         {
             if(!suppliers.Remove(supplier))
@@ -80,6 +90,11 @@ namespace Classes
             }
         }
 
+        /// <summary>
+        /// Adds the customer to the known database of clients.
+        /// </summary>
+        /// <param name="customer">The customer.</param>
+        /// <exception cref="Classes.DuplicateException">Email is already in use</exception>
         public void AddCustomer(Customer customer)
         {
             if (!customers.Any(x => x.Email == customer.Email)) {
@@ -92,6 +107,11 @@ namespace Classes
             }
         }
 
+        /// <summary>
+        /// Removes the customer from the known database of clients.
+        /// </summary>
+        /// <param name="customer">The customer.</param>
+        /// <exception cref="Classes.WrongKeyException">No such Customer</exception>
         public void RemoveCustomer(Customer customer)
         {
             if (!customers.Remove(customer))
@@ -100,6 +120,12 @@ namespace Classes
             }
         }
 
+        /// <summary>
+        /// Gets all orders of all customers.
+        /// </summary>
+        /// <returns>
+        /// A list of orders.
+        /// </returns>
         public List<Order> GetAllOrders()
         {
             List<Order> result = new();
@@ -113,6 +139,12 @@ namespace Classes
             return result;
         }
 
+        /// <summary>
+        /// Gets all products of all suppliers.
+        /// </summary>
+        /// <returns>
+        /// A list of products
+        /// </returns>
         public List<Product> GetAllProducts()
         {
             List<Product> result = new();
@@ -126,6 +158,14 @@ namespace Classes
             return result;
         }
 
+        /// <summary>
+        /// Gets the customer.
+        /// </summary>
+        /// <param name="order">The order.</param>
+        /// <returns>
+        /// A customer.
+        /// </returns>
+        /// <exception cref="Classes.WrongKeyException">No such Order</exception>
         public Customer GetCustomer(Order order)
         {
             foreach(Customer customer in customers)

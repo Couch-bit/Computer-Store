@@ -199,6 +199,11 @@ namespace Classes
             return Items.Count;
         }
 
+        /// <summary>
+        /// Adds the individual item to the general product. The individual item is distinguished by the serial number. 
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <exception cref="Classes.DuplicateException">This Item is already added</exception>
         public void AddItem(Item item)
         {
             if (items.Contains(item))
@@ -209,6 +214,11 @@ namespace Classes
             items.Add(item);
         }
 
+        /// <summary>
+        /// Removes the individual item from the general product.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <exception cref="Classes.WrongKeyException">There is no such item</exception>
         public void RemoveItem(Item item)
         {
             if (!items.Contains(item))
