@@ -121,8 +121,10 @@ namespace GUI
                     "Bit32" => Architecture.Bit32,
                     _ => Architecture.Bit64,
                 };
+                string text = TxtLicense.Text == "lifetime" ?
+                    "0" : TxtLicense.Text;
                 if (TimeSpan.TryParse
-                    (TxtLicense.Text, out TimeSpan license) &&
+                    (text, out TimeSpan license) &&
                     decimal.TryParse
                     (TxtDiscount.Text, out decimal discount) &&
                     decimal.TryParse

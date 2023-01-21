@@ -91,9 +91,12 @@ namespace Classes
         /// </returns>
         public override string ToString()
         {
+            string lic = License.TotalDays != 0 ?
+                $"{License.TotalDays} days" : 
+                "lifetime";
             return base.ToString() + $"({Version} " +
                 $"{TargetArchitecture}," +
-                $" license: {License.TotalDays} days)";
+                $" license: {lic})";
         }
         #endregion Methods
     }
