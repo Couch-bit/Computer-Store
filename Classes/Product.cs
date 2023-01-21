@@ -22,7 +22,7 @@ namespace Classes
         private decimal discount;
         private decimal price;
         private decimal vat;
-        private readonly Dictionary<string, string> technical_info;
+        private readonly Dictionary<string, string> technicalInfo;
         private readonly List<Item> items;
         #endregion Fields
 
@@ -131,8 +131,8 @@ namespace Classes
         /// The technical information.
         /// </value>
         public Dictionary<string, string> Technical_info { 
-            get => technical_info;
-            init => technical_info = value;
+            get => technicalInfo;
+            init => technicalInfo = value;
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Classes
             Discount = 0;
             Price = 0;
             vat = 0;
-            technical_info = new Dictionary<string, string>();
+            technicalInfo = new Dictionary<string, string>();
             items = new();
         }
 
@@ -229,13 +229,13 @@ namespace Classes
         /// <exception cref="Classes.WrongKeyException">Key already exists</exception>
         public void AddTechnicalInfo(string key, string value)
         {
-            if (technical_info.ContainsKey(key))
+            if (technicalInfo.ContainsKey(key))
             {
                 throw new WrongKeyException("Key already exists");
             }
             else
             {
-                technical_info.Add(key, value);
+                technicalInfo.Add(key, value);
             }
         }
 
@@ -247,9 +247,9 @@ namespace Classes
         /// <exception cref="Classes.WrongKeyException">Key doesn't exist</exception>
         public void EditTechnicalInfo(string key, string value)
         {
-            if (technical_info.ContainsKey(key))
+            if (technicalInfo.ContainsKey(key))
             {
-                technical_info[key] = value;
+                technicalInfo[key] = value;
             }
             else
             {
@@ -264,11 +264,7 @@ namespace Classes
         /// <exception cref="Classes.WrongKeyException">Key does not exist</exception>
         public void DeleteTechnicalInfo(string key)
         {
-            if (technical_info.ContainsKey(key))
-            {
-                technical_info.Remove(key);
-            }
-            else
+            if (!technicalInfo.Remove(key))
             {
                 throw new WrongKeyException("Key does not exist");
             }
@@ -288,7 +284,7 @@ namespace Classes
             {
                 return 1;
             }
-            return GetTotalPrice().CompareTo(other.GetTotalPrice());
+            return Name.CompareTo(other.Name);
         }
 
         /// <summary>
@@ -304,7 +300,7 @@ namespace Classes
             {
                 return false;
             }
-            return Name.Equals(other.Name);
+            return Id.Equals(other.Id);
         }
 
         /// <summary>
@@ -326,7 +322,7 @@ namespace Classes
         /// </returns>
         public override string ToString()
         {
-            string text = $"{name}, " +
+            string text = $"{name}, {GetCount()} " +
                 $"price: {GetTotalPrice():c}";
             if (Discount != 0)
             {
@@ -355,7 +351,7 @@ namespace Classes
         /// </returns>
         public override int GetHashCode()
         {
-            return HashCode.Combine(name);
+            return HashCode.Combine(id);
         }
         #endregion Methods
     }

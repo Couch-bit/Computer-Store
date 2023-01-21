@@ -1,6 +1,6 @@
-﻿using System.ComponentModel;
+﻿using Classes;
 
-namespace Classes
+namespace UnitTests
 {
     [TestClass]
     public class SoftwareTests
@@ -428,11 +428,11 @@ namespace Classes
             Software software = new(version, license,
                 targetArchitecture, name, description,
                 discount, price, vat);
-            text = $"{name} (Id : {software.Id}), " +
+            text = $"{name}, {software.GetCount()} " +
                 $"price: {software.GetTotalPrice():c}";
             text += $" <-{discount:P} OFF!>";
             text += $" ({version} " +
-                $"{targetArchitecture}, license: {license})";
+                $"{targetArchitecture}, license: {license.TotalDays} days)";
             result = software.ToString();
 
             // Assert

@@ -17,7 +17,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name ="BtnFinish" Content="Finish" HorizontalAlignment="Left" Height="37" Margin="265,276,0,0" VerticalAlignment="Top" Width="225" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnFinish_Click">
+        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="37" Margin="20,275,0,0" VerticalAlignment="Top" Width="225" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnCancel_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -28,6 +28,13 @@
         <Label x:Name="LblList" Content="List of Items" HorizontalAlignment="Left" Height="32" Margin="250,18,0,0" VerticalAlignment="Top" Width="240" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <DatePicker x:Name ="TxtDate" HorizontalAlignment="Left" Height="32" Margin="132,85,0,0" VerticalAlignment="Top" Width="105"/>
         <Button x:Name="BtnRemove" Content="Remove" HorizontalAlignment="Left" Height="37" Margin="20,172,0,0" VerticalAlignment="Top" Width="217" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnRemove_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name ="BtnConfitm" Content="Confirm" HorizontalAlignment="Left" Height="37" Margin="265,276,0,0" VerticalAlignment="Top" Width="225" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnConfirm_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

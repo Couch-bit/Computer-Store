@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using Classes;
 
@@ -10,12 +12,13 @@ namespace GUI
     public partial class IndividualItemWindow : Window
     {
         private readonly Product product;
+        private readonly List<Item> items;
 
         public IndividualItemWindow(Product product)
         {
             this.product = product;
+            items = product.Items.ToList();
             InitializeComponent();
-            
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -23,7 +26,7 @@ namespace GUI
             if (TxtDate.SelectedDate is not null &&
                 !string.IsNullOrEmpty(TxtNumber.Text))
             {
-                product.AddItem(new Item(TxtNumber.Text,
+                items.Add(new Item(TxtNumber.Text,
                     (System.DateTime)TxtDate.SelectedDate));
                 RefreshStore();
             }
@@ -41,10 +44,16 @@ namespace GUI
         private void RefreshStore()
         {
             LstItems.ItemsSource = new
-                ObservableCollection<Item>(product.Items);
+                ObservableCollection<Item>(items);
         }
 
-        private void BtnFinish_Click(object sender, RoutedEventArgs e)
+        private void BtnConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            product.Items.Clear();
+            items.ForEach(product.Items.Add);
+            DialogResult = true;
+        }
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }

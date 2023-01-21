@@ -1,6 +1,6 @@
-﻿using System.Xml.Linq;
+﻿using Classes;
 
-namespace Classes
+namespace UnitTests
 {
     [TestClass]
     public class HardwareTests
@@ -542,7 +542,7 @@ namespace Classes
             // Act
             Hardware hardware = new(weight, length, height, width,
                 type, name, description, discount, price, vat);
-            text = $"{name} (Id : {hardware.Id}), " +
+            text = $"{name}, {hardware.GetCount()} " +
                 $"price: {hardware.GetTotalPrice():c}";
             text += $" <-{discount:P} OFF!>";
             text += $" ({type})";

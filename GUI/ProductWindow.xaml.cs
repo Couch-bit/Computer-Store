@@ -48,6 +48,10 @@ namespace GUI
             }
         }
 
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
 
         private void AddHardware()
         {
@@ -110,7 +114,7 @@ namespace GUI
         {
             try
             {
-                Architecture architecture = CmbAccessory.Text
+                Architecture architecture = CmbArchitecture.Text
                     switch
                 {
                     "Bit32" => Architecture.Bit32,

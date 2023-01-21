@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Controls;
 using Classes;
 
@@ -17,6 +18,7 @@ namespace GUI
             InitializeComponent();
             this.store = store;
             this.customer = customer;
+            RefreshStore();
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -32,6 +34,11 @@ namespace GUI
         private void BtnSort_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void RefreshStore()
+        {
+            LstTechnicalInfo.ItemsSource = new
+                ObservableCollection<Product>(store.GetAllProducts());
         }
     }
 }

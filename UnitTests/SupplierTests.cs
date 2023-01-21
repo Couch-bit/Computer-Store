@@ -1,4 +1,6 @@
-namespace Classes
+using Classes;
+
+namespace UnitTests
 {
     [TestClass]
     public class SupplierTests

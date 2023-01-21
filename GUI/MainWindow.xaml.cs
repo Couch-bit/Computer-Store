@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Linq;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Forms;
@@ -13,6 +12,7 @@ namespace GUI
     public partial class MainWindow : Window
     {
         private Store store;
+
         public MainWindow()
         {
             store = new();

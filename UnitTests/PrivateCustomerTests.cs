@@ -1,4 +1,6 @@
-﻿namespace Classes
+﻿using Classes;
+
+namespace UnitTests
 {
     [TestClass]
     public class PrivateCustomerTests
@@ -361,6 +363,30 @@
                     lastName, country, city, street, zipCode,
                     phoneNumber, email3, password);
             });
+        }
+
+        [TestMethod]
+        public void ToStringTest()
+        {
+            // Arrange
+            string firstName = "Cezary";
+            string lastName = "Moskal";
+            string country = "Polandia bruh";
+            string city = "Łódź";
+            string street = "Słowiańska 8";
+            string zipCode = "26-086";
+            string phoneNumber = "652-548-943";
+            string email = "xd@gmail.com";
+            string password = "samolot123";
+
+            // Act
+            PrivateCustomer privateCustomer = new(firstName, lastName,
+                country, city, street, zipCode, phoneNumber,
+                email, password);
+
+            // Assert
+            Assert.AreEqual($"Private Customer: " +
+                $"{firstName} {lastName}", privateCustomer.ToString());
         }
     }
 }

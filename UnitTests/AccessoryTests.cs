@@ -1,4 +1,6 @@
-﻿namespace Classes
+﻿using Classes;
+
+namespace UnitTests
 {
     [TestClass]
     public class AccessoryTests
@@ -413,7 +415,7 @@
             // Act
             Accessory accessory = new(weight, type,
                 name, description, discount, price, vat);
-            text = $"{name} (Id : {accessory.Id}), " +
+            text = $"{name}, {accessory.GetCount()} " +
                 $"price: {accessory.GetTotalPrice():c}";
             text += $" <-{discount:P} OFF!>";
             text += $" ({type})";

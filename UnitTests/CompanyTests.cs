@@ -1,4 +1,6 @@
-﻿namespace Classes
+﻿using Classes;
+
+namespace UnitTests
 {
     [TestClass]
     public class CompanyTests
@@ -336,6 +338,30 @@
                     country, city, street, zipCode,
                     phoneNumber, email3, password);
             });
+        }
+
+        [TestMethod]
+        public void ToStringTest()
+        {
+            // Arrange
+            string name = "PGE";
+            string nip = "0000000000";
+            string country = "Polandia bruh";
+            string city = "Łódź";
+            string street = "Słowiańska 8";
+            string zipCode = "26-086";
+            string phoneNumber = "652-548-943";
+            string email = "xd@gmail.com";
+            string password = "samolot123";
+
+            // Act
+            Company company = new(name, nip,
+                country, city, street, zipCode, phoneNumber,
+                email, password);
+
+            // Assert
+            Assert.AreEqual($"Company: {name} (NIP: {nip})",
+                company.ToString());
         }
     }
 }

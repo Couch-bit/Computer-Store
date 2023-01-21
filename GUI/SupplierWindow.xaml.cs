@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Forms;
 using Classes;
@@ -27,7 +28,7 @@ namespace GUI
         {
             this.store = store;
             this.supplier = supplier;
-            products = supplier.Products;
+            products = supplier.Products.ToList();
             InitializeComponent();
             TxtName.Text = supplier.Name;
             TxtNIP.Text = supplier.Nip;
@@ -66,11 +67,8 @@ namespace GUI
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             ProductWindow dlg = new(products);
-            bool? result = dlg.ShowDialog();
-            if (result == true)
-            {
-                RefreshStore();
-            }
+            dlg.ShowDialog();
+            RefreshStore();
         }
 
         private void BtnModify_Click(object sender, RoutedEventArgs e)
