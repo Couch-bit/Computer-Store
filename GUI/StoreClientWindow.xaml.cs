@@ -11,6 +11,7 @@ namespace GUI
     {
         private Store store;
         private Customer customer;
+
         public StoreClientWindow(Store store, Customer customer)
         {
             InitializeComponent();

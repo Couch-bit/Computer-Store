@@ -62,6 +62,7 @@ namespace GUI
                 {
                     System.Windows.Forms.MessageBox.Show
                     (exc.Message, "Error", MessageBoxButtons.OK);
+                    --Customer.CurrentId;
                 }
             }
         }

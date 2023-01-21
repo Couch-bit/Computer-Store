@@ -33,8 +33,6 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image x:Name="ImageFile" Margin="414,282,276,47" Grid.Row="3" Source="/receipt.png"/>
-        <Image x:Name ="ImageLogin" Margin="58,282,635,47" Grid.Row="3" Source="/shopping-cart.png" />
         <Image x:Name="ImageAdmin" Margin="641,69,19,201" Grid.Row="3" Source="/settings.png"/>
         <Image x:Name ="ImageAccount" Margin="278,68,378,201" Grid.Row="3" Source="/user.png"/>
         <Button x:Name="BtnCreate" Content="Create an account" HorizontalAlignment="Left" Height="83" Margin="46,68,0,0" VerticalAlignment="Top" Width="348" Click="Create_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
@@ -49,9 +47,9 @@
         <Label x:Name="LblPassword" Content="PASSWORD" HorizontalAlignment="Left" Height="27" Margin="113,226,0,0" VerticalAlignment="Top" Width="82" Grid.Row="3" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <PasswordBox x:Name ="TxtPassword" HorizontalAlignment="Left" Height="17" Margin="200,231,0,0" VerticalAlignment="Top" Width="186" Grid.Row="3"/>
         <Menu Height="24" VerticalAlignment="Top" Grid.RowSpan="2">
-            <MenuItem Header="Plik" Width="75" Height="24">
-                <MenuItem x:Name="MenuItemSave" Header="Zapisz" Click="MenuItemSave_Click"/>
-                <MenuItem x:Name="MenuItemClose" Header="Zakończ" Click="MenuItemClose_Click"/>
+            <MenuItem Header="File" Width="75" Height="24">
+                <MenuItem x:Name="MenuItemSave" Header="Save" Click="MenuItemSave_Click"/>
+                <MenuItem x:Name="MenuItemClose" Header="Close" Click="MenuItemClose_Click"/>
             </MenuItem>
         </Menu>
         <Button x:Name="BtnAdministrator" Content="Admin mode" HorizontalAlignment="Left" Height="83" Margin="404,68,0,0" VerticalAlignment="Top" Width="348" Grid.Row="3"
@@ -67,7 +65,7 @@
         <Label x:Name="LblName" Content="NAME" HorizontalAlignment="Left" Height="27" Margin="420,177,0,0" Grid.Row="3" VerticalAlignment="Top" Width="82" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblSuppliers" Content="SUPPLIERS" HorizontalAlignment="Left" Height="27" Margin="420,223,0,0" Grid.Row="3" VerticalAlignment="Top" Width="82" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <Label Content="CUSTOMERS" HorizontalAlignment="Left" Height="27" Margin="584,223,0,0" Grid.Row="3" VerticalAlignment="Top" Width="89" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name ="TxtName" HorizontalAlignment="Left" Height="17" Margin="507,182,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" IsEnabled="False"/>
+        <TextBox x:Name ="TxtName" HorizontalAlignment="Left" Height="17" Margin="507,182,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" TextChanged="TxtName_TextChanged"/>
         <TextBox x:Name="TxtSupplier" HorizontalAlignment="Left" Height="17" Margin="507,228,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" IsEnabled="False"/>
         <TextBox x:Name ="TxtCustomer" HorizontalAlignment="Left" Height="17" Margin="673,228,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False"/>
     </Grid>

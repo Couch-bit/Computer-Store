@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Forms;
 using Classes;
 
@@ -15,6 +15,7 @@ namespace GUI
         private readonly Store store;
         private readonly Supplier? supplier;
         private readonly List<Product> products;
+
         public SupplierWindow(Store store)
         {
             this.store = store;
@@ -26,13 +27,14 @@ namespace GUI
         {
             this.store = store;
             this.supplier = supplier;
-            products = new();
+            products = supplier.Products;
             InitializeComponent();
-            LstProducts.ItemsSource = supplier.Products;
             TxtName.Text = supplier.Name;
             TxtNIP.Text = supplier.Nip;
             TxtCountry.Text = supplier.Country;
+            RefreshStore();
         }
+
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -57,7 +59,46 @@ namespace GUI
                 System.Windows.Forms.MessageBox.Show
                         (exc.Message, "Error",
                         MessageBoxButtons.OK);
+                --Supplier.CurrentId;
             }
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            ProductWindow dlg = new(products);
+            bool? result = dlg.ShowDialog();
+            if (result == true)
+            {
+                RefreshStore();
+            }
+        }
+
+        private void BtnModify_Click(object sender, RoutedEventArgs e)
+        {
+            if (LstProducts.SelectedItem is Product product)
+            {
+                ProductWindow dlg = new(products, product);
+                bool? result = dlg.ShowDialog();
+                if (result == true)
+                {
+                    RefreshStore();
+                }
+            }
+        }
+
+        private void BtnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            if (LstProducts.SelectedItem is Product product)
+            {
+                products.Remove(product);
+                RefreshStore();
+            }
+        }
+
+        private void RefreshStore()
+        {
+            LstProducts.ItemsSource = new
+                ObservableCollection<Product>(products);
         }
     }
 }

@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Classes;
 
 namespace GUI
 {
@@ -19,9 +9,44 @@ namespace GUI
     /// </summary>
     public partial class IndividualItemWindow : Window
     {
-        public IndividualItemWindow()
+        private readonly Product product;
+
+        public IndividualItemWindow(Product product)
         {
+            this.product = product;
             InitializeComponent();
+            
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtDate.SelectedDate is not null &&
+                !string.IsNullOrEmpty(TxtNumber.Text))
+            {
+                product.AddItem(new Item(TxtNumber.Text,
+                    (System.DateTime)TxtDate.SelectedDate));
+                RefreshStore();
+            }
+        }
+
+        private void BtnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            if (LstItems.SelectedItem is Item item)
+            {
+                product.RemoveItem(item);
+                RefreshStore();
+            }
+        }
+
+        private void RefreshStore()
+        {
+            LstItems.ItemsSource = new
+                ObservableCollection<Item>(product.Items);
+        }
+
+        private void BtnFinish_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

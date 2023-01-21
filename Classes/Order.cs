@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Classes
 {
@@ -26,6 +27,7 @@ namespace Classes
         /// <value>
         /// The identifier.
         /// </value>
+        [JsonIgnore]
         public int Id { get => id; init => id = value; }
 
         /// <summary>

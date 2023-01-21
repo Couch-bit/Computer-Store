@@ -130,5 +130,10 @@ namespace GUI
             window.ShowDialog();
             RefreshStore();
         }
+
+        private void TxtName_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            store.Name = TxtName.Text;
+        }
     }
 }

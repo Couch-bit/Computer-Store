@@ -10,7 +10,8 @@ namespace Classes
     [JsonDerivedType(typeof(Hardware), typeDiscriminator: "Hardware")]
     [JsonDerivedType(typeof(Software), typeDiscriminator: "Software")]
     [JsonDerivedType(typeof(Accessory), typeDiscriminator: "Accessory")]
-    public abstract class Product : IComparable<Product>, IEquatable<Product>, ICloneable
+    public abstract class Product : IComparable<Product>,
+        IEquatable<Product>, ICloneable
     {
         #region Fields
 
@@ -27,13 +28,14 @@ namespace Classes
 
         #region Properties
 
-        public static int CurrentId => currentId;
+        public static int CurrentId { get => currentId; set => currentId = value; }
         /// <summary>
         /// Gets or sets (init) the identifier.
         /// </summary>
         /// <value>
         /// The identifier.
         /// </value>
+        [JsonIgnore]
         public int Id { get => id; init => id = value; }
 
         /// <summary>
@@ -149,6 +151,7 @@ namespace Classes
         {
             currentId = 1;
         }
+
         public Product()
         {
             id = currentId++;
@@ -301,7 +304,7 @@ namespace Classes
             {
                 return false;
             }
-            return id.Equals(other.Id);
+            return Name.Equals(other.Name);
         }
 
         /// <summary>
@@ -323,7 +326,7 @@ namespace Classes
         /// </returns>
         public override string ToString()
         {
-            string text = $"{name} (Id : {id}), " +
+            string text = $"{name}, " +
                 $"price: {GetTotalPrice():c}";
             if (Discount != 0)
             {
@@ -352,9 +355,8 @@ namespace Classes
         /// </returns>
         public override int GetHashCode()
         {
-            return HashCode.Combine(id);
+            return HashCode.Combine(name);
         }
         #endregion Methods
     }
-
 }

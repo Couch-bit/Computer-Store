@@ -11,7 +11,7 @@
         <Label x:Name="LblWelcome" Content="WELCOME TO OUR STORE" HorizontalAlignment="Center" Height="32" Margin="0,10,0,0" VerticalAlignment="Top" Width="756" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Left" Height="420" Margin="390,57,0,0" VerticalAlignment="Top" Width="7" Fill="#FF0052D6"/>
         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="403,97,0,228" HorizontalAlignment="Left" SelectionChanged="ListBox_SelectionChanged" Width="279"/>
-        <Button x:Name ="BtnDelete" Content="Delete" HorizontalAlignment="Left" Margin="699,58,0,0" VerticalAlignment="Top" Height="37" Width="82"
+        <Button x:Name ="BtnDelete" Content="Delete" HorizontalAlignment="Left" Margin="699,97,0,0" VerticalAlignment="Top" Height="37" Width="82"
         Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -33,11 +33,11 @@
         <Label x:Name ="LblTotal" Content="Total cost" HorizontalAlignment="Left" Height="31" Margin="402,405,0,0" VerticalAlignment="Top" Width="137" HorizontalContentAlignment="Right" FontFamily="Bahnschrift"/>
         <TextBox x:Name="TxtOrder" HorizontalAlignment="Left" Height="20" Margin="555,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
         <TextBox x:Name="TxtFee" HorizontalAlignment="Left" Height="20" Margin="555,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
-        <TextBox x:Name="TxtCost" HorizontalAlignment="Left" Height="21" Margin="555,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
+        <TextBox x:Name="TxtCost" HorizontalAlignment="Left" Height="20" Margin="555,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
         <Label x:Name ="LblCart" Content="Products in your cart" HorizontalAlignment="Left" Height="31" Margin="403,62,0,0" VerticalAlignment="Top" Width="215" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <Label x:Name ="LblCartAmount" Content="Amount" HorizontalAlignment="Left" Height="31" Margin="623,62,0,0" VerticalAlignment="Top" Width="57" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <DatePicker x:Name="DateDelivery" HorizontalAlignment="Left" Height="33" Margin="555,293,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name ="LblStore" Content="Products in our store" HorizontalAlignment="Left" Height="31" Margin="27,62,0,0" VerticalAlignment="Top" Width="235" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Label x:Name ="LblStore" Content="Products in our store" HorizontalAlignment="Left" Height="31" Margin="27,62,0,0" VerticalAlignment="Top" Width="219" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="27,98,0,33" SelectionChanged="ListBox_SelectionChanged" HorizontalAlignment="Left" Width="219"/>
         <Button x:Name ="BtnSort" Content="Sort" HorizontalAlignment="Left" Margin="266,441,0,0" VerticalAlignment="Top" Height="36" Width="119"
             Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnSort_Click">
@@ -47,7 +47,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name ="BtnAdd" Content="Add product" HorizontalAlignment="Left" Margin="266,401,0,0" VerticalAlignment="Top" Height="37" Width="119"
+        <Button x:Name ="BtnAdd" Content="Add Product" HorizontalAlignment="Left" Margin="266,401,0,0" VerticalAlignment="Top" Height="37" Width="119"
             Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnSort_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

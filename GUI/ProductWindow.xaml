@@ -6,11 +6,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="ProductWindow" Height="450" Width="800">
+        Title="ProductWindow" Height="462" Width="806">
     <Grid>
-        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="27" Margin="105,24,0,0" VerticalAlignment="Top" Width="137">
-            <ComboBoxItem x:Name="company" Content="Company"/>
-            <ComboBoxItem x:Name="private" Content="Private Customer"/>
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="27" Margin="105,24,0,0" VerticalAlignment="Top" Width="137" DropDownClosed="CmbType_DropDownClosed">
+            <ComboBoxItem x:Name="hardware" Content="Hardware"/>
+            <ComboBoxItem x:Name="software" Content="Software"/>
+            <ComboBoxItem x:Name="accessory" Content="Accessory"/>
         </ComboBox>
         <Label x:Name="LblType" Content="Type" HorizontalAlignment="Left" Height="26" Margin="21,25,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblName" Content="Name" HorizontalAlignment="Left" Height="26" Margin="21,90,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
@@ -23,7 +24,7 @@
         <TextBox x:Name="TxtDescription" HorizontalAlignment="Left" Height="67" Margin="105,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
         <TextBox x:Name="TxtDiscount" HorizontalAlignment="Left" Height="17" Margin="105,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
         <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Height="17" Margin="105,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
-        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="30" Margin="21,383,0,0" VerticalAlignment="Top" Width="189" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="30" Margin="21,383,0,0" VerticalAlignment="Top" Width="189" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnConfirm_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -41,7 +42,7 @@
         <Label x:Name="LblInfoVal" Content="Description" HorizontalAlignment="Left" Height="23" Margin="664,81,0,0" VerticalAlignment="Top" Width="121" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <TextBox x:Name="TxtInfoValue" HorizontalAlignment="Left" Height="67" Margin="664,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"/>
         <TextBox x:Name="TxtInfoKey" HorizontalAlignment="Left" Height="17" Margin="533,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"/>
-        <Button x:Name="BtnAdd" Content="Add" HorizontalAlignment="Left" Height="31" Margin="533,143,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnAdd_Click">
+        <Button x:Name="BtnAdd" Content="Add" HorizontalAlignment="Left" Height="31" Margin="533,143,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -56,31 +57,41 @@
         <Label x:Name="LblLength" Content="Length" HorizontalAlignment="Left" Height="26" Margin="260,116,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblHeight" Content="Height" HorizontalAlignment="Left" Height="26" Margin="260,142,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblWidth" Content="Width" HorizontalAlignment="Left" Height="26" Margin="260,167,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtWeight" HorizontalAlignment="Left" Height="17" Margin="347,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <TextBox x:Name="TxtLength" HorizontalAlignment="Left" Height="16" Margin="347,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <TextBox x:Name="TxtHeight" HorizontalAlignment="Left" Height="16" Margin="347,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <TextBox x:Name="TxtWidth" HorizontalAlignment="Left" Height="17" Margin="347,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <Label x:Name="LblTypeS" Content="Type" HorizontalAlignment="Left" Height="25" Margin="260,267,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblArchitecture" Content="Architecture" HorizontalAlignment="Left" Height="26" Margin="260,318,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtWeight" HorizontalAlignment="Center" Height="20" Margin="0,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
+        <TextBox x:Name="TxtLength" HorizontalAlignment="Center" Height="20" Margin="0,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="TxtHeight" HorizontalAlignment="Center" Height="20" Margin="0,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
+        <TextBox x:Name="TxtWidth" HorizontalAlignment="Center" Height="20" Margin="0,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
+        <Label x:Name="LblHardware" Content="Hardware" HorizontalAlignment="Left" Height="25" Margin="260,247,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblArchitecture" Content="Architecture" HorizontalAlignment="Left" Height="26" Margin="260,274,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblAccessory" Content="Accessory" HorizontalAlignment="Left" Height="26" Margin="260,304,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblVersion" Content="Version" HorizontalAlignment="Left" Height="26" Margin="260,193,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblLicense" Content="License" HorizontalAlignment="Left" Height="26" Margin="260,219,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtVersion" HorizontalAlignment="Left" Height="17" Margin="347,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <TextBox x:Name="TxtLicense" HorizontalAlignment="Left" Height="17" Margin="347,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <ComboBox x:Name="CmbTypeS" HorizontalAlignment="Left" Height="26" Margin="347,265,0,0" VerticalAlignment="Top" Width="111">
-            <ComboBoxItem x:Name="GPU" Content="GPU"/>
-            <ComboBoxItem x:Name="CPU" Content="CPU"/>
-            <ComboBoxItem x:Name="RAM" Content="RAM"/>
-            <ComboBoxItem x:Name="Motherboard" Content="Motherboard"/>
-            <ComboBoxItem x:Name="PowerSupply" Content="PowerSupply"/>
-            <ComboBoxItem x:Name="Drive" Content="Drive"/>
-            <ComboBoxItem x:Name="Other" Content="Other"/>
+        <TextBox x:Name="TxtVersion" HorizontalAlignment="Center" Height="20" Margin="0,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
+        <TextBox x:Name="TxtLicense" HorizontalAlignment="Center" Height="20" Margin="0,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
+        <ComboBox x:Name="CmbHardware" HorizontalAlignment="Left" Height="26" Margin="347,246,0,0" VerticalAlignment="Top" Width="111">
+            <ComboBoxItem x:Name="gpu" Content="GPU"/>
+            <ComboBoxItem x:Name="cpu" Content="CPU"/>
+            <ComboBoxItem x:Name="ram" Content="RAM"/>
+            <ComboBoxItem x:Name="motherboard" Content="Motherboard"/>
+            <ComboBoxItem x:Name="powerSupply" Content="PowerSupply"/>
+            <ComboBoxItem x:Name="drive" Content="Drive"/>
+            <ComboBoxItem x:Name="other" Content="Other"/>
         </ComboBox>
-        <ComboBox x:Name="CmbArchitecture" HorizontalAlignment="Left" Height="27" Margin="347,316,0,0" VerticalAlignment="Top" Width="111">
+        <ComboBox x:Name="CmbArchitecture" HorizontalAlignment="Left" Height="27" Margin="347,276,0,0" VerticalAlignment="Top" Width="111">
             <ComboBoxItem x:Name="Bit32" Content="Bit32"/>
             <ComboBoxItem x:Name="Bit64" Content="Bit64"/>
         </ComboBox>
+        <ComboBox x:Name="CmbAccessory" HorizontalAlignment="Left" Height="26" Margin="347,306,0,0" VerticalAlignment="Top" Width="111">
+            <ComboBoxItem x:Name="headphones" Content="Headphones"/>
+            <ComboBoxItem x:Name="microphone" Content="Microphone"/>
+            <ComboBoxItem x:Name="mouse" Content="Mouse"/>
+            <ComboBoxItem x:Name="keyboard" Content="Keyboard"/>
+            <ComboBoxItem x:Name="screen" Content="Screen"/>
+            <ComboBoxItem x:Name="cable" Content="Cable"/>
+            <ComboBoxItem x:Name="others" Content="Other"/>
+        </ComboBox>
         <ListBox x:Name="LstInfoCurrent" HorizontalAlignment="Left" Height="147" Margin="533,207,0,0" VerticalAlignment="Top" Width="244" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button x:Name="BtnAddItem" Content="Add Individual Item" HorizontalAlignment="Left" Height="31" Margin="21,341,0,0" VerticalAlignment="Top" Width="189" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnAdd_Click">
+        <Button x:Name="BtnAddItem" Content="Add Individual Item" HorizontalAlignment="Left" Height="31" Margin="21,341,0,0" VerticalAlignment="Top" Width="189" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnAddItem_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

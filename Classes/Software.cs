@@ -92,7 +92,8 @@ namespace Classes
         public override string ToString()
         {
             return base.ToString() + $" ({Version} " +
-                $"{TargetArchitecture}, license: {License})";
+                $"{TargetArchitecture}," +
+                $" license: {License.TotalDays} days)";
         }
         #endregion Methods
     }

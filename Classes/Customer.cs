@@ -28,13 +28,15 @@ namespace Classes
 
         #region Properties  
 
-        public static int CurrentId => currentId;
+        
+        public static int CurrentId { get => currentId; set => currentId = value; }
         /// <summary>
         /// Gets the identifier.
         /// </summary>
         /// <value>
         /// The identifier.
         /// </value>
+        [JsonIgnore]
         public int Id { get => id; init => id = value; }
 
         /// <summary>
