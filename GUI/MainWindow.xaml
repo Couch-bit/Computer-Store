@@ -34,7 +34,6 @@
             </Button.Resources>
         </Button>
         <Image x:Name="ImageAdmin" Margin="641,69,19,201" Grid.Row="3" Source="/settings.png"/>
-        <Image x:Name ="ImageAccount" Margin="278,68,378,201" Grid.Row="3" Source="/user.png"/>
         <Button x:Name="BtnCreate" Content="Create an account" HorizontalAlignment="Left" Height="83" Margin="46,68,0,0" VerticalAlignment="Top" Width="348" Click="Create_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

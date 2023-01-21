@@ -241,7 +241,6 @@ namespace GUI
             {
                 InitiateAccessory();
             }
-            
         }
 
         private void InitiateHardware()

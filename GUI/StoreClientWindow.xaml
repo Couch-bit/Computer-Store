@@ -59,7 +59,7 @@
             </Button.Resources>
         </Button>
         <Button x:Name ="BtnModifyAccount" Content="Modify Account" HorizontalAlignment="Left" Margin="576,5,0,0" VerticalAlignment="Top" Height="37" Width="202"
-            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnModifyAccount_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

@@ -127,7 +127,7 @@ namespace Classes
         /// The zip code.
         /// </value>
         public string ZipCode { get => zipCode;
-            init
+            set
             {
                 if (Regex.IsMatch(value, @"^\d{2}-\d{3}$"))
                 {
@@ -173,7 +173,7 @@ namespace Classes
         /// </value>
         /// <exception cref="WrongEmailException">Incorrect Email</exception>
         public string Email { get => email;
-            init
+            set
             {
                 if (Regex.IsMatch(value,
                     @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
@@ -194,7 +194,7 @@ namespace Classes
         /// The password.
         /// </value>
         public string Password { get => password;
-            init => password = value; }
+            set => password = value; }
 
         /// <summary>
         /// Gets or sets (init) the orders.

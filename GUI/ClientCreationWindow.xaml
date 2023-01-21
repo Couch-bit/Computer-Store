@@ -10,7 +10,7 @@
     <Grid Margin="0,-13,0,0" Height="330" VerticalAlignment="Top" HorizontalAlignment="Center" Width="495">
         <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="32" Margin="102,22,0,0" VerticalAlignment="Top" Width="197" DropDownClosed="CmbType_DropDownClosed">
             <ComboBoxItem x:Name="company">Company</ComboBoxItem>
-            <ComboBoxItem x:Name="private">Private Customer</ComboBoxItem>
+            <ComboBoxItem x:Name="private">PrivateCustomer</ComboBoxItem>
         </ComboBox>
         <Label x:Name="LblType" Content="Type" HorizontalAlignment="Left" Height="30" Margin="20,22,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblCountry" Content="Country" HorizontalAlignment="Left" Height="30" Margin="20,56,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>

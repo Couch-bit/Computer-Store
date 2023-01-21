@@ -95,9 +95,12 @@ namespace GUI
 
         private void BtnOrder_Click(object sender, RoutedEventArgs e)
         {
-            customer.AddOrder(order);
-            ++Order.CurrentId;
-            DialogResult = true;
+            if (order.Cart.Count > 0)
+            {
+                customer.AddOrder(order);
+                ++Order.CurrentId;
+                DialogResult = true;
+            }
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -116,6 +119,12 @@ namespace GUI
             TxtOrder.Text = $"{order.CalculateOrderCost():c2}";
             TxtDelivery.Text = $"{order.CalculateShippingCost():c2}";
             TxtCost.Text = $"{order.CalculateTotalCost():c2}";
+        }
+
+        private void BtnModifyAccount_Click(object sender, RoutedEventArgs e)
+        {
+            ClientCreationWindow dlg = new(store, customer);
+            dlg.ShowDialog();
         }
     }
 }
