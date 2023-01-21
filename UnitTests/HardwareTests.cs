@@ -544,8 +544,8 @@ namespace UnitTests
                 type, name, description, discount, price, vat);
             text = $"{name}, {hardware.GetCount()} " +
                 $"price: {hardware.GetTotalPrice():c}";
-            text += $" <-{discount:P} OFF!>";
-            text += $" ({type})";
+            text += $" <-{discount:P} OFF!>\n";
+            text += $"({type})";
             result = hardware.ToString();
 
             // Assert

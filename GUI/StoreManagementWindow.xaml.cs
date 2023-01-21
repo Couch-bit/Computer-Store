@@ -10,6 +10,7 @@ namespace GUI
     public partial class StoreManagementWindow : Window
     {
         private readonly Store store;
+
         public StoreManagementWindow(Store store)
         {
             this.store = store;

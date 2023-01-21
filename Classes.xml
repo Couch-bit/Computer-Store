@@ -57,7 +57,7 @@
         <member name="P:Classes.Company.Nip">
             <summary>
             Gets or sets the NIP. Setting the NIP is validated by the
-            <see cref="!:Supplier.ValidateNip(string)" /> method and the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            <see cref="M:Classes.Supplier.ValidateNip(System.String,Classes.Sumation)" /> method and the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
             </summary>
             <value>
             The NIP.
@@ -118,7 +118,7 @@
         </member>
         <member name="P:Classes.Customer.ZipCode">
             <summary>
-            Gets or sets (init) the zip code. Setting the zip code is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            Gets or sets the zip code. Setting the zip code is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
             Zip code must be in a Polish format (ex. 12-353).
             </summary>
             <value>
@@ -127,7 +127,7 @@
         </member>
         <member name="P:Classes.Customer.PhoneNumber">
             <summary>
-            Gets or sets (init) the phone number. Setting the phone number is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            Gets or sets the phone number. Setting the phone number is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
             Phone number must be in a Polish (European) format (ex. 212-234-124).
             </summary>
             <value>
@@ -137,7 +137,7 @@
         </member>
         <member name="P:Classes.Customer.Email">
             <summary>
-            Gets or sets (init) the email. Setting the e-mail is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            Gets or sets the email. Setting the e-mail is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
             E-mail must be in an internationally accepted format (ex. me@myself.org)
             </summary>
             <value>
@@ -147,7 +147,7 @@
         </member>
         <member name="P:Classes.Customer.Password">
             <summary>
-            Gets or sets (init) the password.
+            Gets or sets the password.
             </summary>
             <value>
             The password.
@@ -172,7 +172,7 @@
             <summary>
             Removes the order by id.
             </summary>
-            <param name="id">The identifier.</param>
+            <param name="order">The identifier.</param>
             <returns></returns>
         </member>
         <member name="T:Classes.HardwareType">
@@ -284,7 +284,7 @@
             </summary>
             <param name="obj">The object to compare with the current object.</param>
             <returns>
-              <see langword="true" /> if the specified object  is equal to the current object; otherwise, <see langword="false" />.
+            <see langword="true" /> if the specified object  is equal to the current object; otherwise, <see langword="false" />.
             </returns>
         </member>
         <member name="M:Classes.Item.GetHashCode">
@@ -349,7 +349,7 @@
             <summary>
             Deletes the specified product from the order.
             </summary>
-            <param name="product">The product.</param>
+            <param name="product">The CartItem.</param>
             <exception cref="T:Classes.CartException">There is no such Item</exception>
         </member>
         <member name="M:Classes.Order.CalculateOrderCost">
@@ -430,7 +430,7 @@
         <member name="P:Classes.PrivateCustomer.FirstName">
             <summary>
             Gets or sets the first name. Setting the name is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
-            Name must start with a big letter and contain only letters. Spaces are permitted.
+            Name must start with a Capital letter and contain only letters. Spaces are permitted.
             </summary>
             <value>
             The first name.
@@ -601,7 +601,7 @@
             </summary>
             <param name="other">An object to compare with this object.</param>
             <returns>
-              <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.
+            <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.
             </returns>
         </member>
         <member name="M:Classes.Product.Clone">
@@ -626,7 +626,7 @@
             </summary>
             <param name="obj">The object to compare with the current object.</param>
             <returns>
-              <see langword="true" /> if the specified object  is equal to the current object; otherwise, <see langword="false" />.
+            <see langword="true" /> if the specified object  is equal to the current object; otherwise, <see langword="false" />.
             </returns>
         </member>
         <member name="M:Classes.Product.GetHashCode">
@@ -728,7 +728,7 @@
         </member>
         <member name="M:Classes.Store.RemoveSupplier(Classes.Supplier)">
             <summary>
-            Removes the supplier from the known database from suppliers.
+            Removes the supplier from the known database of suppliers.
             </summary>
             <param name="supplier">The supplier.</param>
             <exception cref="T:Classes.WrongKeyException">No such Supplier</exception>
@@ -827,7 +827,7 @@
         <member name="P:Classes.Supplier.Nip">
             <summary>
             Gets or sets the NIP. Setting the NIP is validated by 
-            <see cref="!:ValidateNip(string)" /> method and <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            <see cref="M:Classes.Supplier.ValidateNip(System.String,Classes.Sumation)" /> method and <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
             </summary>
             <value>
             The NIP.
@@ -864,9 +864,10 @@
             <summary>
             Validates the inputed NIP number.
             </summary>
-            <param name="nip">It's a Polish tax identification number, consists of 10 digits, 
+            <param name="nip">It's a Polish tax identification number, consists of 10 digits,
             where the first three digits are codes provided by the tax office, and the last number is a control one.
             For further references please click <a href="https://www.justaskpoland.com/nip-number/">here</a>.</param>
+            <param name="sum"> The function used to calculate the control sum of the nip, </param>
             <returns>Boolean value</returns>
         </member>
         <member name="M:Classes.Supplier.SumNip(System.String)">
@@ -874,7 +875,7 @@
             Sums the nip - a base for the famous mandatory delegate.
             </summary>
             <param name="nip">The nip.</param>
-            <returns></returns>
+            <returns>the sum</returns>
         </member>
         <member name="M:Classes.Supplier.ToString">
             <summary>

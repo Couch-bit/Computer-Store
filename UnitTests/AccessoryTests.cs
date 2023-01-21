@@ -417,8 +417,8 @@ namespace UnitTests
                 name, description, discount, price, vat);
             text = $"{name}, {accessory.GetCount()} " +
                 $"price: {accessory.GetTotalPrice():c}";
-            text += $" <-{discount:P} OFF!>";
-            text += $" ({type})";
+            text += $" <-{discount:P} OFF!>\n";
+            text += $"({type})";
             result = accessory.ToString();
 
             // Assert

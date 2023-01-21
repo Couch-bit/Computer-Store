@@ -430,8 +430,8 @@ namespace UnitTests
                 discount, price, vat);
             text = $"{name}, {software.GetCount()} " +
                 $"price: {software.GetTotalPrice():c}";
-            text += $" <-{discount:P} OFF!>";
-            text += $" ({version} " +
+            text += $" <-{discount:P} OFF!>\n";
+            text += $"({version} " +
                 $"{targetArchitecture}, license: {license.TotalDays} days)";
             result = software.ToString();
 

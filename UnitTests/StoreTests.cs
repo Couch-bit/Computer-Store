@@ -33,5 +33,11 @@ namespace UnitTests
             Assert.IsFalse(store.Suppliers.Any());
             Assert.IsFalse(store.Customers.Any());
         }
+
+        [TestMethod]
+        public void RemoveSupplierTest()
+        {
+
+        }
     }
 }
