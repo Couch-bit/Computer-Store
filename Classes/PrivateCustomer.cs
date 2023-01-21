@@ -18,7 +18,7 @@ namespace Classes
 
         /// <summary>
         /// Gets or sets the first name. Setting the name is validated by the <see cref="Regex.IsMatch(string, string)" /> method.
-        /// Name must start with a big letter and contain only letters. Spaces are permitted.
+        /// Name must start with a Capital letter and contain only letters. Spaces are permitted.
         /// </summary>
         /// <value>
         /// The first name.
@@ -30,7 +30,9 @@ namespace Classes
             set 
             { 
                 if(Regex.IsMatch(value.Trim(),
-                    @"^[A-Z]{1}[a-zA-Z\s]+$"))
+                    @"^[AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ]{1}" +
+                    @"[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃń" +
+                    @"OoÓóPpRrSsŚśTtUuWwYyZzŹźŻż\s]+$"))
                 {
                     firstName = value.Trim();
                 }
@@ -56,7 +58,9 @@ namespace Classes
             set 
             {
                 if(Regex.IsMatch(value.Trim(),
-                    @"^[A-Z]{1}[a-zA-Z\s]+$"))
+                    @"^[AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ]{1}" +
+                    @"[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃń" +
+                    @"OoÓóPpRrSsŚśTtUuWwYyZzŹźŻż\s]+$"))
                 {
                     lastName = value.Trim();
                 }

@@ -21,7 +21,7 @@ namespace Classes
         private string nip;
         private string name;
         private string country;
-        private List<Product> products;
+        private readonly List<Product> products;
         #endregion Fields
 
         #region Properties
@@ -48,7 +48,7 @@ namespace Classes
 
         /// <summary>
         /// Gets or sets the NIP. Setting the NIP is validated by 
-        /// <see cref="ValidateNip(string)" /> method and <see cref="Regex.IsMatch(string, string)" /> method.
+        /// <see cref="ValidateNip(string, Sumation)" /> method and <see cref="Regex.IsMatch(string, string)" /> method.
         /// </summary>
         /// <value>
         /// The NIP.
@@ -83,7 +83,10 @@ namespace Classes
             get => country;
             set
             {
-                if (Regex.IsMatch(value, @"^[A-Z]{1}[a-zA-Z\s]+$"))
+                if (Regex.IsMatch(value,
+                    @"^[AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ]{1}" +
+                    @"[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMm" +
+                    @"NnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż\s]+$"))
                 {
                     country = value;
                 }
@@ -153,9 +156,10 @@ namespace Classes
         /// <summary>
         /// Validates the inputed NIP number.
         /// </summary>
-        /// <param name="nip">It's a Polish tax identification number, consists of 10 digits, 
+        /// <param name="nip">It's a Polish tax identification number, consists of 10 digits,
         /// where the first three digits are codes provided by the tax office, and the last number is a control one.
         /// For further references please click <a href="https://www.justaskpoland.com/nip-number/">here</a>.</param>
+        /// <param name="sum"> The function used to calculate the control sum of the nip, </param>
         /// <returns>Boolean value</returns>
         public static bool ValidateNip(string nip, Sumation sum)
         {
@@ -172,7 +176,7 @@ namespace Classes
         /// Sums the nip - a base for the famous mandatory delegate.
         /// </summary>
         /// <param name="nip">The nip.</param>
-        /// <returns></returns>
+        /// <returns>the sum</returns>
         public static int SumNip(string nip)
         {
             int[] arr = new int[] { 6, 5, 7, 2, 3, 4, 5, 6, 7 };
@@ -192,7 +196,7 @@ namespace Classes
         /// </returns>
         public override string ToString()
         {
-            return $"{name} ({nip:000-000-00-00} {country})";
+            return $"{Name} ({Nip:000-000-00-00} {Country})";
         }
         #endregion Methods
     }

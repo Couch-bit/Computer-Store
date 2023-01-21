@@ -1,6 +1,4 @@
-﻿using static System.Net.WebRequestMethods;
-
-namespace Classes
+﻿namespace Classes
 {
     /// <summary>
     /// Enum for basic computer architectures in the store.

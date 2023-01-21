@@ -20,8 +20,7 @@ namespace GUI
             RefreshStore();
         }
 
-
-        private void StoreOpen_Click(object sender, RoutedEventArgs e)
+        private void BtnStoreOpen_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new()
             {
@@ -76,8 +75,7 @@ namespace GUI
             Close();
         }
 
-
-        private void Login_Click(object sender,
+        private void BtnLogin_Click(object sender,
             RoutedEventArgs e)
         {
             Customer? customer = store.Customers.Find
@@ -106,7 +104,7 @@ namespace GUI
             }
         }
 
-        private void Create_Click(object sender,
+        private void BtnCreate_Click(object sender,
             RoutedEventArgs e)
         {
             ClientCreationWindow window = new(store);
@@ -117,14 +115,7 @@ namespace GUI
             }
         }
 
-        public void RefreshStore()
-        {
-            TxtName.Text = store.Name;
-            TxtSupplier.Text = store.Suppliers.Count.ToString();
-            TxtCustomer.Text = store.Customers.Count.ToString();
-        }
-
-        private void Admin_Click(object sender, RoutedEventArgs e)
+        private void BtnAdmin_Click(object sender, RoutedEventArgs e)
         {
             StoreManagementWindow window = new(store);
             window.ShowDialog();
@@ -134,6 +125,13 @@ namespace GUI
         private void TxtName_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             store.Name = TxtName.Text;
+        }
+
+        public void RefreshStore()
+        {
+            TxtName.Text = store.Name;
+            TxtSupplier.Text = store.Suppliers.Count.ToString();
+            TxtCustomer.Text = store.Customers.Count.ToString();
         }
     }
 }

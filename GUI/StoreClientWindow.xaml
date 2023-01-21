@@ -51,7 +51,7 @@
         <Label x:Name ="LblDescription" Content="Description" HorizontalAlignment="Left" Height="31" Margin="250,63,0,0" VerticalAlignment="Top" Width="134" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <TextBox x:Name="TxtDescription" HorizontalAlignment="Left" Height="185" Margin="251,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" IsEnabled="False"/>
         <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="422,441,0,0" VerticalAlignment="Top" Height="36" Width="167"
-            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="Cancel_Click">
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnCancel_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

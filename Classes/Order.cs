@@ -8,8 +8,9 @@ namespace Classes
     /// </summary>
     public class Order
     {
+        private const decimal BASE = 20M;
         #region Fields
-        
+
         private static int currentId;
         private readonly int id;
         private bool status;
@@ -126,7 +127,7 @@ namespace Classes
         /// <summary>
         /// Deletes the specified product from the order.
         /// </summary>
-        /// <param name="product">The product.</param>
+        /// <param name="product">The CartItem.</param>
         /// <exception cref="Classes.CartException">There is no such Item</exception>
         public void Delete(CartItem product)
         {
@@ -171,7 +172,7 @@ namespace Classes
         /// </returns>
         public decimal CalculateShippingCost()
         {
-            return 20M + CalculateFee();
+            return BASE + CalculateFee();
         }
 
 

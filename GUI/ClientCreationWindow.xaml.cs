@@ -32,7 +32,7 @@ namespace GUI
             CmbType.IsEnabled = false;
         }
 
-        private void Confirm_Click(object sender, RoutedEventArgs e)
+        private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
             if (!TxtPassword.Password.Equals(TxtConfirm.Password))
             {
@@ -98,7 +98,7 @@ namespace GUI
             }
         }
 
-        private void Close_Click(object sender, RoutedEventArgs e)
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }

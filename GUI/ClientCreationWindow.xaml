@@ -37,14 +37,14 @@
         <TextBox x:Name="TxtLastName" HorizontalAlignment="Left" Height="20" Margin="346,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
         <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="20" Margin="346,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
         <TextBox x:Name="TxtNip" HorizontalAlignment="Left" Height="20" Margin="346,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
-        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="37" Margin="250,276,0,0" VerticalAlignment="Top" Width="231" Click="Confirm_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="37" Margin="250,276,0,0" VerticalAlignment="Top" Width="231" Click="BtnConfirm_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="37" Margin="20,276,0,0" VerticalAlignment="Top" Width="225" Click="Close_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name ="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Height="37" Margin="20,276,0,0" VerticalAlignment="Top" Width="225" Click="BtnClose_Click" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

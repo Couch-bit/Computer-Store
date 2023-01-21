@@ -1,9 +1,7 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using Classes;
@@ -39,7 +37,8 @@ namespace GUI
             }
         }
 
-        private void DateDelivery_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        private void DateDelivery_SelectedDateChanged(object sender,
+            SelectionChangedEventArgs e)
         {
             try
             {
@@ -103,9 +102,15 @@ namespace GUI
             }
         }
 
-        private void Cancel_Click(object sender, RoutedEventArgs e)
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void BtnModifyAccount_Click(object sender, RoutedEventArgs e)
+        {
+            ClientCreationWindow dlg = new(store, customer);
+            dlg.ShowDialog();
         }
 
         private void RefreshStore()
@@ -119,12 +124,6 @@ namespace GUI
             TxtOrder.Text = $"{order.CalculateOrderCost():c2}";
             TxtDelivery.Text = $"{order.CalculateShippingCost():c2}";
             TxtCost.Text = $"{order.CalculateTotalCost():c2}";
-        }
-
-        private void BtnModifyAccount_Click(object sender, RoutedEventArgs e)
-        {
-            ClientCreationWindow dlg = new(store, customer);
-            dlg.ShowDialog();
         }
     }
 }

@@ -78,7 +78,7 @@ namespace Classes
         }
 
         /// <summary>
-        /// Removes the supplier from the known database from suppliers.
+        /// Removes the supplier from the known database of suppliers.
         /// </summary>
         /// <param name="supplier">The supplier.</param>
         /// <exception cref="Classes.WrongKeyException">No such Supplier</exception>

@@ -9,13 +9,11 @@ namespace GUI
     /// </summary>
     public partial class ViewOrderWindow : Window
     {
-        private readonly Store store;
         private readonly Order order;
         private readonly Customer customer;
 
         public ViewOrderWindow(Store store, Order order)
         {
-            this.store = store;
             this.order = order;
             InitializeComponent();
             customer = store.GetCustomer(order);

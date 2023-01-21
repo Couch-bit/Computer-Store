@@ -17,7 +17,7 @@
         <Label x:Name ="LblOrders" Content="Orders To Realize" HorizontalAlignment="Left" Height="27" Margin="642,57,0,0" VerticalAlignment="Top" Width="148" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <ListBox x:Name="LstOrders" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="642,86,0,100" HorizontalAlignment="Left" Width="148"/>
         <Button x:Name ="BtnAddSupplier" Content="Add Supplier" HorizontalAlignment="Left" Margin="240,339,0,0" VerticalAlignment="Top" Height="32" Width="148"
-            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="AddSupplier_Click">
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnAddSupplier_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -25,7 +25,7 @@
             </Button.Resources>
         </Button>
         <Button x:Name ="BtnViewOrder" Content="View Order" HorizontalAlignment="Left" Margin="642,339,0,0" VerticalAlignment="Top" Height="32" Width="148"
-            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="ViewOrder_Click">
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnViewOrder_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -33,7 +33,7 @@
             </Button.Resources>
         </Button>
         <Button x:Name ="BtnModifySupplier" Content="Modify Supplier" HorizontalAlignment="Left" Margin="240,376,0,0" VerticalAlignment="Top" Height="32" Width="148"
-            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="ModifySupplier_Click">
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnModifySupplier_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -43,7 +43,7 @@
         <ListBox x:Name="LstProducts" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,86,0,100" HorizontalAlignment="Left" Width="169"/>
         <Label x:Name ="LblStoreProducts" Content="Registered Products" HorizontalAlignment="Left" Height="27" Margin="10,57,0,0" VerticalAlignment="Top" Width="169" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
         <Button x:Name ="BtnFinish" Content="Finish" HorizontalAlignment="Left" Margin="20,339,0,0" VerticalAlignment="Top" Height="32" Width="148"
-            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="Finish_Click">
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnFinish_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

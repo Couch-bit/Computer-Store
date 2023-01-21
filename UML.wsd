@@ -5,12 +5,12 @@ class Supplier {
   -string nip
   -string name
   -string country
-  -List<Product> products
+  -readonly List<Product> products
   ----
-  + void AddProduct (Product product)
-  + void RemoveProduct (Product product)
+  + void AddProduct(Product product)
+  + void RemoveProduct(Product product)
   + void Sort()
-  + {static} bool ValidateNip (string nip, Sumation sum)
+  + {static} bool ValidateNip(string nip, Sumation sum)
   + {static} int SumNip(string nip)
   + override string ToString()
 }
@@ -22,7 +22,7 @@ class Company {
   + override string ToString()
 }
 
-class PrivateCustomer{
+class PrivateCustomer {
   -string firstName
   -string lastName
   ----
@@ -38,23 +38,22 @@ abstract Customer {
   -string zipCode
   -string phoneNumber
   -string email
-  -List<Order> orders
   -string password
+  -List<Order> orders
   ----
   + void AddOrder(Order order)
-  + void RemoveOrder(int id)
+  + void RemoveOrder(Order order)
 }
 
 class Order {
   -{static} int currentId
   -readonly int id
-  -Customer customer
   -bool status
   -DateTime deliveryDate
-  -readonly Dictionary<Product, int> cart
+  -readonly List<CartItem> cart
   ----
   + void Add(Product product, int amount)
-  + void Delete(Product product)
+  + void Delete(CartItem product)
   + decimal CalculateOrderCost()
   + decimal CalculateFee()
   + decimal CalculateShippingCost()
@@ -62,7 +61,7 @@ class Order {
   + override string ToString()
 }
 
-abstract Product{
+abstract Product {
   -{static} int currentId
   -readonly int id
   -string name
@@ -71,8 +70,8 @@ abstract Product{
   -decimal price
   -int amount
   -Supplier supplier
-  -Dictionary<string, string> technicalInfo
-  -List<Item> items
+  -readonly Dictionary<string, string> technicalInfo
+  -readonly List<Item> items
   ----
   + decimal GetTotalPrice()
   + int GetCount()
@@ -86,7 +85,7 @@ abstract Product{
   + override int GetHashCode()
 }
 
-class Item{
+class Item {
   - readonly string serialNumber
   - readonly DateTime dateOfArrival
   ----
@@ -95,7 +94,7 @@ class Item{
   + override int GetHashCode()
 }
 
-class Store{
+class Store {
   - string name
   - readonly List<Supplier> suppliers
   - readonly List<Customer> customers
@@ -106,12 +105,13 @@ class Store{
   + void RemoveCustomer(Customer customer) 
   + List<Order> GetAllOrders()
   + List<Product> GetAllProducts()
+  + void GetCustomer(Customer customer)
   + void Serialize (string fname)
   + {static} Store Deserialize (string fname)
   + override string ToString()
 }
 
-enum HardwareType{
+enum HardwareType {
   GPU,
   CPU,
   RAM,
@@ -121,7 +121,7 @@ enum HardwareType{
   Other
 }
 
-enum AccessoryType{
+enum AccessoryType {
   Headphones,
   Microphone,
   Mouse,
@@ -131,12 +131,12 @@ enum AccessoryType{
   Other
 }
 
-enum Architecture{
+enum Architecture {
   Bit32,
   Bit64
 }
 
-class Hardware{
+class Hardware {
   -double weight
   -double length
   -double height
@@ -146,7 +146,7 @@ class Hardware{
   + override string ToString()
 }
 
-class Software{
+class Software {
   -string version
   -TimeSpan license
   -Architecture architecture
@@ -154,22 +154,22 @@ class Software{
   + override string ToString()
 }
 
-class Accessory{
+class Accessory {
   -double weight
   -AccessoryType type
   ----
   + override string ToString()
 }
 
-interface ICloneable{
+interface ICloneable {
   + object Clone()
 }
 
-interface IComparable{
+interface IComparable {
   + int CompareTo(object? other)
 }
 
-interface IEquatable{
+interface IEquatable {
   + bool Equals (object? other)
 }
 

@@ -17,7 +17,7 @@ namespace GUI
             RefreshStore();
         }
 
-        private void AddSupplier_Click(object sender,
+        private void BtnAddSupplier_Click(object sender,
             RoutedEventArgs e)
         {
             SupplierWindow window = new(store);
@@ -28,7 +28,7 @@ namespace GUI
             }
         }
 
-        private void ModifySupplier_Click(object sender,
+        private void BtnModifySupplier_Click(object sender,
             RoutedEventArgs e)
         {
             if (LstSuppliers.SelectedItem is Supplier supplier)
@@ -42,12 +42,12 @@ namespace GUI
             }
         }
 
-        private void Finish_Click(object sender, RoutedEventArgs e)
+        private void BtnFinish_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void ViewOrder_Click(object sender, RoutedEventArgs e)
+        private void BtnViewOrder_Click(object sender, RoutedEventArgs e)
         {
             if (LstOrders.SelectedItem is Order order)
             {

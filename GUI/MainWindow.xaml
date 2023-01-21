@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Border x:Name ="BorderRIGHT" HorizontalAlignment="Left" Height="289" Margin="399,37,0,0" VerticalAlignment="Top" Width="358" BorderThickness="2" Grid.Row="3"
         CornerRadius="0,10,10,0" BorderBrush="Black"/>
-        <Button x:Name="BtnFileOpen" Content="READ FROM FILE" HorizontalAlignment="Left" Height="30" Margin="404,279,0,0" Grid.Row="3" VerticalAlignment="Top" Width="348" Click="StoreOpen_Click"
+        <Button x:Name="BtnFileOpen" Content="READ FROM FILE" HorizontalAlignment="Left" Height="30" Margin="404,279,0,0" Grid.Row="3" VerticalAlignment="Top" Width="348" Click="BtnStoreOpen_Click"
                 Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -26,7 +26,7 @@
         </Button>
         <Border x:Name ="BorderLEFT" HorizontalAlignment="Left" Height="289" Margin="41,37,0,0" VerticalAlignment="Top" Width="358" BorderThickness="2" Grid.Row="3"
         CornerRadius="10,0,0,10" BorderBrush="Black"/>
-        <Button x:Name="BtnLogin" Content="LOG IN" HorizontalAlignment="Left" Height="30" Margin="46,279,0,0" VerticalAlignment="Top" Width="348" Click="Login_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name="BtnLogin" Content="LOG IN" HorizontalAlignment="Left" Height="30" Margin="46,279,0,0" VerticalAlignment="Top" Width="348" Click="BtnLogin_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -34,7 +34,7 @@
             </Button.Resources>
         </Button>
         <Image x:Name="ImageAdmin" Margin="641,69,19,201" Grid.Row="3" Source="/settings.png"/>
-        <Button x:Name="BtnCreate" Content="Create an account" HorizontalAlignment="Left" Height="83" Margin="46,68,0,0" VerticalAlignment="Top" Width="348" Click="Create_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
+        <Button x:Name="BtnCreate" Content="Create an account" HorizontalAlignment="Left" Height="83" Margin="46,68,0,0" VerticalAlignment="Top" Width="348" Click="BtnCreate_Click" Grid.Row="3" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -52,7 +52,7 @@
             </MenuItem>
         </Menu>
         <Button x:Name="BtnAdministrator" Content="Admin mode" HorizontalAlignment="Left" Height="83" Margin="404,68,0,0" VerticalAlignment="Top" Width="348" Grid.Row="3"
-                Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="Admin_Click">
+                Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnAdmin_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

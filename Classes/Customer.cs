@@ -120,7 +120,7 @@ namespace Classes
         }
 
         /// <summary>
-        /// Gets or sets (init) the zip code. Setting the zip code is validated by the <see cref="Regex.IsMatch(string, string)" /> method.
+        /// Gets or sets the zip code. Setting the zip code is validated by the <see cref="Regex.IsMatch(string, string)" /> method.
         /// Zip code must be in a Polish format (ex. 12-353).
         /// </summary>
         /// <value>
@@ -142,7 +142,7 @@ namespace Classes
         }
 
         /// <summary>
-        /// Gets or sets (init) the phone number. Setting the phone number is validated by the <see cref="Regex.IsMatch(string, string)" /> method.
+        /// Gets or sets the phone number. Setting the phone number is validated by the <see cref="Regex.IsMatch(string, string)" /> method.
         /// Phone number must be in a Polish (European) format (ex. 212-234-124).
         /// </summary>
         /// <value>
@@ -165,7 +165,7 @@ namespace Classes
         }
 
         /// <summary>
-        /// Gets or sets (init) the email. Setting the e-mail is validated by the <see cref="Regex.IsMatch(string, string)" /> method.
+        /// Gets or sets the email. Setting the e-mail is validated by the <see cref="Regex.IsMatch(string, string)" /> method.
         /// E-mail must be in an internationally accepted format (ex. me@myself.org)
         /// </summary>
         /// <value>
@@ -188,7 +188,7 @@ namespace Classes
         }
 
         /// <summary>
-        /// Gets or sets (init) the password.
+        /// Gets or sets the password.
         /// </summary>
         /// <value>
         /// The password.
@@ -255,7 +255,7 @@ namespace Classes
         /// <summary>
         /// Removes the order by id.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="order">The identifier.</param>
         /// <returns></returns>
         public void RemoveOrder(Order order)
         {

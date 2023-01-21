@@ -25,7 +25,7 @@ namespace Classes
 
         /// <summary>
         /// Gets or sets the NIP. Setting the NIP is validated by the
-        /// <see cref="Supplier.ValidateNip(string)" /> method and the <see cref="Regex.IsMatch(string, string)" /> method.
+        /// <see cref="Supplier.ValidateNip(string, Sumation)" /> method and the <see cref="Regex.IsMatch(string, string)" /> method.
         /// </summary>
         /// <value>
         /// The NIP.
@@ -54,7 +54,6 @@ namespace Classes
 
         public Company() : base()
         {
-
             name = string.Empty;
             nip = new string('0', 10);
         }
