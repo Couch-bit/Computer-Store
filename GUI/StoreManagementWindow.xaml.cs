@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using System.Collections.Generic;
 using Classes;
 
 namespace GUI

@@ -19,8 +19,9 @@ namespace GUI
         public IndividualItemWindow(Product product)
         {
             this.product = product;
-            items = product.Items.ToList();
+            items = new(product.Items);
             InitializeComponent();
+            RefreshStore();
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)

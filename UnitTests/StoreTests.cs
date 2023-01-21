@@ -1,4 +1,6 @@
 ﻿using Classes;
+using System;
+using System.Xml.Linq;
 
 namespace UnitTests
 {
@@ -37,7 +39,78 @@ namespace UnitTests
         [TestMethod]
         public void RemoveSupplierTest()
         {
+            // Arrange
+            Supplier supplier = new();
 
+            // Act
+            Store store = new();
+            store.AddSupplier(supplier);
+            store.RemoveSupplier(supplier);
+
+            // Assert
+            Assert.IsFalse(store.Suppliers.Any());
+        }
+
+        [TestMethod]
+        public void RemoveSupplierTestFail()
+        {
+            // Arrange
+            Supplier supplier = new();
+
+            // Act
+            Store store = new();
+
+
+            // Assert
+            Assert.ThrowsException<WrongKeyException>(() =>
+            {
+                store.RemoveSupplier(supplier);
+            });
+        }
+
+        [TestMethod]
+        public void RemoveCustomerTest()
+        {
+            // Arrange
+            Company company = new();
+
+            // Act
+            Store store = new();
+            store.AddCustomer(company);
+            store.RemoveCustomer(company);
+
+            // Assert
+            Assert.IsFalse(store.Suppliers.Any());
+        }
+
+        [TestMethod]
+        public void RemoveCustomerTestFail()
+        {
+            // Arrange
+            Company company = new();
+
+            // Act
+            Store store = new();
+
+            // Assert
+            Assert.ThrowsException<WrongKeyException>(() =>
+            {
+                store.RemoveCustomer(company);
+            });
+        }
+
+        [TestMethod]
+        public void ToStringTest()
+        {
+            // Arrange
+            string name = "test";
+            
+            // Act
+            Store store = new("test");
+
+            // Assert
+            Assert.AreEqual($"Name: {name}\nSuppliers:\nCustomers:",
+                store.ToString());
         }
     }
 }

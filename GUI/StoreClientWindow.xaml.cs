@@ -110,7 +110,11 @@ namespace GUI
         private void BtnModifyAccount_Click(object sender, RoutedEventArgs e)
         {
             ClientCreationWindow dlg = new(store, customer);
-            dlg.ShowDialog();
+            bool? result = dlg.ShowDialog();
+            if (result == true)
+            {
+                Close();
+            }
         }
 
         private void RefreshStore()

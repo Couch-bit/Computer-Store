@@ -76,11 +76,8 @@ namespace GUI
             if (LstProducts.SelectedItem is Product product)
             {
                 ProductWindow dlg = new(products, product);
-                bool? result = dlg.ShowDialog();
-                if (result == true)
-                {
-                    RefreshStore();
-                }
+                dlg.ShowDialog();
+                RefreshStore();
             }
         }
 

@@ -223,7 +223,7 @@ namespace Classes
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new($"Name: {Name}");
+            StringBuilder sb = new($"Name: {Name}\n");
             sb.Append("Suppliers:");
             foreach (Supplier supplier in Suppliers)
             {
