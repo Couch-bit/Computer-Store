@@ -90,7 +90,7 @@ namespace Classes
         /// </returns>
         public override string ToString()
         {
-            return base.ToString() + $" ({Type})";
+            return base.ToString() + $"({Type})";
         }
         #endregion Methods
     }

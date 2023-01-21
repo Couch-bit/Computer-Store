@@ -14,7 +14,7 @@ namespace Classes
         private readonly int id;
         private bool status;
         private DateTime deliveryDate;
-        private readonly Dictionary<Product, int> cart;
+        private readonly List<CartItem> cart;
         #endregion Fields
 
         #region Properties
@@ -69,7 +69,7 @@ namespace Classes
         /// <value>
         /// The cart.
         /// </value>
-        public Dictionary<Product, int> Cart { get => cart;
+        public List<CartItem> Cart { get => cart;
             init => cart = value; }
         #endregion Properties
 
@@ -108,7 +108,7 @@ namespace Classes
         /// </exception>
         public void Add(Product product, int amount)
         {
-            if (cart.ContainsKey(product))
+            if (cart.Any(p => p.Item1.Equals(product)))
             {
                 throw new CartException
                     ("Product is already in the cart.");
@@ -119,7 +119,7 @@ namespace Classes
             }
             else
             {
-                cart.Add((Product)product.Clone(), amount);
+                cart.Add(new CartItem(product, amount));
             }
         }
 
@@ -128,7 +128,7 @@ namespace Classes
         /// </summary>
         /// <param name="product">The product.</param>
         /// <exception cref="Classes.CartException">There is no such Item</exception>
-        public void Delete(Product product)
+        public void Delete(CartItem product)
         {
             if (!cart.Remove(product))
             {
@@ -144,7 +144,7 @@ namespace Classes
         /// </returns>
         public decimal CalculateOrderCost()
         {
-            return cart.Sum(p => p.Key.GetTotalPrice() * p.Value);
+            return cart.Sum(p => p.Item1.GetTotalPrice() * p.Item2);
         }
 
         /// <summary>
@@ -199,12 +199,44 @@ namespace Classes
             }
             sb.AppendLine
                 ($"Delivery date: {DeliveryDate:dd-MM-yyyy})");
-            sb.Append($"Order cost: {CalculateOrderCost():c2},");
+            sb.AppendLine($"Order cost: {CalculateOrderCost():c2},");
             sb.Append($"Shipping cost: {CalculateShippingCost():c2}");
-            sb.Append($" (Fee: {CalculateFee():c2}),");
+            sb.AppendLine($" (Fee: {CalculateFee():c2}),");
             sb.Append($" Total: " +
                 $"{CalculateTotalCost():c2}");
             return sb.ToString();
+        }
+        #endregion Methods
+    }
+
+    public class CartItem
+    {
+        #region Properties
+
+        public Product Item1 { get; set; }
+        public int Item2 { get; set; }
+        #endregion Properties
+
+        #region Contructors
+
+        public CartItem()
+        {
+            Item1 = new Hardware();
+            --Product.CurrentId;
+            Item2 = 1;
+        }
+
+        public CartItem(Product product, int amount)
+        {
+            Item1 = product;
+            Item2 = amount;
+        }
+        #endregion Constructors
+
+        #region Methods
+        public override string ToString()
+        {
+            return $"({Item1} , {Item2})";
         }
         #endregion Methods
     }

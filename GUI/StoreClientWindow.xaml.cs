@@ -1,7 +1,9 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using Classes;
@@ -13,9 +15,9 @@ namespace GUI
     /// </summary>
     public partial class StoreClientWindow : Window
     {
-        private Store store;
-        private Customer customer;
-        private Order order;
+        private readonly Store store;
+        private readonly Customer customer;
+        private readonly Order order;
 
         public StoreClientWindow(Store store, Customer customer)
         {
@@ -34,16 +36,6 @@ namespace GUI
             {
                 TxtDescription.Text =
                 product.Description;
-            }
-        }
-
-        private void LstOrder_SelectionChanged(object sender,
-            SelectionChangedEventArgs e)
-        {
-            if (LstOrder.SelectedItem is Product product)
-            {
-                TxtAmountOrder.Text =
-                order.Cart[product].ToString() ?? "";
             }
         }
 
@@ -94,9 +86,9 @@ namespace GUI
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if (LstOrder.SelectedItem is Product product)
+            if (LstOrder.SelectedItem is CartItem cartItem)
             {
-                order.Delete(product);
+                order.Delete(cartItem);
                 RefreshStore();
             }
         }
@@ -120,7 +112,7 @@ namespace GUI
             LstProducts.ItemsSource = new
                 ObservableCollection<Product>(allProducts);
             LstOrder.ItemsSource = new
-                ObservableCollection<Product>(order.Cart.Keys);
+                ObservableCollection<CartItem>(order.Cart);
             TxtOrder.Text = $"{order.CalculateOrderCost():c2}";
             TxtDelivery.Text = $"{order.CalculateShippingCost():c2}";
             TxtCost.Text = $"{order.CalculateTotalCost():c2}";

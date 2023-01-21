@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Classes;
 
 namespace GUI
 {
@@ -19,9 +9,44 @@ namespace GUI
     /// </summary>
     public partial class ViewOrderWindow : Window
     {
-        public ViewOrderWindow()
+        private readonly Store store;
+        private readonly Order order;
+        private readonly Customer customer;
+
+        public ViewOrderWindow(Store store, Order order)
         {
+            this.store = store;
+            this.order = order;
             InitializeComponent();
+            customer = store.GetCustomer(order);
+            TxtCustomer.Text = customer.ToString();
+            TxtOrder.Text = order.CalculateOrderCost().ToString();
+            TxtDelivery.Text = order.CalculateShippingCost
+                ().ToString();
+            TxtCost.Text = order.CalculateTotalCost().ToString();
+            TxtCountry.Text = customer.Country;
+            TxtCity.Text = customer.City;
+            TxtStreet.Text = customer.Street;
+            TxtZipCode.Text = customer.ZipCode;
+            LstItems.ItemsSource = new
+                ObservableCollection<CartItem>(order.Cart);
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            customer.RemoveOrder(order);
+            DialogResult = true;
+        }
+
+        private void BtnRealize_Click(object sender, RoutedEventArgs e)
+        {
+            order.Status = true;
+            DialogResult = true;
+        }
+
+        private void BtnFinish_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -125,6 +125,22 @@ namespace Classes
             }
             return result;
         }
+
+        public Customer GetCustomer(Order order)
+        {
+            foreach(Customer customer in customers)
+            {
+                foreach (Order o in customer.Orders)
+                {
+                    if (o == order)
+                    {
+                        return customer;
+                    }
+                }
+            }
+            throw new WrongKeyException("No such Order");
+        }
+
         /// <summary>
         /// Serializes the specified file to JSON format.
         /// </summary>

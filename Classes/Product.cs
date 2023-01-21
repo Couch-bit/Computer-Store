@@ -196,7 +196,7 @@ namespace Classes
         /// </returns>
         public int GetCount()
         {
-            return items.Count;
+            return Items.Count;
         }
 
         public void AddItem(Item item)
@@ -328,6 +328,7 @@ namespace Classes
             {
                 text += $" <-{Discount:P} OFF!>";
             }
+            text += "\n";
             return text;
         }
 

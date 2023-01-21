@@ -25,7 +25,7 @@
             </Button.Resources>
         </Button>
         <Button x:Name ="BtnViewOrder" Content="View Order" HorizontalAlignment="Left" Margin="642,339,0,0" VerticalAlignment="Top" Height="32" Width="148"
-            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnDeleteOrder_Click">
+            Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="ViewOrder_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

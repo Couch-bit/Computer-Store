@@ -257,15 +257,12 @@ namespace Classes
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public void RemoveOrder(int id)
+        public void RemoveOrder(Order order)
         {
-            foreach (Order order in orders)
+            if (!orders.Remove(order))
             {
-                if (order.Id == id)
-                {
-                    orders.Remove(order);
-                    return;
-                }
+                throw new
+                    WrongKeyException("No such Order");
             }
         }
         #endregion Methods

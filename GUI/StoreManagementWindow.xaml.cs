@@ -47,14 +47,17 @@ namespace GUI
             Close();
         }
 
-        private void BtnModifyItem_Click(object sender, RoutedEventArgs e)
+        private void ViewOrder_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void BtnDeleteOrder_Click(object sender, RoutedEventArgs e)
-        {
-
+            if (LstOrders.SelectedItem is Order order)
+            {
+                ViewOrderWindow dlg = new(store, order);
+                bool? result = dlg.ShowDialog();
+                if (result == true)
+                {
+                    RefreshStore();
+                }
+            }
         }
 
         private void RefreshStore()
