@@ -42,10 +42,10 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="LblLogin" Content="E-MAIL" HorizontalAlignment="Left" Height="27" Margin="113,177,0,0" VerticalAlignment="Top" Width="82" Grid.Row="3" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtLogin" HorizontalAlignment="Left" Height="17" Margin="200,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Grid.Row="3" Text=""/>
-        <Label x:Name="LblPassword" Content="PASSWORD" HorizontalAlignment="Left" Height="27" Margin="113,226,0,0" VerticalAlignment="Top" Width="82" Grid.Row="3" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <PasswordBox x:Name ="TxtPassword" HorizontalAlignment="Left" Height="17" Margin="200,231,0,0" VerticalAlignment="Top" Width="186" Grid.Row="3"/>
+        <Label x:Name="LblLogin" Content="E-MAIL" HorizontalAlignment="Left" Height="27" Margin="113,177,0,0" VerticalAlignment="Top" Width="87" Grid.Row="3" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center" RenderTransformOrigin="0.488,0.419"/>
+        <TextBox x:Name="TxtLogin" HorizontalAlignment="Left" Height="20" Margin="200,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Grid.Row="3" Text=""/>
+        <Label x:Name="LblPassword" Content="PASSWORD" HorizontalAlignment="Left" Height="27" Margin="113,223,0,0" VerticalAlignment="Top" Width="87" Grid.Row="3" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name ="TxtPassword" HorizontalAlignment="Left" Height="20" Margin="200,228,0,0" VerticalAlignment="Top" Width="186" Grid.Row="3"/>
         <Menu Height="24" VerticalAlignment="Top" Grid.RowSpan="2">
             <MenuItem Header="File" Width="75" Height="24">
                 <MenuItem x:Name="MenuItemSave" Header="Save" Click="MenuItemSave_Click"/>
@@ -62,11 +62,20 @@
         </Button>
         <Label x:Name="LblCustomer" Content="CUSTOMER" HorizontalAlignment="Left" Height="25" Margin="41,12,0,0" VerticalAlignment="Top" Width="358" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3" FontFamily="Bahnschrift" FontSize="16"/>
         <Label x:Name="LblStore" Content="SHOP" HorizontalAlignment="Left" Height="25" Margin="400,12,0,0" VerticalAlignment="Top" Width="359" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Row="3" FontFamily="Bahnschrift" FontSize="16"/>
-        <Label x:Name="LblName" Content="NAME" HorizontalAlignment="Left" Height="27" Margin="420,177,0,0" Grid.Row="3" VerticalAlignment="Top" Width="82" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblSuppliers" Content="SUPPLIERS" HorizontalAlignment="Left" Height="27" Margin="420,223,0,0" Grid.Row="3" VerticalAlignment="Top" Width="82" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift"/>
-        <Label Content="CUSTOMERS" HorizontalAlignment="Left" Height="27" Margin="584,223,0,0" Grid.Row="3" VerticalAlignment="Top" Width="89" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name ="TxtName" HorizontalAlignment="Left" Height="17" Margin="507,182,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" TextChanged="TxtName_TextChanged"/>
-        <TextBox x:Name="TxtSupplier" HorizontalAlignment="Left" Height="17" Margin="507,228,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" IsEnabled="False"/>
-        <TextBox x:Name ="TxtCustomer" HorizontalAlignment="Left" Height="17" Margin="673,228,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" IsEnabled="False"/>
+        <Label x:Name="LblName" Content="NAME" HorizontalAlignment="Left" Height="27" Margin="420,177,0,0" Grid.Row="3" VerticalAlignment="Top" Width="87" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblSuppliers" Content="SUPPLIERS" HorizontalAlignment="Left" Height="27" Margin="420,223,0,0" Grid.Row="3" VerticalAlignment="Top" Width="87" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Label Content="CUSTOMERS" HorizontalAlignment="Left" Height="27" Margin="578,223,0,0" Grid.Row="3" VerticalAlignment="Top" Width="77" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name ="TxtName" HorizontalAlignment="Left" Height="20" Margin="507,180,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" TextChanged="TxtName_TextChanged"/>
+        <TextBox x:Name="TxtSupplier" HorizontalAlignment="Left" Height="20" Margin="507,226,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" IsEnabled="False"/>
+        <TextBox x:Name ="TxtCustomer" HorizontalAlignment="Left" Height="20" Margin="655,226,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="77" IsEnabled="False">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.471"/>
+                    <TranslateTransform X="-0.045" Y="-0.004"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
     </Grid>
 </Window>

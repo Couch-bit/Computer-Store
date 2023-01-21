@@ -95,6 +95,7 @@ namespace GUI
 
         private void RefreshStore()
         {
+            products.Sort();
             LstProducts.ItemsSource = new
                 ObservableCollection<Product>(products);
         }

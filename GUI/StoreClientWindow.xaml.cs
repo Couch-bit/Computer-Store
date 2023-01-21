@@ -23,6 +23,7 @@ namespace GUI
             this.store = store;
             this.customer = customer;
             order = new();
+            --Order.CurrentId;
             RefreshStore();
         }
 
@@ -34,7 +35,36 @@ namespace GUI
                 TxtDescription.Text =
                 product.Description;
             }
-            
+        }
+
+        private void LstOrder_SelectionChanged(object sender,
+            SelectionChangedEventArgs e)
+        {
+            if (LstOrder.SelectedItem is Product product)
+            {
+                TxtAmountOrder.Text =
+                order.Cart[product].ToString() ?? "";
+            }
+        }
+
+        private void DateDelivery_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                if (DateDelivery.SelectedDate is DateTime dateTime)
+                {
+                    order.DeliveryDate = dateTime;
+                }
+                RefreshStore();
+
+            }
+            catch (Exception exc)
+            {
+                DateDelivery.SelectedDate = order.DeliveryDate;
+                System.Windows.Forms.MessageBox.Show
+                        (exc.Message, "Error",
+                        MessageBoxButtons.OK);
+            }
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -60,12 +90,6 @@ namespace GUI
                         MessageBoxButtons.OK);
                 }
             }
-            
-        }
-
-        private void BtnOrder_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -75,6 +99,18 @@ namespace GUI
                 order.Delete(product);
                 RefreshStore();
             }
+        }
+
+        private void BtnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            customer.AddOrder(order);
+            ++Order.CurrentId;
+            DialogResult = true;
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
 
         private void RefreshStore()
@@ -88,16 +124,6 @@ namespace GUI
             TxtOrder.Text = $"{order.CalculateOrderCost():c2}";
             TxtDelivery.Text = $"{order.CalculateShippingCost():c2}";
             TxtCost.Text = $"{order.CalculateTotalCost():c2}";
-        }
-
-        private void LstOrder_SelectionChanged(object sender,
-            SelectionChangedEventArgs e)
-        {
-            if (LstOrder.SelectedItem is Product product)
-            {
-                TxtAmountOrder.Text =
-                order.Cart[product].ToString() ?? "";
-            }
         }
     }
 }

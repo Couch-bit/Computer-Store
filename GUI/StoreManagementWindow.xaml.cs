@@ -17,18 +17,6 @@ namespace GUI
             RefreshStore();
         }
 
-        private void RefreshStore()
-        {
-            LstProducts.ItemsSource = new ObservableCollection
-                <Product>(store.GetAllProducts());
-            LstSuppliers.ItemsSource = new ObservableCollection
-                <Supplier>(store.Suppliers);
-            LstCustomers.ItemsSource = new ObservableCollection
-                <Customer>(store.Customers);
-            LstOrders.ItemsSource = new ObservableCollection
-                <Order>(store.GetAllOrders().FindAll(p => p.Status));
-        }
-
         private void AddSupplier_Click(object sender,
             RoutedEventArgs e)
         {
@@ -40,7 +28,7 @@ namespace GUI
             }
         }
 
-        private void BtnModifySupplier_Click(object sender,
+        private void ModifySupplier_Click(object sender,
             RoutedEventArgs e)
         {
             if (LstSuppliers.SelectedItem is Supplier supplier)
@@ -54,6 +42,11 @@ namespace GUI
             }
         }
 
+        private void Finish_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
         private void BtnModifyItem_Click(object sender, RoutedEventArgs e)
         {
 
@@ -62,6 +55,18 @@ namespace GUI
         private void BtnDeleteOrder_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void RefreshStore()
+        {
+            LstProducts.ItemsSource = new ObservableCollection
+                <Product>(store.GetAllProducts());
+            LstSuppliers.ItemsSource = new ObservableCollection
+                <Supplier>(store.Suppliers);
+            LstCustomers.ItemsSource = new ObservableCollection
+                <Customer>(store.Customers);
+            LstOrders.ItemsSource = new ObservableCollection
+                <Order>(store.GetAllOrders().FindAll(p => !p.Status));
         }
     }
 }

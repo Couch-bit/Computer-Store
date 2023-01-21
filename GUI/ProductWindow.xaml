@@ -18,11 +18,11 @@
         <Label x:Name="LblDescription" Content="Description" HorizontalAlignment="Left" Height="26" Margin="21,121,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblDiscount" Content="Discount" HorizontalAlignment="Left" Height="26" Margin="21,193,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblPrice" Content="Price" HorizontalAlignment="Left" Height="26" Margin="21,219,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LbLVAT" Content="VAT" HorizontalAlignment="Left" Height="26" Margin="21,244,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="17" Margin="105,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
-        <TextBox x:Name="TxtDescription" HorizontalAlignment="Left" Height="67" Margin="105,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
-        <TextBox x:Name="TxtDiscount" HorizontalAlignment="Left" Height="17" Margin="105,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
-        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Height="17" Margin="105,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="LbLVAT" Content="VAT" HorizontalAlignment="Left" Height="26" Margin="21,247,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Height="20" Margin="106,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="TxtDescription" HorizontalAlignment="Left" Height="67" Margin="106,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="TxtDiscount" HorizontalAlignment="Left" Height="20" Margin="106,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Height="20" Margin="106,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
         <Button x:Name="BtnConfirm" Content="Confirm" HorizontalAlignment="Left" Height="30" Margin="276,377,0,0" VerticalAlignment="Top" Width="189" Foreground="#FF0052D6" BorderBrush="#FF0052D6" BorderThickness="3" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Background="{x:Null}" Click="BtnConfirm_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -37,25 +37,25 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox x:Name="TxtVAT" HorizontalAlignment="Left" Height="17" Margin="105,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="TxtVAT" HorizontalAlignment="Left" Height="20" Margin="106,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
         <Label x:Name="LblBasicInfo" Content="Basic information" HorizontalAlignment="Left" Height="26" Margin="21,57,0,0" VerticalAlignment="Top" Width="221" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblSpecificInfo" Content="Specific Information" HorizontalAlignment="Left" Height="26" Margin="246,57,0,0" VerticalAlignment="Top" Width="219" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblWeigth" Content="Weight" HorizontalAlignment="Left" Height="26" Margin="260,90,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblLength" Content="Length" HorizontalAlignment="Left" Height="26" Margin="260,116,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblHeight" Content="Height" HorizontalAlignment="Left" Height="26" Margin="260,142,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblWidth" Content="Width" HorizontalAlignment="Left" Height="26" Margin="260,167,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtWeight" HorizontalAlignment="Left" Height="20" Margin="349,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <TextBox x:Name="TxtLength" HorizontalAlignment="Left" Height="20" Margin="349,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
-        <TextBox x:Name="TxtHeight" HorizontalAlignment="Left" Height="20" Margin="349,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <TextBox x:Name="TxtWidth" HorizontalAlignment="Left" Height="20" Margin="349,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <Label x:Name="LblHardware" Content="Hardware" HorizontalAlignment="Left" Height="25" Margin="260,247,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblArchitecture" Content="Architecture" HorizontalAlignment="Left" Height="26" Margin="260,274,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblAccessory" Content="Accessory" HorizontalAlignment="Left" Height="26" Margin="260,304,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblVersion" Content="Version" HorizontalAlignment="Left" Height="26" Margin="260,193,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <Label x:Name="LblLicense" Content="License" HorizontalAlignment="Left" Height="26" Margin="260,219,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="TxtVersion" Height="20" Margin="349,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.947,0.6" HorizontalAlignment="Left" Width="111"/>
-        <TextBox x:Name="TxtLicense" HorizontalAlignment="Left" Height="20" Margin="349,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
-        <ComboBox x:Name="CmbHardware" HorizontalAlignment="Left" Height="26" Margin="349,246,0,0" VerticalAlignment="Top" Width="111">
+        <Label x:Name="LblWeigth" Content="Weight" HorizontalAlignment="Left" Height="26" Margin="264,90,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblLength" Content="Length" HorizontalAlignment="Left" Height="26" Margin="264,119,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblHeight" Content="Height" HorizontalAlignment="Left" Height="26" Margin="264,145,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblWidth" Content="Width" HorizontalAlignment="Left" Height="26" Margin="264,170,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtWeight" HorizontalAlignment="Left" Height="20" Margin="349,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.456,0.425"/>
+        <TextBox x:Name="TxtLength" HorizontalAlignment="Left" Height="20" Margin="349,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="TxtHeight" HorizontalAlignment="Left" Height="20" Margin="349,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="TxtWidth" HorizontalAlignment="Left" Height="20" Margin="349,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="LblHardware" Content="Hardware" HorizontalAlignment="Left" Height="25" Margin="264,257,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblArchitecture" Content="Architecture" HorizontalAlignment="Left" Height="26" Margin="264,288,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblAccessory" Content="Accessory" HorizontalAlignment="Left" Height="26" Margin="264,316,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblVersion" Content="Version" HorizontalAlignment="Left" Height="26" Margin="264,196,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <Label x:Name="LblLicense" Content="License" HorizontalAlignment="Left" Height="26" Margin="264,222,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TxtVersion" Height="20" Margin="349,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.947,0.6" HorizontalAlignment="Left" Width="110"/>
+        <TextBox x:Name="TxtLicense" HorizontalAlignment="Left" Height="20" Margin="349,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <ComboBox x:Name="CmbHardware" HorizontalAlignment="Left" Height="26" Margin="349,254,0,0" VerticalAlignment="Top" Width="110">
             <ComboBoxItem x:Name="gpu" Content="GPU"/>
             <ComboBoxItem x:Name="cpu" Content="CPU"/>
             <ComboBoxItem x:Name="ram" Content="RAM"/>
@@ -64,11 +64,11 @@
             <ComboBoxItem x:Name="drive" Content="Drive"/>
             <ComboBoxItem x:Name="other" Content="Other"/>
         </ComboBox>
-        <ComboBox x:Name="CmbArchitecture" HorizontalAlignment="Left" Height="27" Margin="349,275,0,0" VerticalAlignment="Top" Width="111">
+        <ComboBox x:Name="CmbArchitecture" HorizontalAlignment="Left" Height="27" Margin="349,316,0,0" VerticalAlignment="Top" Width="110">
             <ComboBoxItem x:Name="Bit32" Content="Bit32"/>
             <ComboBoxItem x:Name="Bit64" Content="Bit64"/>
         </ComboBox>
-        <ComboBox x:Name="CmbAccessory" HorizontalAlignment="Left" Height="26" Margin="349,305,0,0" VerticalAlignment="Top" Width="111">
+        <ComboBox x:Name="CmbAccessory" HorizontalAlignment="Left" Height="26" Margin="349,285,0,0" VerticalAlignment="Top" Width="110">
             <ComboBoxItem x:Name="headphones" Content="Headphones"/>
             <ComboBoxItem x:Name="microphone" Content="Microphone"/>
             <ComboBoxItem x:Name="mouse" Content="Mouse"/>

@@ -155,7 +155,7 @@ namespace Classes
         /// </returns>
         public decimal CalculateFee()
         {
-            double days = DateTime.Now.Subtract(DeliveryDate).TotalDays;
+            double days = Math.Round(DeliveryDate.Date.Subtract(DateTime.Now).TotalDays, 0);
             if (days < 7)
             {
                 return (decimal)(7 - days) * 3.0M;

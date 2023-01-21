@@ -229,13 +229,13 @@ namespace Classes
         /// <exception cref="Classes.WrongKeyException">Key already exists</exception>
         public void AddTechnicalInfo(string key, string value)
         {
-            if (technicalInfo.ContainsKey(key))
+            if (technicalInfo.ContainsKey(key.ToLower()))
             {
                 throw new WrongKeyException("Key already exists");
             }
             else
             {
-                technicalInfo.Add(key, value);
+                technicalInfo.Add(key.ToLower(), value);
             }
         }
 
@@ -247,9 +247,9 @@ namespace Classes
         /// <exception cref="Classes.WrongKeyException">Key doesn't exist</exception>
         public void EditTechnicalInfo(string key, string value)
         {
-            if (technicalInfo.ContainsKey(key))
+            if (technicalInfo.ContainsKey(key.ToLower()))
             {
-                technicalInfo[key] = value;
+                technicalInfo[key.ToLower()] = value;
             }
             else
             {
@@ -264,7 +264,7 @@ namespace Classes
         /// <exception cref="Classes.WrongKeyException">Key does not exist</exception>
         public void DeleteTechnicalInfo(string key)
         {
-            if (!technicalInfo.Remove(key))
+            if (!technicalInfo.Remove(key.ToLower()))
             {
                 throw new WrongKeyException("Key does not exist");
             }
