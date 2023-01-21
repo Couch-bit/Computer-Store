@@ -1,0 +1,888 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Classes</name>
+    </assembly>
+    <members>
+        <member name="T:Classes.AccessoryType">
+            <summary>
+            Enum for basic Accesory types in the store.
+            </summary>
+        </member>
+        <member name="T:Classes.Accessory">
+            <summary>
+            A class for Accessories that inherits after the abstract class Product.
+            </summary>
+            <seealso cref="T:Classes.Product" />
+        </member>
+        <member name="P:Classes.Accessory.Weight">
+            <summary>
+            Gets or sets the weight. Setting the weight is validated, as weight cannot be smaller or
+            equal to 0.
+            </summary>
+            <value>
+            The weight.
+            </value>
+        </member>
+        <member name="P:Classes.Accessory.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="M:Classes.Accessory.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Classes.Company">
+            <summary>
+            A class for Public Customer (Company) that inherits after the abstract class Customer.
+            </summary>
+            <seealso cref="T:Classes.Customer" />
+        </member>
+        <member name="P:Classes.Company.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Classes.Company.Nip">
+            <summary>
+            Gets or sets the NIP. Setting the NIP is validated by the
+            <see cref="!:Supplier.ValidateNip(string)" /> method and the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            </summary>
+            <value>
+            The NIP.
+            </value>
+            <exception cref="T:Classes.NipValidationException">Incorrect NIP</exception>
+        </member>
+        <member name="M:Classes.Company.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Classes.Customer">
+            <summary>
+            An abstract class for all customers.
+            </summary>
+        </member>
+        <member name="P:Classes.Customer.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Classes.Customer.Country">
+            <summary>
+            Gets or sets the country. Setting the country is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            Country must start with a big letter and contain only letters. Spaces are permitted.
+            </summary>
+            <value>
+            The country.
+            </value>
+            <exception cref="T:Classes.WrongNameException">Incorrect Country</exception>
+        </member>
+        <member name="P:Classes.Customer.City">
+            <summary>
+            Gets or sets the city. Setting the city is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            City must start with a big letter and contain only letters. Spaces are permitted.
+            </summary>
+            <value>
+            The city.
+            </value>
+            <exception cref="T:Classes.WrongNameException">Incorrect City</exception>
+        </member>
+        <member name="P:Classes.Customer.Street">
+            <summary>
+            Gets or sets the street. Setting the street is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            Street must start with a big letter and contain only letters and numbers at the end of the string (ex. apartment number). 
+            Spaces are permitted.
+            </summary>
+            <value>
+            The street.
+            </value>
+            <exception cref="T:Classes.WrongNameException">Incorrect Street</exception>
+        </member>
+        <member name="P:Classes.Customer.ZipCode">
+            <summary>
+            Gets or sets (init) the zip code. Setting the zip code is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            Zip code must be in a Polish format (ex. 12-353).
+            </summary>
+            <value>
+            The zip code.
+            </value>
+        </member>
+        <member name="P:Classes.Customer.PhoneNumber">
+            <summary>
+            Gets or sets (init) the phone number. Setting the phone number is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            Phone number must be in a Polish (European) format (ex. 212-234-124).
+            </summary>
+            <value>
+            The phone number.
+            </value>
+            <exception cref="T:Classes.PhoneNumberException">Incorrect Phone Number</exception>
+        </member>
+        <member name="P:Classes.Customer.Email">
+            <summary>
+            Gets or sets (init) the email. Setting the e-mail is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            E-mail must be in an internationally accepted format (ex. me@myself.org)
+            </summary>
+            <value>
+            The email.
+            </value>
+            <exception cref="T:Classes.WrongEmailException">Incorrect Email</exception>
+        </member>
+        <member name="P:Classes.Customer.Password">
+            <summary>
+            Gets or sets (init) the password.
+            </summary>
+            <value>
+            The password.
+            </value>
+        </member>
+        <member name="P:Classes.Customer.Orders">
+            <summary>
+            Gets or sets (init) the orders.
+            </summary>
+            <value>
+            The orders.
+            </value>
+        </member>
+        <member name="M:Classes.Customer.AddOrder(Classes.Order)">
+            <summary>
+            Adds the order.
+            </summary>
+            <param name="order">The order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Classes.Customer.RemoveOrder(Classes.Order)">
+            <summary>
+            Removes the order by id.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Classes.HardwareType">
+            <summary>
+            Enum for basic Hardware types in the store.
+            </summary>
+        </member>
+        <member name="T:Classes.Hardware">
+            <summary>
+            A class for Hardware that inherits after the abstract class Product.
+            </summary>
+            <seealso cref="T:Classes.Product" />
+        </member>
+        <member name="P:Classes.Hardware.Weight">
+            <summary>
+            Gets or sets the weight. Setting the weight is validated, as weight cannot be smaller or
+            equal to 0.
+            </summary>
+            <value>
+            The weight.
+            </value>
+            <exception cref="T:Classes.WrongParameterException">Weight cannot be smaller or equal to 0.</exception>
+        </member>
+        <member name="P:Classes.Hardware.Length">
+            <summary>
+            Gets or sets the length. Setting the length is validated, as length cannot be smaller or
+            equal to 0.
+            </summary>
+            <value>
+            The length.
+            </value>
+            <exception cref="T:Classes.WrongParameterException">Length cannot be smaller or equal to 0.</exception>
+        </member>
+        <member name="P:Classes.Hardware.Height">
+            <summary>
+            Gets or sets the height. Setting the height is validated, as height cannot be smaller or
+            equal to 0.
+            </summary>
+            <value>
+            The height.
+            </value>
+        </member>
+        <member name="P:Classes.Hardware.Width">
+            <summary>
+            Gets or sets the width. Setting the width is validated, as width cannot be smaller or
+            equal to 0.
+            </summary>
+            <value>
+            The width.
+            </value>
+        </member>
+        <member name="P:Classes.Hardware.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="M:Classes.Hardware.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Classes.Item">
+            <summary>
+            A public class for the items - which are specified copies of the main product
+            </summary>
+        </member>
+        <member name="P:Classes.Item.SerialNumber">
+            <summary>
+            Gets or sets (init) the serial number.
+            </summary>
+            <value>
+            The serial number.
+            </value>
+        </member>
+        <member name="P:Classes.Item.DateofArrival">
+            <summary>
+            Gets or sets (init) the date of arrival.
+            </summary>
+            <value>
+            The date of arrival.
+            </value>
+        </member>
+        <member name="M:Classes.Item.Equals(Classes.Item)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Classes.Item.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Classes.Item.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns>
+              <see langword="true" /> if the specified object  is equal to the current object; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Classes.Item.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="T:Classes.Order">
+            <summary>
+            A class for all Orders from Customers.
+            </summary>
+        </member>
+        <member name="P:Classes.Order.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Classes.Order.Status">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Classes.Order"/> is realized or not.
+            </summary>
+            <value>
+            <c>true</c> if the order is realized; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Classes.Order.DeliveryDate">
+            <summary>
+            Gets or sets the desired delivery date.
+            </summary>
+            <value>
+            The delivery date.
+            </value>
+            <exception cref="T:Classes.WrongDateException">Incorrect date</exception>
+        </member>
+        <member name="P:Classes.Order.Cart">
+            <summary>
+            Gets or sets (init) the cart.
+            </summary>
+            <value>
+            The cart.
+            </value>
+        </member>
+        <member name="M:Classes.Order.Add(Classes.Product,System.Int32)">
+            <summary>
+            Adds the specified product to the order.
+            </summary>
+            <param name="product">The product.</param>
+            <param name="amount">The amount.</param>
+            <exception cref="T:Classes.CartException">
+            Product is already in the cart.
+            or
+            Insufficient Items
+            </exception>
+        </member>
+        <member name="M:Classes.Order.Delete(Classes.CartItem)">
+            <summary>
+            Deletes the specified product from the order.
+            </summary>
+            <param name="product">The product.</param>
+            <exception cref="T:Classes.CartException">There is no such Item</exception>
+        </member>
+        <member name="M:Classes.Order.CalculateOrderCost">
+            <summary>
+            Calculates the order cost (doesn't include the shipping cost).
+            </summary>
+            <returns>
+            A decimal containing said cost.
+            </returns>
+        </member>
+        <member name="M:Classes.Order.CalculateFee">
+            <summary>
+            Calculates the extra fee of fast shipping. The earlier customer wants the product, the more expensive is the shipping.
+            </summary>
+            <returns>
+            A decimal containing said fee.
+            </returns>
+        </member>
+        <member name="M:Classes.Order.CalculateShippingCost">
+            <summary>
+            Calculates the shipping cost (base fee + extra fee).
+            </summary>
+            <returns>
+            A decimal containing said shipping cost.
+            </returns>
+        </member>
+        <member name="M:Classes.Order.CalculateTotalCost">
+            <summary>
+            Calculates the total cost (order cost + shipping cost).
+            </summary>
+            <returns>
+            A decimal containing said total cost.
+            </returns>
+        </member>
+        <member name="M:Classes.Order.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Classes.CartItem">
+            <summary>
+            A class converging the type of dictionary to make it JSON friendly. Otherwise JSON won't work. Perhaps in .NET 8.0 it won't be needed. 
+            </summary>
+        </member>
+        <member name="P:Classes.CartItem.Item1">
+            <summary>
+            Gets or sets the item1 (as the name in the original dictionary).
+            </summary>
+            <value>
+            The item1.
+            </value>
+        </member>
+        <member name="P:Classes.CartItem.Item2">
+            <summary>
+            Gets or sets the item2 (as the name in the original dictionary).
+            </summary>
+            <value>
+            The item2.
+            </value>
+        </member>
+        <member name="M:Classes.CartItem.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Classes.PrivateCustomer">
+            <summary>
+            A class for Private Customer that inherits after the abstract class Customer.
+            </summary>
+            <seealso cref="T:Classes.Customer" />
+        </member>
+        <member name="P:Classes.PrivateCustomer.FirstName">
+            <summary>
+            Gets or sets the first name. Setting the name is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            Name must start with a big letter and contain only letters. Spaces are permitted.
+            </summary>
+            <value>
+            The first name.
+            </value>
+            <exception cref="T:Classes.WrongNameException">Incorrect first name</exception>
+        </member>
+        <member name="P:Classes.PrivateCustomer.LastName">
+            <summary>
+            Gets or sets the last name. Setting the last name is validated by the <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            Last name must start with a big letter and contain only letters. Spaces are permitted.
+            </summary>
+            <value>
+            The last name.
+            </value>
+            <exception cref="T:Classes.WrongNameException">Incorrect last name</exception>
+        </member>
+        <member name="M:Classes.PrivateCustomer.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Classes.Product">
+            <summary>
+            An abstract class for the Products.
+            </summary>
+            <seealso cref="T:System.IComparable" />
+            <seealso cref="T:System.ICloneable" />
+        </member>
+        <member name="P:Classes.Product.Id">
+            <summary>
+            Gets or sets (init) the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Classes.Product.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Classes.Product.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:Classes.Product.Discount">
+            <summary>
+            Gets or sets the discount. Setting the discount is validated, as discount must be in range (0,1).
+            </summary>
+            <value>
+            The discount.
+            </value>
+            <exception cref="T:Classes.NumericException">Illegal discount</exception>
+        </member>
+        <member name="P:Classes.Product.Price">
+            <summary>
+            Gets or sets the price. Setting the price is validated, as price cannot be negative.
+            </summary>
+            <value>
+            The price.
+            </value>
+            <exception cref="T:Classes.NumericException">Illegal price</exception>
+        </member>
+        <member name="P:Classes.Product.Vat">
+            <summary>
+            Gets or sets the vat. Setting the VAT is validated, as VAT can assume only certain levels.
+            </summary>
+            <value>
+            The <a href="https://en.wikipedia.org/wiki/Value-added_tax">vat</a>.
+            </value>
+            <exception cref="T:Classes.NumericException">Illegal vat</exception>
+        </member>
+        <member name="P:Classes.Product.Technical_info">
+            <summary>
+            Gets the or sets (init) technical information.
+            </summary>
+            <value>
+            The technical information.
+            </value>
+        </member>
+        <member name="P:Classes.Product.Items">
+            <summary>
+            Gets or sets (init) the items. This list contains all the copies of the product - each with individual serial number, etc.
+            </summary>
+            <value>
+            The items (copies).
+            </value>
+        </member>
+        <member name="M:Classes.Product.GetTotalPrice">
+            <summary>
+            Gets the total price.
+            </summary>
+            <returns>
+            A decimal containing price.
+            </returns>
+        </member>
+        <member name="M:Classes.Product.GetCount">
+            <summary>
+            Gets the count of all the items of this product.
+            </summary>
+            <returns>
+            An integer containing the count.
+            </returns>
+        </member>
+        <member name="M:Classes.Product.AddItem(Classes.Item)">
+            <summary>
+            Adds the individual item to the general product. The individual item is distinguished by the serial number. 
+            </summary>
+            <param name="item">The item.</param>
+            <exception cref="T:Classes.DuplicateException">This Item is already added</exception>
+        </member>
+        <member name="M:Classes.Product.RemoveItem(Classes.Item)">
+            <summary>
+            Removes the individual item from the general product.
+            </summary>
+            <param name="item">The item.</param>
+            <exception cref="T:Classes.WrongKeyException">There is no such item</exception>
+        </member>
+        <member name="M:Classes.Product.AddTechnicalInfo(System.String,System.String)">
+            <summary>
+            Adds the technical information.
+            </summary>
+            <param name="key">The key - here it is the technical parameter.</param>
+            <param name="value">The value - here it is the technical value.</param>
+            <example>
+            object.AddTechnicalInfo("Chipset", "Geforce RTX 3060");
+            </example>
+            <exception cref="T:Classes.WrongKeyException">Key already exists</exception>
+        </member>
+        <member name="M:Classes.Product.EditTechnicalInfo(System.String,System.String)">
+            <summary>
+            Edits the technical information.
+            </summary>
+            <param name="key">The key - here it is the technical parameter.</param>
+            <param name="value">The value - here it is the technical value.</param>
+            <exception cref="T:Classes.WrongKeyException">Key doesn't exist</exception>
+        </member>
+        <member name="M:Classes.Product.DeleteTechnicalInfo(System.String)">
+            <summary>
+            Deletes the technical information.
+            </summary>
+            <param name="key">The key - here it is the technical parameter.</param>
+            <exception cref="T:Classes.WrongKeyException">Key does not exist</exception>
+        </member>
+        <member name="M:Classes.Product.CompareTo(Classes.Product)">
+            <summary>
+            Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+            </summary>
+            <param name="other">An object to compare with this instance.</param>
+            <returns>
+            A value that indicates the relative order of the objects being compared. The return value has these meanings:
+            <list type="table"><listheader><term> Value</term><description> Meaning</description></listheader><item><term> Less than zero</term><description> This instance precedes <paramref name="other" /> in the sort order.</description></item><item><term> Zero</term><description> This instance occurs in the same position in the sort order as <paramref name="other" />.</description></item><item><term> Greater than zero</term><description> This instance follows <paramref name="other" /> in the sort order.</description></item></list>
+            </returns>
+        </member>
+        <member name="M:Classes.Product.Equals(Classes.Product)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+              <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Classes.Product.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="M:Classes.Product.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Classes.Product.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns>
+              <see langword="true" /> if the specified object  is equal to the current object; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Classes.Product.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="T:Classes.Architecture">
+            <summary>
+            Enum for basic computer architectures in the store.
+            </summary>
+        </member>
+        <member name="F:Classes.Architecture.Bit32">
+            <summary>
+            The bit32. For further references see <a href="https://en.wikipedia.org/wiki/32-bit_computing">this</a>.
+            </summary>
+        </member>
+        <member name="F:Classes.Architecture.Bit64">
+            <summary>
+            The bit64. For further references see <a href="https://en.wikipedia.org/wiki/64-bit_computing">this</a>.
+            </summary>
+        </member>
+        <member name="T:Classes.Software">
+            <summary>
+            A class for Software that inherits after the abstract class Product.
+            </summary>
+            <seealso cref="T:Classes.Product" />
+        </member>
+        <member name="P:Classes.Software.Version">
+            <summary>
+            Gets or sets the version.
+            </summary>
+            <value>
+            The version.
+            </value>
+        </member>
+        <member name="P:Classes.Software.License">
+            <summary>
+            Gets or sets the license.
+            </summary>
+            <value>
+            The license.
+            </value>
+        </member>
+        <member name="P:Classes.Software.TargetArchitecture">
+            <summary>
+            Gets or sets the target architecture.
+            </summary>
+            <value>
+            The target architecture.
+            </value>
+        </member>
+        <member name="M:Classes.Software.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Classes.Store">
+            <summary>
+            A class containing all of the store. 
+            </summary>
+        </member>
+        <member name="P:Classes.Store.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Classes.Store.Suppliers">
+            <summary>
+            Gets or sets (init) the suppliers.
+            </summary>
+            <value>
+            The suppliers.
+            </value>
+        </member>
+        <member name="P:Classes.Store.Customers">
+            <summary>
+            Gets or sets (init) the customers.
+            </summary>
+            <value>
+            The customers.
+            </value>
+        </member>
+        <member name="M:Classes.Store.AddSupplier(Classes.Supplier)">
+            <summary>
+            Adds the supplier to the known database of suppliers.
+            </summary>
+            <param name="supplier">The supplier.</param>
+            <exception cref="T:Classes.DuplicateException">Supplier already exists</exception>
+        </member>
+        <member name="M:Classes.Store.RemoveSupplier(Classes.Supplier)">
+            <summary>
+            Removes the supplier from the known database from suppliers.
+            </summary>
+            <param name="supplier">The supplier.</param>
+            <exception cref="T:Classes.WrongKeyException">No such Supplier</exception>
+        </member>
+        <member name="M:Classes.Store.AddCustomer(Classes.Customer)">
+            <summary>
+            Adds the customer to the known database of clients.
+            </summary>
+            <param name="customer">The customer.</param>
+            <exception cref="T:Classes.DuplicateException">Email is already in use</exception>
+        </member>
+        <member name="M:Classes.Store.RemoveCustomer(Classes.Customer)">
+            <summary>
+            Removes the customer from the known database of clients.
+            </summary>
+            <param name="customer">The customer.</param>
+            <exception cref="T:Classes.WrongKeyException">No such Customer</exception>
+        </member>
+        <member name="M:Classes.Store.GetAllOrders">
+            <summary>
+            Gets all orders of all customers.
+            </summary>
+            <returns>
+            A list of orders.
+            </returns>
+        </member>
+        <member name="M:Classes.Store.GetAllProducts">
+            <summary>
+            Gets all products of all suppliers.
+            </summary>
+            <returns>
+            A list of products
+            </returns>
+        </member>
+        <member name="M:Classes.Store.GetCustomer(Classes.Order)">
+            <summary>
+            Gets the customer.
+            </summary>
+            <param name="order">The order.</param>
+            <returns>
+            A customer.
+            </returns>
+            <exception cref="T:Classes.WrongKeyException">No such Order</exception>
+        </member>
+        <member name="M:Classes.Store.Serialize(System.String)">
+            <summary>
+            Serializes the specified file to JSON format.
+            </summary>
+            <param name="fname">The name of the file where the JSON format is going to be stored.</param>
+        </member>
+        <member name="M:Classes.Store.Deserialize(System.String)">
+            <summary>
+            Deserializes the specified file from JSON format.
+            </summary>
+            <param name="fname">The name of the file where the JSON format is stored.</param>
+            <returns></returns>
+            <exception cref="T:System.IO.FileNotFoundException">No such JSON file</exception>
+            <exception cref="T:Classes.SerializationException">Failed to Parse File</exception>
+        </member>
+        <member name="M:Classes.Store.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Classes.Sumation">
+            <summary>
+            The mandatory delegate.
+            </summary>
+            <param name="nip">The nip.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Classes.Supplier">
+            <summary>
+            Class for suppliers.
+            </summary>
+        </member>
+        <member name="P:Classes.Supplier.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Classes.Supplier.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Classes.Supplier.Nip">
+            <summary>
+            Gets or sets the NIP. Setting the NIP is validated by 
+            <see cref="!:ValidateNip(string)" /> method and <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            </summary>
+            <value>
+            The NIP.
+            </value>
+            <exception cref="T:Classes.NipValidationException"></exception>
+        </member>
+        <member name="P:Classes.Supplier.Country">
+            <summary>
+            Gets or sets the country. Setting the country is validated by <see cref="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)" /> method.
+            </summary>
+            <value>
+            The country.
+            </value>
+            <exception cref="T:Classes.WrongNameException"></exception>
+        </member>
+        <member name="M:Classes.Supplier.AddProduct(Classes.Product)">
+            <summary>
+            Adds the product.
+            </summary>
+            <param name="product">The product.</param>
+        </member>
+        <member name="M:Classes.Supplier.RemoveProduct(Classes.Product)">
+            <summary>
+            Removes the product.
+            </summary>
+            <param name="product">The product.</param>
+        </member>
+        <member name="M:Classes.Supplier.Sort">
+            <summary>
+            Sorts this instance.
+            </summary>
+        </member>
+        <member name="M:Classes.Supplier.ValidateNip(System.String,Classes.Sumation)">
+            <summary>
+            Validates the inputed NIP number.
+            </summary>
+            <param name="nip">It's a Polish tax identification number, consists of 10 digits, 
+            where the first three digits are codes provided by the tax office, and the last number is a control one.
+            For further references please click <a href="https://www.justaskpoland.com/nip-number/">here</a>.</param>
+            <returns>Boolean value</returns>
+        </member>
+        <member name="M:Classes.Supplier.SumNip(System.String)">
+            <summary>
+            Sums the nip - a base for the famous mandatory delegate.
+            </summary>
+            <param name="nip">The nip.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Classes.Supplier.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+    </members>
+</doc>
