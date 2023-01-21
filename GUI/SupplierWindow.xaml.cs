@@ -47,7 +47,7 @@ namespace GUI
             {
                 Supplier result = new(TxtName.Text, TxtNIP.Text,
                     TxtCountry.Text);
-                products.ForEach(p => result.AddProduct(p));
+                products.ForEach(result.AddProduct);
                 if (supplier is not null)
                 {
                     store.RemoveSupplier(supplier);

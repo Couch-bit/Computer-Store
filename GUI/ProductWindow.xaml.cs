@@ -92,6 +92,7 @@ namespace GUI
                     if (product is not null)
                     {
                         products.Remove(product);
+                        product.Items.ForEach(hardware.AddItem);
                     }
                     products.Add(hardware);
                     DialogResult = true;
@@ -136,6 +137,7 @@ namespace GUI
                     if (product is not null)
                     {
                         products.Remove(product);
+                        product.Items.ForEach(software.AddItem);
                     }
                     products.Add(software);
                     DialogResult = true;
@@ -182,6 +184,7 @@ namespace GUI
                     if (product is not null)
                     {
                         products.Remove(product);
+                        product.Items.ForEach(accessory.AddItem);
                     }
                     products.Add(accessory);
                     DialogResult = true;

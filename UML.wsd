@@ -58,6 +58,7 @@ class Order {
   + decimal CalculateOrderCost()
   + decimal CalculateFee()
   + decimal CalculateShippingCost()
+  + decimal CalculateTotalCost()
   + override string ToString()
 }
 

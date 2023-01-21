@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Forms;
 using Classes;
 
 namespace GUI
@@ -27,7 +29,7 @@ namespace GUI
                 !string.IsNullOrEmpty(TxtNumber.Text))
             {
                 items.Add(new Item(TxtNumber.Text,
-                    (System.DateTime)TxtDate.SelectedDate));
+                    (DateTime)TxtDate.SelectedDate));
                 RefreshStore();
             }
         }
@@ -36,26 +38,40 @@ namespace GUI
         {
             if (LstItems.SelectedItem is Item item)
             {
-                product.RemoveItem(item);
+                items.Remove(item);
                 RefreshStore();
             }
+        }
+
+        private void BtnConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Hardware hardware = new();
+                items.ForEach(hardware.AddItem);
+                product.Items.Clear();
+                items.ForEach(product.AddItem);
+                DialogResult = true;
+            }
+            catch (Exception exc) 
+            {
+                System.Windows.Forms.MessageBox.Show
+                        (exc.Message,
+                        "Error",
+                        MessageBoxButtons.OK);
+            }
+            
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
 
         private void RefreshStore()
         {
             LstItems.ItemsSource = new
                 ObservableCollection<Item>(items);
-        }
-
-        private void BtnConfirm_Click(object sender, RoutedEventArgs e)
-        {
-            product.Items.Clear();
-            items.ForEach(product.Items.Add);
-            DialogResult = true;
-        }
-        private void BtnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

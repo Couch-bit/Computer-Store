@@ -113,7 +113,7 @@ namespace Classes
                 throw new CartException
                     ("Product is already in the cart.");
             }
-            else if (amount >= product.GetCount())
+            else if (amount > product.GetCount())
             {
                 throw new CartException("Insufficient Items");
             }
@@ -174,6 +174,11 @@ namespace Classes
             return 20M + CalculateFee();
         }
 
+        public decimal CalculateTotalCost()
+        {
+            return CalculateOrderCost() + CalculateShippingCost();
+        }
+
         /// <summary>
         /// Converts to string.
         /// </summary>
@@ -194,11 +199,11 @@ namespace Classes
             }
             sb.AppendLine
                 ($"Delivery date: {DeliveryDate:dd-MM-yyyy})");
-            sb.Append($"Order cost: {CalculateOrderCost():c},");
-            sb.Append($"Shipping cost: {CalculateShippingCost():c}");
-            sb.Append($" (Fee: {CalculateFee():c}),");
+            sb.Append($"Order cost: {CalculateOrderCost():c2},");
+            sb.Append($"Shipping cost: {CalculateShippingCost():c2}");
+            sb.Append($" (Fee: {CalculateFee():c2}),");
             sb.Append($" Total: " +
-                $"{CalculateOrderCost() + CalculateShippingCost():c}");
+                $"{CalculateTotalCost():c2}");
             return sb.ToString();
         }
         #endregion Methods

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using System.Text;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace Classes
@@ -110,7 +108,7 @@ namespace Classes
                 if (Regex.IsMatch(value,
                     @"^[AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ]{1}" +
                     @"[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃń" +
-                    @"OoÓóPpRrSsŚśTtUuWwYyZzŹźŻż\s]{1,} \d{1,}$"))
+                    @"OoÓóPpRrSsŚśTtUuWwYyZzŹźŻż\s]{1,} \d{1,}(/\d{1,})?$"))
                 {
                     street = value;
                 }
