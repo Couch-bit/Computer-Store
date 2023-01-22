@@ -51,8 +51,20 @@ namespace GUI
                 if (supplier is not null)
                 {
                     store.RemoveSupplier(supplier);
+                    try
+                    {
+                        store.AddSupplier(result);
+                    }
+                    catch 
+                    {
+                        store.AddSupplier(supplier);
+                        throw;
+                    }
                 }
-                store.AddSupplier(result);
+                else
+                {
+                    store.AddSupplier(result);
+                }
                 DialogResult = true;
             }
             catch (Exception exc)

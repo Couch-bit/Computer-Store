@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Globalization;
+using System.IO;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace GUI
 
         public MainWindow()
         {
+            CultureInfo.CurrentCulture = new CultureInfo("pl-PL", true);
             store = new();
             InitializeComponent();
             RefreshStore();
