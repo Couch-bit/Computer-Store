@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Collections.Generic;
 using Classes;
 
 namespace GUI
@@ -46,7 +45,8 @@ namespace GUI
             Close();
         }
 
-        private void BtnViewOrder_Click(object sender, RoutedEventArgs e)
+        private void BtnViewOrder_Click(object sender,
+            RoutedEventArgs e)
         {
             if (LstOrders.SelectedItem is Order order)
             {

@@ -1,7 +1,7 @@
-﻿using Classes;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Forms;
+using Classes;
 
 namespace GUI
 {
@@ -40,7 +40,7 @@ namespace GUI
                     ("Passwords Do Not Match", "Warning",
                     MessageBoxButtons.OK);
             }
-            else if (TxtNip.IsEnabled)
+            if (TxtNip.IsEnabled)
             {
                 ParseCompany();
             }
@@ -60,9 +60,22 @@ namespace GUI
                     TxtPassword.Password);
                 if (customer is not null)
                 {
+                    customer.Orders.ForEach(company.AddOrder);
                     store.RemoveCustomer(customer);
+                    try
+                    {
+                        store.AddCustomer(company);
+                    }
+                    catch 
+                    {
+                        store.AddCustomer(customer);
+                        throw;
+                    }
                 }
-                store.AddCustomer(company);
+                else
+                {
+                    store.AddCustomer(company);
+                }
                 DialogResult = true;
             }
             catch (Exception exc)
@@ -85,9 +98,23 @@ namespace GUI
                     TxtPassword.Password);
                 if (customer is not null)
                 {
+                    customer.Orders.ForEach(privateCustomer.AddOrder);
                     store.RemoveCustomer(customer);
+                    try
+                    {
+                        store.AddCustomer(privateCustomer);
+                    }
+                    catch
+                    {
+                        store.AddCustomer(customer);
+                        throw;
+                    }
                 }
-                store.AddCustomer(privateCustomer);
+                else
+                {
+                    store.AddCustomer(privateCustomer);
+                }
+                
                 DialogResult = true;
             }
             catch (Exception exc)
