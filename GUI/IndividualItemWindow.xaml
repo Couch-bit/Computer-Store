@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="IndividualItemWindow" Height="376" Width="514">
+        Title="Individual Item Menu" Height="376" Width="514">
     <Grid>
         <Label x:Name="LblNumber" Content="Serial Number" HorizontalAlignment="Left" Height="31" Margin="20,55,0,0" VerticalAlignment="Top" Width="107" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>
         <Label x:Name="LblDate" Content="Date of Arrival" HorizontalAlignment="Left" Height="32" Margin="20,86,0,0" VerticalAlignment="Top" Width="107" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center"/>

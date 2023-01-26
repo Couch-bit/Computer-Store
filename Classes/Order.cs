@@ -10,11 +10,11 @@ namespace Classes
     {
         private const decimal BASE = 20M;
         #region Fields
-
         private static int currentId;
         private readonly int id;
         private bool status;
-        private DateTime deliveryDate;
+        [JsonInclude]
+        public DateTime deliveryDate;
         private readonly List<CartItem> cart;
         #endregion Fields
 
@@ -55,13 +55,14 @@ namespace Classes
                 DateTime now = DateTime.Now;
                 if (value.Subtract(now).TotalDays < 1)
                 {
-                    throw new WrongDateException("Incorrect date");
+                    throw new WrongDateException("Incorrect Date");
                 }
                 else
                 {
                     deliveryDate = value;
                 }
-            } 
+            }
+            
         }
 
         /// <summary>

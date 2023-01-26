@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="ProductWindow" Height="462" Width="517">
+        Title="Product Menu" Height="462" Width="517">
     <Grid HorizontalAlignment="Center" Width="517">
         <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="27" Margin="105,24,0,0" VerticalAlignment="Top" Width="137" DropDownClosed="CmbType_DropDownClosed">
             <ComboBoxItem x:Name="hardware" Content="Hardware"/>
