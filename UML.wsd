@@ -69,7 +69,6 @@ abstract Product {
   -decimal discount
   -decimal price
   -int amount
-  -Supplier supplier
   -readonly Dictionary<string, string> technicalInfo
   -readonly List<Item> items
   ----
@@ -177,18 +176,18 @@ IEquatable <|-[dashed]- Item : "<Item>"
 IComparable <|-[dashed]- Product : "<Product>"
 IEquatable <|-[dashed]- Product : "<Product>"
 abstract Product implements ICloneable
-HardwareType --> Hardware
-AccessoryType --> Accessory
-Architecture --> Software
+HardwareType <-- Hardware
+AccessoryType <-- Accessory
+Architecture <-- Software
 Product <|-- Accessory
 Product <|-- Software
 Product <|-- Hardware
 Customer	<|-- Company
 Customer	<|-- PrivateCustomer
-Supplier "0..*" --> "1" Store
-Customer "0..*" --> "1" Store
-Product "0..*" --> "1" Order
-Product "0..*" --> "1" Supplier
-Order "0..*" --> "1" Customer
-Item "0..*" --> "1" Product
+Supplier "0..*" <-- "1" Store
+Customer "0..*" <-- "1" Store
+Product "0..*" <-- "1" Order
+Product "0..*" <-- "1" Supplier
+Order "0..*" <-- "1" Customer
+Item "0..*" <-- "1" Product
 @enduml
